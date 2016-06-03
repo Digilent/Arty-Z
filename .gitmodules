@@ -1,0 +1,6 @@
+[submodule "vivado-boards"]
+	path = Projects/linux_bd/repo/vivado-boards
+	url = https://github.com/Digilent/vivado-boards.git
+[submodule "vivado-library"]
+	path = Projects/linux_bd/repo/vivado-library
+	url = https://github.com/Digilent/vivado-library.git
