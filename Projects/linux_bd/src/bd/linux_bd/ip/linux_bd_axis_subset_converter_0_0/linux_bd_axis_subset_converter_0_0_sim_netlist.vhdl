@@ -1,10 +1,10 @@
--- Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
--- Date        : Sun May 29 23:58:38 2016
--- Host        : localhost.localdomain running 64-bit Fedora release 22 (Twenty Two)
+-- Tool Version: Vivado v.2016.1 (win64) Build 1538259 Fri Apr  8 15:45:27 MDT 2016
+-- Date        : Fri Jun 03 18:27:56 2016
+-- Host        : WK73 running 64-bit Service Pack 1  (build 7601)
 -- Command     : write_vhdl -force -mode funcsim
---               /home/samb/sam_work/git/digilent/Arty-Z/Projects/linux_bd/src/bd/linux_bd/ip/linux_bd_axis_subset_converter_0_0/linux_bd_axis_subset_converter_0_0_sim_netlist.vhdl
+--               C:/sam_work/git/digilent/Arty-Z/Projects/linux_bd/src/bd/linux_bd/ip/linux_bd_axis_subset_converter_0_0/linux_bd_axis_subset_converter_0_0_sim_netlist.vhdl
 -- Design      : linux_bd_axis_subset_converter_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,7 +14,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 is
+entity linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 is
   port (
     aclk : in STD_LOGIC;
     aresetn : in STD_LOGIC;
@@ -41,72 +41,72 @@ entity linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subs
     sparse_tkeep_removed : out STD_LOGIC
   );
   attribute C_DEFAULT_TLAST : integer;
-  attribute C_DEFAULT_TLAST of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 0;
+  attribute C_DEFAULT_TLAST of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 0;
   attribute C_FAMILY : string;
-  attribute C_FAMILY of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is "zynq";
+  attribute C_FAMILY of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is "zynq";
   attribute C_M_AXIS_SIGNAL_SET : string;
-  attribute C_M_AXIS_SIGNAL_SET of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is "32'b00000000000000000000000010011011";
+  attribute C_M_AXIS_SIGNAL_SET of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is "32'b00000000000000000000000010011011";
   attribute C_M_AXIS_TDATA_WIDTH : integer;
-  attribute C_M_AXIS_TDATA_WIDTH of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 24;
+  attribute C_M_AXIS_TDATA_WIDTH of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 24;
   attribute C_M_AXIS_TDEST_WIDTH : integer;
-  attribute C_M_AXIS_TDEST_WIDTH of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 1;
+  attribute C_M_AXIS_TDEST_WIDTH of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 1;
   attribute C_M_AXIS_TID_WIDTH : integer;
-  attribute C_M_AXIS_TID_WIDTH of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 1;
+  attribute C_M_AXIS_TID_WIDTH of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 1;
   attribute C_M_AXIS_TUSER_WIDTH : integer;
-  attribute C_M_AXIS_TUSER_WIDTH of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 1;
+  attribute C_M_AXIS_TUSER_WIDTH of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 1;
   attribute C_S_AXIS_SIGNAL_SET : string;
-  attribute C_S_AXIS_SIGNAL_SET of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is "32'b00000000000000000000000010011011";
+  attribute C_S_AXIS_SIGNAL_SET of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is "32'b00000000000000000000000010011011";
   attribute C_S_AXIS_TDATA_WIDTH : integer;
-  attribute C_S_AXIS_TDATA_WIDTH of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 32;
+  attribute C_S_AXIS_TDATA_WIDTH of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 32;
   attribute C_S_AXIS_TDEST_WIDTH : integer;
-  attribute C_S_AXIS_TDEST_WIDTH of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 1;
+  attribute C_S_AXIS_TDEST_WIDTH of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 1;
   attribute C_S_AXIS_TID_WIDTH : integer;
-  attribute C_S_AXIS_TID_WIDTH of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 1;
+  attribute C_S_AXIS_TID_WIDTH of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 1;
   attribute C_S_AXIS_TUSER_WIDTH : integer;
-  attribute C_S_AXIS_TUSER_WIDTH of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 1;
+  attribute C_S_AXIS_TUSER_WIDTH of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 1;
   attribute G_INDX_SS_TDATA : integer;
-  attribute G_INDX_SS_TDATA of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 1;
+  attribute G_INDX_SS_TDATA of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 1;
   attribute G_INDX_SS_TDEST : integer;
-  attribute G_INDX_SS_TDEST of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 6;
+  attribute G_INDX_SS_TDEST of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 6;
   attribute G_INDX_SS_TID : integer;
-  attribute G_INDX_SS_TID of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 5;
+  attribute G_INDX_SS_TID of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 5;
   attribute G_INDX_SS_TKEEP : integer;
-  attribute G_INDX_SS_TKEEP of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 3;
+  attribute G_INDX_SS_TKEEP of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 3;
   attribute G_INDX_SS_TLAST : integer;
-  attribute G_INDX_SS_TLAST of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 4;
+  attribute G_INDX_SS_TLAST of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 4;
   attribute G_INDX_SS_TREADY : integer;
-  attribute G_INDX_SS_TREADY of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 0;
+  attribute G_INDX_SS_TREADY of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 0;
   attribute G_INDX_SS_TSTRB : integer;
-  attribute G_INDX_SS_TSTRB of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 2;
+  attribute G_INDX_SS_TSTRB of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 2;
   attribute G_INDX_SS_TUSER : integer;
-  attribute G_INDX_SS_TUSER of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 7;
+  attribute G_INDX_SS_TUSER of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 7;
   attribute G_MASK_SS_TDATA : integer;
-  attribute G_MASK_SS_TDATA of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 2;
+  attribute G_MASK_SS_TDATA of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 2;
   attribute G_MASK_SS_TDEST : integer;
-  attribute G_MASK_SS_TDEST of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 64;
+  attribute G_MASK_SS_TDEST of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 64;
   attribute G_MASK_SS_TID : integer;
-  attribute G_MASK_SS_TID of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 32;
+  attribute G_MASK_SS_TID of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 32;
   attribute G_MASK_SS_TKEEP : integer;
-  attribute G_MASK_SS_TKEEP of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 8;
+  attribute G_MASK_SS_TKEEP of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 8;
   attribute G_MASK_SS_TLAST : integer;
-  attribute G_MASK_SS_TLAST of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 16;
+  attribute G_MASK_SS_TLAST of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 16;
   attribute G_MASK_SS_TREADY : integer;
-  attribute G_MASK_SS_TREADY of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 1;
+  attribute G_MASK_SS_TREADY of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 1;
   attribute G_MASK_SS_TSTRB : integer;
-  attribute G_MASK_SS_TSTRB of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 4;
+  attribute G_MASK_SS_TSTRB of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 4;
   attribute G_MASK_SS_TUSER : integer;
-  attribute G_MASK_SS_TUSER of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 128;
+  attribute G_MASK_SS_TUSER of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 128;
   attribute G_TASK_SEVERITY_ERR : integer;
-  attribute G_TASK_SEVERITY_ERR of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 2;
+  attribute G_TASK_SEVERITY_ERR of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 2;
   attribute G_TASK_SEVERITY_INFO : integer;
-  attribute G_TASK_SEVERITY_INFO of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 0;
+  attribute G_TASK_SEVERITY_INFO of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 0;
   attribute G_TASK_SEVERITY_WARNING : integer;
-  attribute G_TASK_SEVERITY_WARNING of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is 1;
+  attribute G_TASK_SEVERITY_WARNING of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is 1;
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 : entity is "axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0";
-end linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0;
+  attribute ORIG_REF_NAME of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 : entity is "top_linux_bd_axis_subset_converter_0_0";
+end linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0;
 
-architecture STRUCTURE of linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 is
+architecture STRUCTURE of linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 is
   signal \<const0>\ : STD_LOGIC;
   signal \^m_axis_tready\ : STD_LOGIC;
   signal \^s_axis_tdata\ : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -116,8 +116,8 @@ architecture STRUCTURE of linux_bd_axis_subset_converter_0_0_axis_subset_convert
   signal \^s_axis_tvalid\ : STD_LOGIC;
 begin
   \^m_axis_tready\ <= m_axis_tready;
-  \^s_axis_tdata\(31 downto 0) <= s_axis_tdata(31 downto 0);
-  \^s_axis_tkeep\(3 downto 0) <= s_axis_tkeep(3 downto 0);
+  \^s_axis_tdata\(23 downto 0) <= s_axis_tdata(23 downto 0);
+  \^s_axis_tkeep\(2 downto 0) <= s_axis_tkeep(2 downto 0);
   \^s_axis_tlast\ <= s_axis_tlast;
   \^s_axis_tuser\(0) <= s_axis_tuser(0);
   \^s_axis_tvalid\ <= s_axis_tvalid;
@@ -165,13 +165,11 @@ entity linux_bd_axis_subset_converter_0_0 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of linux_bd_axis_subset_converter_0_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of linux_bd_axis_subset_converter_0_0 : entity is "linux_bd_axis_subset_converter_0_0,axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0,{}";
-  attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of linux_bd_axis_subset_converter_0_0 : entity is "linux_bd_axis_subset_converter_0_0,axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0,{x_ipProduct=Vivado 2015.4,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axis_subset_converter,x_ipVersion=1.1,x_ipCoreRevision=7,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_S_AXIS_TDATA_WIDTH=32,C_S_AXIS_TID_WIDTH=1,C_S_AXIS_TDEST_WIDTH=1,C_S_AXIS_TUSER_WIDTH=1,C_S_AXIS_SIGNAL_SET=0b00000000000000000000000010011011,C_M_AXIS_TDATA_WIDTH=24,C_M_AXIS_TID_WIDTH=1,C_M_AXIS_TDEST_WIDTH=1,C_M_AXIS_SIGNAL_SET=0b00000000000000000000000010011011,C_M_AXIS_TUSER_WIDTH=1,C_DEFAULT_TLAST=0}";
+  attribute CHECK_LICENSE_TYPE of linux_bd_axis_subset_converter_0_0 : entity is "linux_bd_axis_subset_converter_0_0,top_linux_bd_axis_subset_converter_0_0,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of linux_bd_axis_subset_converter_0_0 : entity is "yes";
   attribute X_CORE_INFO : string;
-  attribute X_CORE_INFO of linux_bd_axis_subset_converter_0_0 : entity is "axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0,Vivado 2015.4";
+  attribute X_CORE_INFO of linux_bd_axis_subset_converter_0_0 : entity is "top_linux_bd_axis_subset_converter_0_0,Vivado 2016.1";
 end linux_bd_axis_subset_converter_0_0;
 
 architecture STRUCTURE of linux_bd_axis_subset_converter_0_0 is
@@ -243,7 +241,7 @@ architecture STRUCTURE of linux_bd_axis_subset_converter_0_0 is
   attribute G_TASK_SEVERITY_WARNING : integer;
   attribute G_TASK_SEVERITY_WARNING of inst : label is 1;
 begin
-inst: entity work.linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0
+inst: entity work.linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0
      port map (
       aclk => aclk,
       aclken => '1',

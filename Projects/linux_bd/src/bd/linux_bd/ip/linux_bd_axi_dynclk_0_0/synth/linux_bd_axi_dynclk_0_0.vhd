@@ -84,9 +84,8 @@ ENTITY linux_bd_axi_dynclk_0_0 IS
 END linux_bd_axi_dynclk_0_0;
 
 ARCHITECTURE linux_bd_axi_dynclk_0_0_arch OF linux_bd_axi_dynclk_0_0 IS
-  ATTRIBUTE DowngradeIPIdentifiedWarnings : string;
+  ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF linux_bd_axi_dynclk_0_0_arch: ARCHITECTURE IS "yes";
-
   COMPONENT axi_dynclk IS
     GENERIC (
       C_S00_AXI_DATA_WIDTH : INTEGER;
@@ -122,7 +121,7 @@ ARCHITECTURE linux_bd_axi_dynclk_0_0_arch OF linux_bd_axi_dynclk_0_0 IS
     );
   END COMPONENT axi_dynclk;
   ATTRIBUTE X_CORE_INFO : STRING;
-  ATTRIBUTE X_CORE_INFO OF linux_bd_axi_dynclk_0_0_arch: ARCHITECTURE IS "axi_dynclk,Vivado 2015.4";
+  ATTRIBUTE X_CORE_INFO OF linux_bd_axi_dynclk_0_0_arch: ARCHITECTURE IS "axi_dynclk,Vivado 2016.1";
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF linux_bd_axi_dynclk_0_0_arch : ARCHITECTURE IS "linux_bd_axi_dynclk_0_0,axi_dynclk,{}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;

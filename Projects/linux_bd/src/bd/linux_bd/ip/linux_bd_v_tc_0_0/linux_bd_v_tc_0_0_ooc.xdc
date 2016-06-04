@@ -53,9 +53,7 @@
 
 
 create_clock -period 10 -name clk [get_ports clk]
-set_property HD.CLK_SRC BUFGCTRL_X0Y0 [get_ports clk]
 
 create_clock -period 10 -name s_axi_aclk [get_ports s_axi_aclk]
-set_property HD.CLK_SRC BUFGCTRL_X0Y1 [get_ports s_axi_aclk]
 
 

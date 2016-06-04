@@ -52,10 +52,8 @@
 # #########################################################
 
 
-create_clock -period 7 -name aclk [get_ports aclk]
-set_property HD.CLK_SRC BUFGCTRL_X0Y0 [get_ports aclk]
-
 create_clock -period 10 -name vid_io_out_clk [get_ports vid_io_out_clk]
-set_property HD.CLK_SRC BUFGCTRL_X0Y1 [get_ports vid_io_out_clk]
+
+create_clock -period 7 -name aclk [get_ports aclk]
 
 

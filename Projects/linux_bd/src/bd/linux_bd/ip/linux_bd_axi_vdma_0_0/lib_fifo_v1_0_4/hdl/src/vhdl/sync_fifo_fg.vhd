@@ -172,15 +172,16 @@
 --     - Added sleep, wr_rst_busy, and rd_rst_busy signals
 --     - Changed FULL_FLAGS_RST_VAL to '1'
 -- ^^^^^^
---
+--   KARTHEEK 03/02/2016
+--     - Update to use fifo_generator_v13_1_0
 -------------------------------------------------------------------------------
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 
-library fifo_generator_v13_0_1;
-use fifo_generator_v13_0_1.all;
+library fifo_generator_v13_1_0;
+use fifo_generator_v13_1_0.all;
 
 
 -------------------------------------------------------------------------------
@@ -661,7 +662,7 @@ begin --(architecture implementation)
     -- BRAM implementations of a legacy Sync FIFO
     --
     -------------------------------------------------------------------------------
-    I_SYNC_FIFO_BRAM : entity fifo_generator_v13_0_1.fifo_generator_v13_0_1 
+    I_SYNC_FIFO_BRAM : entity fifo_generator_v13_1_0.fifo_generator_v13_1_0 
       generic map(
         C_COMMON_CLOCK                 =>  1,                                           
         C_COUNT_TYPE                   =>  0,                                           

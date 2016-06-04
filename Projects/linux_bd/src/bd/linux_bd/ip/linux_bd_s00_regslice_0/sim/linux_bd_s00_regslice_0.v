@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:ip:axi_register_slice:2.1
-// IP Revision: 7
+// IP Revision: 8
 
 `timescale 1ns/1ps
 
@@ -159,7 +159,7 @@ input wire m_axi_rvalid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI RREADY" *)
 output wire m_axi_rready;
 
-  axi_register_slice_v2_1_7_axi_register_slice #(
+  axi_register_slice_v2_1_8_axi_register_slice #(
     .C_FAMILY("zynq"),
     .C_AXI_PROTOCOL(0),
     .C_AXI_ID_WIDTH(1),
@@ -183,7 +183,7 @@ output wire m_axi_rready;
     .s_axi_awaddr(32'H00000000),
     .s_axi_awlen(8'H00),
     .s_axi_awsize(3'H0),
-    .s_axi_awburst(2'H0),
+    .s_axi_awburst(2'H1),
     .s_axi_awlock(1'H0),
     .s_axi_awcache(4'H0),
     .s_axi_awprot(3'H0),

@@ -1,10 +1,10 @@
--- Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
--- Date        : Sun May 29 23:57:59 2016
--- Host        : localhost.localdomain running 64-bit Fedora release 22 (Twenty Two)
+-- Tool Version: Vivado v.2016.1 (win64) Build 1538259 Fri Apr  8 15:45:27 MDT 2016
+-- Date        : Fri Jun 03 18:24:50 2016
+-- Host        : WK73 running 64-bit Service Pack 1  (build 7601)
 -- Command     : write_vhdl -force -mode synth_stub
---               /home/samb/sam_work/git/digilent/Arty-Z/Projects/linux_bd/src/bd/linux_bd/ip/linux_bd_rgb2dvi_0_0/linux_bd_rgb2dvi_0_0_stub.vhdl
+--               C:/sam_work/git/digilent/Arty-Z/Projects/linux_bd/src/bd/linux_bd/ip/linux_bd_rgb2dvi_0_0/linux_bd_rgb2dvi_0_0_stub.vhdl
 -- Design      : linux_bd_rgb2dvi_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-1
@@ -35,6 +35,6 @@ attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
 attribute black_box_pad_pin of stub : architecture is "TMDS_Clk_p,TMDS_Clk_n,TMDS_Data_p[2:0],TMDS_Data_n[2:0],aRst_n,vid_pData[23:0],vid_pVDE,vid_pHSync,vid_pVSync,PixelClk,SerialClk";
 attribute x_core_info : string;
-attribute x_core_info of stub : architecture is "rgb2dvi,Vivado 2015.4";
+attribute x_core_info of stub : architecture is "rgb2dvi,Vivado 2016.1";
 begin
 end;

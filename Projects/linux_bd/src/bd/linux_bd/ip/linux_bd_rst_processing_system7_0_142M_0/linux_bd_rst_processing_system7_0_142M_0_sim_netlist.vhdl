@@ -1,10 +1,10 @@
--- Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
--- Date        : Sun May 29 23:58:35 2016
--- Host        : localhost.localdomain running 64-bit Fedora release 22 (Twenty Two)
+-- Tool Version: Vivado v.2016.1 (win64) Build 1538259 Fri Apr  8 15:45:27 MDT 2016
+-- Date        : Fri Jun 03 18:26:02 2016
+-- Host        : WK73 running 64-bit Service Pack 1  (build 7601)
 -- Command     : write_vhdl -force -mode funcsim
---               /home/samb/sam_work/git/digilent/Arty-Z/Projects/linux_bd/src/bd/linux_bd/ip/linux_bd_rst_processing_system7_0_142M_0/linux_bd_rst_processing_system7_0_142M_0_sim_netlist.vhdl
+--               C:/sam_work/git/digilent/Arty-Z/Projects/linux_bd/src/bd/linux_bd/ip/linux_bd_rst_processing_system7_0_142M_0/linux_bd_rst_processing_system7_0_142M_0_sim_netlist.vhdl
 -- Design      : linux_bd_rst_processing_system7_0_142M_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -125,10 +125,10 @@ entity linux_bd_rst_processing_system7_0_142M_0_cdc_sync_0 is
   port (
     lpf_exr_reg : out STD_LOGIC;
     scndry_out : out STD_LOGIC;
-    mb_debug_sys_rst : in STD_LOGIC;
-    ext_reset_in : in STD_LOGIC;
     lpf_exr : in STD_LOGIC;
     p_3_out : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    mb_debug_sys_rst : in STD_LOGIC;
+    ext_reset_in : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
@@ -230,10 +230,9 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity linux_bd_rst_processing_system7_0_142M_0_upcnt_n is
   port (
-    pr_dec0 : out STD_LOGIC;
-    Q : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    seq_cnt_en : in STD_LOGIC;
+    Q : out STD_LOGIC_VECTOR ( 5 downto 0 );
     seq_clr : in STD_LOGIC;
+    seq_cnt_en : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
@@ -241,36 +240,22 @@ entity linux_bd_rst_processing_system7_0_142M_0_upcnt_n is
 end linux_bd_rst_processing_system7_0_142M_0_upcnt_n;
 
 architecture STRUCTURE of linux_bd_rst_processing_system7_0_142M_0_upcnt_n is
-  signal \^q\ : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal \^q\ : STD_LOGIC_VECTOR ( 5 downto 0 );
   signal clear : STD_LOGIC;
   signal q_int0 : STD_LOGIC_VECTOR ( 5 downto 0 );
-  signal seq_cnt : STD_LOGIC_VECTOR ( 2 downto 0 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \core_dec[1]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \q_int[0]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \q_int[1]_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \q_int[1]_i_1\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \q_int[2]_i_1\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \q_int[3]_i_1\ : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of \q_int[4]_i_1\ : label is "soft_lutpair0";
 begin
-  Q(2 downto 0) <= \^q\(2 downto 0);
-\core_dec[1]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0210"
-    )
-        port map (
-      I0 => seq_cnt(0),
-      I1 => seq_cnt(1),
-      I2 => seq_cnt(2),
-      I3 => seq_cnt_en,
-      O => pr_dec0
-    );
+  Q(5 downto 0) <= \^q\(5 downto 0);
 \q_int[0]_i_1\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
-      I0 => seq_cnt(0),
+      I0 => \^q\(0),
       O => q_int0(0)
     );
 \q_int[1]_i_1\: unisim.vcomponents.LUT2
@@ -278,8 +263,8 @@ begin
       INIT => X"6"
     )
         port map (
-      I0 => seq_cnt(0),
-      I1 => seq_cnt(1),
+      I0 => \^q\(0),
+      I1 => \^q\(1),
       O => q_int0(1)
     );
 \q_int[2]_i_1\: unisim.vcomponents.LUT3
@@ -287,9 +272,9 @@ begin
       INIT => X"78"
     )
         port map (
-      I0 => seq_cnt(0),
-      I1 => seq_cnt(1),
-      I2 => seq_cnt(2),
+      I0 => \^q\(0),
+      I1 => \^q\(1),
+      I2 => \^q\(2),
       O => q_int0(2)
     );
 \q_int[3]_i_1\: unisim.vcomponents.LUT4
@@ -297,10 +282,10 @@ begin
       INIT => X"7F80"
     )
         port map (
-      I0 => seq_cnt(1),
-      I1 => seq_cnt(0),
-      I2 => seq_cnt(2),
-      I3 => \^q\(0),
+      I0 => \^q\(1),
+      I1 => \^q\(0),
+      I2 => \^q\(2),
+      I3 => \^q\(3),
       O => q_int0(3)
     );
 \q_int[4]_i_1\: unisim.vcomponents.LUT5
@@ -308,11 +293,11 @@ begin
       INIT => X"7FFF8000"
     )
         port map (
-      I0 => seq_cnt(2),
-      I1 => seq_cnt(0),
-      I2 => seq_cnt(1),
-      I3 => \^q\(0),
-      I4 => \^q\(1),
+      I0 => \^q\(2),
+      I1 => \^q\(0),
+      I2 => \^q\(1),
+      I3 => \^q\(3),
+      I4 => \^q\(4),
       O => q_int0(4)
     );
 \q_int[5]_i_1\: unisim.vcomponents.LUT1
@@ -328,12 +313,12 @@ begin
       INIT => X"7FFFFFFF80000000"
     )
         port map (
-      I0 => \^q\(0),
-      I1 => seq_cnt(1),
-      I2 => seq_cnt(0),
-      I3 => seq_cnt(2),
-      I4 => \^q\(1),
-      I5 => \^q\(2),
+      I0 => \^q\(3),
+      I1 => \^q\(1),
+      I2 => \^q\(0),
+      I3 => \^q\(2),
+      I4 => \^q\(4),
+      I5 => \^q\(5),
       O => q_int0(5)
     );
 \q_int_reg[0]\: unisim.vcomponents.FDRE
@@ -344,7 +329,7 @@ begin
       C => slowest_sync_clk,
       CE => seq_cnt_en,
       D => q_int0(0),
-      Q => seq_cnt(0),
+      Q => \^q\(0),
       R => clear
     );
 \q_int_reg[1]\: unisim.vcomponents.FDRE
@@ -355,7 +340,7 @@ begin
       C => slowest_sync_clk,
       CE => seq_cnt_en,
       D => q_int0(1),
-      Q => seq_cnt(1),
+      Q => \^q\(1),
       R => clear
     );
 \q_int_reg[2]\: unisim.vcomponents.FDRE
@@ -366,7 +351,7 @@ begin
       C => slowest_sync_clk,
       CE => seq_cnt_en,
       D => q_int0(2),
-      Q => seq_cnt(2),
+      Q => \^q\(2),
       R => clear
     );
 \q_int_reg[3]\: unisim.vcomponents.FDRE
@@ -377,7 +362,7 @@ begin
       C => slowest_sync_clk,
       CE => seq_cnt_en,
       D => q_int0(3),
-      Q => \^q\(0),
+      Q => \^q\(3),
       R => clear
     );
 \q_int_reg[4]\: unisim.vcomponents.FDRE
@@ -388,7 +373,7 @@ begin
       C => slowest_sync_clk,
       CE => seq_cnt_en,
       D => q_int0(4),
-      Q => \^q\(1),
+      Q => \^q\(4),
       R => clear
     );
 \q_int_reg[5]\: unisim.vcomponents.FDRE
@@ -399,7 +384,7 @@ begin
       C => slowest_sync_clk,
       CE => seq_cnt_en,
       D => q_int0(5),
-      Q => \^q\(2),
+      Q => \^q\(5),
       R => clear
     );
 end STRUCTURE;
@@ -411,10 +396,10 @@ entity linux_bd_rst_processing_system7_0_142M_0_lpf is
   port (
     lpf_int : out STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC;
-    mb_debug_sys_rst : in STD_LOGIC;
-    ext_reset_in : in STD_LOGIC;
     dcm_locked : in STD_LOGIC;
-    aux_reset_in : in STD_LOGIC
+    aux_reset_in : in STD_LOGIC;
+    mb_debug_sys_rst : in STD_LOGIC;
+    ext_reset_in : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of linux_bd_rst_processing_system7_0_142M_0_lpf : entity is "lpf";
@@ -427,7 +412,7 @@ architecture STRUCTURE of linux_bd_rst_processing_system7_0_142M_0_lpf is
   signal asr_lpf : STD_LOGIC_VECTOR ( 0 to 0 );
   signal lpf_asr : STD_LOGIC;
   signal lpf_exr : STD_LOGIC;
-  signal lpf_int0 : STD_LOGIC;
+  signal \lpf_int0__0\ : STD_LOGIC;
   signal p_1_in : STD_LOGIC;
   signal p_2_in : STD_LOGIC;
   signal p_3_in1_in : STD_LOGIC;
@@ -437,7 +422,7 @@ architecture STRUCTURE of linux_bd_rst_processing_system7_0_142M_0_lpf is
   attribute XILINX_LEGACY_PRIM : string;
   attribute XILINX_LEGACY_PRIM of POR_SRL_I : label is "SRL16";
   attribute srl_name : string;
-  attribute srl_name of POR_SRL_I : label is "\U0/EXT_LPF/POR_SRL_I ";
+  attribute srl_name of POR_SRL_I : label is "U0/\EXT_LPF/POR_SRL_I ";
 begin
 \ACTIVE_LOW_AUX.ACT_LO_AUX\: entity work.linux_bd_rst_processing_system7_0_142M_0_cdc_sync
      port map (
@@ -562,7 +547,7 @@ lpf_exr_reg: unisim.vcomponents.FDRE
       Q => lpf_exr,
       R => '0'
     );
-lpf_int_i_1: unisim.vcomponents.LUT4
+lpf_int0: unisim.vcomponents.LUT4
     generic map(
       INIT => X"FFEF"
     )
@@ -571,7 +556,7 @@ lpf_int_i_1: unisim.vcomponents.LUT4
       I1 => lpf_asr,
       I2 => dcm_locked,
       I3 => lpf_exr,
-      O => lpf_int0
+      O => \lpf_int0__0\
     );
 lpf_int_reg: unisim.vcomponents.FDRE
     generic map(
@@ -580,7 +565,7 @@ lpf_int_reg: unisim.vcomponents.FDRE
         port map (
       C => slowest_sync_clk,
       CE => '1',
-      D => lpf_int0,
+      D => \lpf_int0__0\,
       Q => lpf_int,
       R => '0'
     );
@@ -594,7 +579,7 @@ entity linux_bd_rst_processing_system7_0_142M_0_sequence_psr is
     Core : out STD_LOGIC;
     bsr : out STD_LOGIC;
     pr : out STD_LOGIC;
-    p_0_out : out STD_LOGIC;
+    \ACTIVE_LOW_BSR_OUT_DFF[0].interconnect_aresetn_reg[0]\ : out STD_LOGIC;
     \ACTIVE_LOW_PR_OUT_DFF[0].peripheral_aresetn_reg[0]\ : out STD_LOGIC;
     lpf_int : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
@@ -614,29 +599,29 @@ architecture STRUCTURE of linux_bd_rst_processing_system7_0_142M_0_sequence_psr 
   signal \core_dec[2]_i_1_n_0\ : STD_LOGIC;
   signal \core_dec_reg_n_0_[0]\ : STD_LOGIC;
   signal \core_dec_reg_n_0_[1]\ : STD_LOGIC;
-  signal \core_dec_reg_n_0_[2]\ : STD_LOGIC;
   signal from_sys_i_1_n_0 : STD_LOGIC;
+  signal p_0_in : STD_LOGIC;
   signal p_3_out : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal p_5_out : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal \^pr\ : STD_LOGIC;
-  signal pr_dec0 : STD_LOGIC;
+  signal \pr_dec0__0\ : STD_LOGIC;
   signal \pr_dec_reg_n_0_[0]\ : STD_LOGIC;
   signal \pr_dec_reg_n_0_[2]\ : STD_LOGIC;
   signal pr_i_1_n_0 : STD_LOGIC;
   signal seq_clr : STD_LOGIC;
-  signal seq_cnt : STD_LOGIC_VECTOR ( 5 downto 3 );
+  signal seq_cnt : STD_LOGIC_VECTOR ( 5 downto 0 );
   signal seq_cnt_en : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \ACTIVE_LOW_BSR_OUT_DFF[0].interconnect_aresetn[0]_i_1\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \ACTIVE_LOW_PR_OUT_DFF[0].peripheral_aresetn[0]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of Core_i_1 : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \bsr_dec[0]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \bsr_dec[2]_i_1\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of bsr_i_1 : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \core_dec[0]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \core_dec[2]_i_1\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of from_sys_i_1 : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of pr_i_1 : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \ACTIVE_LOW_BSR_OUT_DFF[0].interconnect_aresetn[0]_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \ACTIVE_LOW_PR_OUT_DFF[0].peripheral_aresetn[0]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of Core_i_1 : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \bsr_dec[2]_i_1\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of bsr_i_1 : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \core_dec[0]_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \core_dec[2]_i_1\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of from_sys_i_1 : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \pr_dec[0]_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of pr_i_1 : label is "soft_lutpair4";
 begin
   Core <= \^core\;
   bsr <= \^bsr\;
@@ -647,7 +632,7 @@ begin
     )
         port map (
       I0 => \^bsr\,
-      O => p_0_out
+      O => \ACTIVE_LOW_BSR_OUT_DFF[0].interconnect_aresetn_reg[0]\
     );
 \ACTIVE_LOW_PR_OUT_DFF[0].peripheral_aresetn[0]_i_1\: unisim.vcomponents.LUT1
     generic map(
@@ -663,7 +648,7 @@ Core_i_1: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \^core\,
-      I1 => \core_dec_reg_n_0_[2]\,
+      I1 => p_0_in,
       O => Core_i_1_n_0
     );
 Core_reg: unisim.vcomponents.FDSE
@@ -679,8 +664,7 @@ Core_reg: unisim.vcomponents.FDSE
     );
 SEQ_COUNTER: entity work.linux_bd_rst_processing_system7_0_142M_0_upcnt_n
      port map (
-      Q(2 downto 0) => seq_cnt(5 downto 3),
-      pr_dec0 => pr_dec0,
+      Q(5 downto 0) => seq_cnt(5 downto 0),
       seq_clr => seq_clr,
       seq_cnt_en => seq_cnt_en,
       slowest_sync_clk => slowest_sync_clk
@@ -785,7 +769,7 @@ bsr_reg: unisim.vcomponents.FDSE
         port map (
       C => slowest_sync_clk,
       CE => '1',
-      D => pr_dec0,
+      D => \pr_dec0__0\,
       Q => \core_dec_reg_n_0_[1]\,
       R => '0'
     );
@@ -797,7 +781,7 @@ bsr_reg: unisim.vcomponents.FDSE
       C => slowest_sync_clk,
       CE => '1',
       D => \core_dec[2]_i_1_n_0\,
-      Q => \core_dec_reg_n_0_[2]\,
+      Q => p_0_in,
       R => '0'
     );
 from_sys_i_1: unisim.vcomponents.LUT2
@@ -810,15 +794,23 @@ from_sys_i_1: unisim.vcomponents.LUT2
       O => from_sys_i_1_n_0
     );
 from_sys_reg: unisim.vcomponents.FDSE
-    generic map(
-      INIT => '1'
-    )
-        port map (
+     port map (
       C => slowest_sync_clk,
       CE => '1',
       D => from_sys_i_1_n_0,
       Q => seq_cnt_en,
       S => lpf_int
+    );
+pr_dec0: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"0210"
+    )
+        port map (
+      I0 => seq_cnt(0),
+      I1 => seq_cnt(1),
+      I2 => seq_cnt(2),
+      I3 => seq_cnt_en,
+      O => \pr_dec0__0\
     );
 \pr_dec[0]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -900,27 +892,45 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity linux_bd_rst_processing_system7_0_142M_0_proc_sys_reset is
   port (
+    slowest_sync_clk : in STD_LOGIC;
+    ext_reset_in : in STD_LOGIC;
+    aux_reset_in : in STD_LOGIC;
+    mb_debug_sys_rst : in STD_LOGIC;
+    dcm_locked : in STD_LOGIC;
     mb_reset : out STD_LOGIC;
     bus_struct_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
     peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
     interconnect_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 );
-    peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 );
-    mb_debug_sys_rst : in STD_LOGIC;
-    ext_reset_in : in STD_LOGIC;
-    slowest_sync_clk : in STD_LOGIC;
-    dcm_locked : in STD_LOGIC;
-    aux_reset_in : in STD_LOGIC
+    peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute C_AUX_RESET_HIGH : string;
+  attribute C_AUX_RESET_HIGH of linux_bd_rst_processing_system7_0_142M_0_proc_sys_reset : entity is "1'b0";
+  attribute C_AUX_RST_WIDTH : integer;
+  attribute C_AUX_RST_WIDTH of linux_bd_rst_processing_system7_0_142M_0_proc_sys_reset : entity is 4;
+  attribute C_EXT_RESET_HIGH : string;
+  attribute C_EXT_RESET_HIGH of linux_bd_rst_processing_system7_0_142M_0_proc_sys_reset : entity is "1'b0";
+  attribute C_EXT_RST_WIDTH : integer;
+  attribute C_EXT_RST_WIDTH of linux_bd_rst_processing_system7_0_142M_0_proc_sys_reset : entity is 4;
+  attribute C_FAMILY : string;
+  attribute C_FAMILY of linux_bd_rst_processing_system7_0_142M_0_proc_sys_reset : entity is "zynq";
+  attribute C_NUM_BUS_RST : integer;
+  attribute C_NUM_BUS_RST of linux_bd_rst_processing_system7_0_142M_0_proc_sys_reset : entity is 1;
+  attribute C_NUM_INTERCONNECT_ARESETN : integer;
+  attribute C_NUM_INTERCONNECT_ARESETN of linux_bd_rst_processing_system7_0_142M_0_proc_sys_reset : entity is 1;
+  attribute C_NUM_PERP_ARESETN : integer;
+  attribute C_NUM_PERP_ARESETN of linux_bd_rst_processing_system7_0_142M_0_proc_sys_reset : entity is 1;
+  attribute C_NUM_PERP_RST : integer;
+  attribute C_NUM_PERP_RST of linux_bd_rst_processing_system7_0_142M_0_proc_sys_reset : entity is 1;
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of linux_bd_rst_processing_system7_0_142M_0_proc_sys_reset : entity is "proc_sys_reset";
 end linux_bd_rst_processing_system7_0_142M_0_proc_sys_reset;
 
 architecture STRUCTURE of linux_bd_rst_processing_system7_0_142M_0_proc_sys_reset is
   signal Core : STD_LOGIC;
+  signal SEQ_n_3 : STD_LOGIC;
   signal SEQ_n_4 : STD_LOGIC;
   signal bsr : STD_LOGIC;
   signal lpf_int : STD_LOGIC;
-  signal p_0_out : STD_LOGIC;
   signal pr : STD_LOGIC;
   attribute equivalent_register_removal : string;
   attribute equivalent_register_removal of \ACTIVE_LOW_BSR_OUT_DFF[0].interconnect_aresetn_reg[0]\ : label is "no";
@@ -935,7 +945,7 @@ begin
         port map (
       C => slowest_sync_clk,
       CE => '1',
-      D => p_0_out,
+      D => SEQ_n_3,
       Q => interconnect_aresetn(0),
       R => '0'
     );
@@ -983,11 +993,11 @@ EXT_LPF: entity work.linux_bd_rst_processing_system7_0_142M_0_lpf
     );
 SEQ: entity work.linux_bd_rst_processing_system7_0_142M_0_sequence_psr
      port map (
+      \ACTIVE_LOW_BSR_OUT_DFF[0].interconnect_aresetn_reg[0]\ => SEQ_n_3,
       \ACTIVE_LOW_PR_OUT_DFF[0].peripheral_aresetn_reg[0]\ => SEQ_n_4,
       Core => Core,
       bsr => bsr,
       lpf_int => lpf_int,
-      p_0_out => p_0_out,
       pr => pr,
       slowest_sync_clk => slowest_sync_clk
     );
@@ -1023,18 +1033,32 @@ entity linux_bd_rst_processing_system7_0_142M_0 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of linux_bd_rst_processing_system7_0_142M_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of linux_bd_rst_processing_system7_0_142M_0 : entity is "linux_bd_rst_processing_system7_0_100M_0,proc_sys_reset,{}";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of linux_bd_rst_processing_system7_0_142M_0 : entity is "linux_bd_rst_processing_system7_0_100M_0";
-  attribute core_generation_info : string;
-  attribute core_generation_info of linux_bd_rst_processing_system7_0_142M_0 : entity is "linux_bd_rst_processing_system7_0_100M_0,proc_sys_reset,{x_ipProduct=Vivado 2015.4,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=proc_sys_reset,x_ipVersion=5.0,x_ipCoreRevision=8,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_EXT_RST_WIDTH=4,C_AUX_RST_WIDTH=4,C_EXT_RESET_HIGH=0,C_AUX_RESET_HIGH=0,C_NUM_BUS_RST=1,C_NUM_PERP_RST=1,C_NUM_INTERCONNECT_ARESETN=1,C_NUM_PERP_ARESETN=1}";
+  attribute CHECK_LICENSE_TYPE of linux_bd_rst_processing_system7_0_142M_0 : entity is "linux_bd_rst_processing_system7_0_142M_0,proc_sys_reset,{}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of linux_bd_rst_processing_system7_0_142M_0 : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of linux_bd_rst_processing_system7_0_142M_0 : entity is "proc_sys_reset,Vivado 2015.4";
+  attribute x_core_info of linux_bd_rst_processing_system7_0_142M_0 : entity is "proc_sys_reset,Vivado 2016.1";
 end linux_bd_rst_processing_system7_0_142M_0;
 
 architecture STRUCTURE of linux_bd_rst_processing_system7_0_142M_0 is
+  attribute C_AUX_RESET_HIGH : string;
+  attribute C_AUX_RESET_HIGH of U0 : label is "1'b0";
+  attribute C_AUX_RST_WIDTH : integer;
+  attribute C_AUX_RST_WIDTH of U0 : label is 4;
+  attribute C_EXT_RESET_HIGH : string;
+  attribute C_EXT_RESET_HIGH of U0 : label is "1'b0";
+  attribute C_EXT_RST_WIDTH : integer;
+  attribute C_EXT_RST_WIDTH of U0 : label is 4;
+  attribute C_FAMILY : string;
+  attribute C_FAMILY of U0 : label is "zynq";
+  attribute C_NUM_BUS_RST : integer;
+  attribute C_NUM_BUS_RST of U0 : label is 1;
+  attribute C_NUM_INTERCONNECT_ARESETN : integer;
+  attribute C_NUM_INTERCONNECT_ARESETN of U0 : label is 1;
+  attribute C_NUM_PERP_ARESETN : integer;
+  attribute C_NUM_PERP_ARESETN of U0 : label is 1;
+  attribute C_NUM_PERP_RST : integer;
+  attribute C_NUM_PERP_RST of U0 : label is 1;
 begin
 U0: entity work.linux_bd_rst_processing_system7_0_142M_0_proc_sys_reset
      port map (

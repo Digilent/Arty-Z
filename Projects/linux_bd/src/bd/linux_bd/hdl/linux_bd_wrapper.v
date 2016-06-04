@@ -1,8 +1,8 @@
-//Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+//Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-//Date        : Sun May 29 19:27:13 2016
-//Host        : localhost.localdomain running 64-bit Fedora release 22 (Twenty Two)
+//Tool Version: Vivado v.2016.1 (win64) Build 1538259 Fri Apr  8 15:45:27 MDT 2016
+//Date        : Fri Jun 03 18:22:59 2016
+//Host        : WK73 running 64-bit Service Pack 1  (build 7601)
 //Command     : generate_target linux_bd_wrapper.bd
 //Design      : linux_bd_wrapper
 //Purpose     : IP block netlist

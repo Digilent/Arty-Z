@@ -70,6 +70,7 @@ module axis_infrastructure_v1_1_0_cdc_handshake #
   input  wire [C_WIDTH-1:0]                 data_in,
 
   input  wire                               to_clk,
+  output wire                               data_valid,
   output wire [C_WIDTH-1:0]                 data_out
 );
 
@@ -84,50 +85,27 @@ module axis_infrastructure_v1_1_0_cdc_handshake #
 ////////////////////////////////////////////////////////////////////////////////
 // Wires/Reg declarations
 ////////////////////////////////////////////////////////////////////////////////
-wire ack_synch;
-wire req_synch;
-wire data_en;
-reg req_synch_d1;
-reg [C_WIDTH-1:0] data_r;
 
 ////////////////////////////////////////////////////////////////////////////////
 // BEGIN RTL
 ///////////////////////////////////////////////////////////////////////////////
-
-// Output ack from input req after being synchronized back and forth.
-assign ack = ack_synch;
-
-axis_infrastructure_v1_1_0_clock_synchronizer #(
-  .C_NUM_STAGES ( C_NUM_SYNCHRONIZER_STAGES )
+xpm_cdc_handshake #(
+  .WIDTH          ( C_WIDTH                   ) ,
+  .DEST_SYNC_FF   ( C_NUM_SYNCHRONIZER_STAGES ) ,
+  .SRC_SYNC_FF    ( C_NUM_SYNCHRONIZER_STAGES ) ,
+  .DEST_EXT_HSK   ( 0                         ) ,
+  .SIM_ASSERT_CHK ( 0                         ) 
 )
-inst_ack_synch (
-  .clk (from_clk),
-  .synch_in (req_synch),
-  .synch_out (ack_synch)
+inst_xpm_cdc_handshake (
+  .src_in   ( data_in    ) ,
+  .src_send ( req        ) ,
+  .src_rcv  ( ack        ) ,
+  .src_clk  ( from_clk ) ,
+  .dest_out ( data_out   ) ,
+  .dest_req ( data_valid ) ,
+  .dest_ack ( 1'b0       ) ,
+  .dest_clk ( to_clk     ) 
 );
-
-axis_infrastructure_v1_1_0_clock_synchronizer #(
-  .C_NUM_STAGES ( C_NUM_SYNCHRONIZER_STAGES )
-)
-inst_req_synch (
-  .clk (to_clk),
-  .synch_in (req),
-  .synch_out (req_synch)
-);
-
-// Output data from synchronized data reg from successful handshake
-assign data_out = data_r;
-
-always @(posedge to_clk) begin 
-  data_r = data_en ? data_in : data_r;
-end
-
-// Save data only at transition 
-assign data_en = req_synch & ~req_synch_d1;
-
-always @(posedge to_clk) begin 
-  req_synch_d1 <= req_synch;
-end
 
 endmodule // axis_infrastructure_v1_1_0_cdc_handshake
 

@@ -1,10 +1,10 @@
--- Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
--- Date        : Sun May 29 23:58:58 2016
--- Host        : localhost.localdomain running 64-bit Fedora release 22 (Twenty Two)
+-- Tool Version: Vivado v.2016.1 (win64) Build 1538259 Fri Apr  8 15:45:27 MDT 2016
+-- Date        : Fri Jun 03 18:28:52 2016
+-- Host        : WK73 running 64-bit Service Pack 1  (build 7601)
 -- Command     : write_vhdl -force -mode funcsim
---               /home/samb/sam_work/git/digilent/Arty-Z/Projects/linux_bd/src/bd/linux_bd/ip/linux_bd_s00_regslice_0/linux_bd_s00_regslice_0_sim_netlist.vhdl
+--               c:/sam_work/git/digilent/Arty-Z/Projects/linux_bd/src/bd/linux_bd/ip/linux_bd_s00_regslice_0/linux_bd_s00_regslice_0_sim_netlist.vhdl
 -- Design      : linux_bd_s00_regslice_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,32 +14,46 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity \linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axic_register_slice__parameterized2\ is
+entity \linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axic_register_slice__parameterized2\ is
   port (
     m_axi_arvalid : out STD_LOGIC;
+    p_0_in : out STD_LOGIC_VECTOR ( 0 to 0 );
+    m_valid_i_reg_0 : out STD_LOGIC;
     s_axi_arready : out STD_LOGIC;
     Q : out STD_LOGIC_VECTOR ( 61 downto 0 );
     aclk : in STD_LOGIC;
+    aresetn : in STD_LOGIC;
     m_axi_arready : in STD_LOGIC;
     s_axi_arvalid : in STD_LOGIC;
-    SR : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 61 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axic_register_slice__parameterized2\ : entity is "axi_register_slice_v2_1_7_axic_register_slice";
-end \linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axic_register_slice__parameterized2\;
+  attribute ORIG_REF_NAME of \linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axic_register_slice__parameterized2\ : entity is "axi_register_slice_v2_1_8_axic_register_slice";
+end \linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axic_register_slice__parameterized2\;
 
-architecture STRUCTURE of \linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axic_register_slice__parameterized2\ is
-  signal \aresetn_d_reg_n_0_[1]\ : STD_LOGIC;
+architecture STRUCTURE of \linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axic_register_slice__parameterized2\ is
+  signal \aresetn_d[1]_i_1_n_0\ : STD_LOGIC;
   signal \^m_axi_arvalid\ : STD_LOGIC;
   signal \m_payload_i[53]_i_1_n_0\ : STD_LOGIC;
-  signal m_valid_i_i_1_n_0 : STD_LOGIC;
-  signal p_0_in : STD_LOGIC_VECTOR ( 1 to 1 );
+  signal \m_valid_i_i_1__0_n_0\ : STD_LOGIC;
+  signal \^m_valid_i_reg_0\ : STD_LOGIC;
+  signal \^p_0_in\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \^s_axi_arready\ : STD_LOGIC;
   signal s_ready_i_i_1_n_0 : STD_LOGIC;
 begin
   m_axi_arvalid <= \^m_axi_arvalid\;
+  m_valid_i_reg_0 <= \^m_valid_i_reg_0\;
+  p_0_in(0) <= \^p_0_in\(0);
   s_axi_arready <= \^s_axi_arready\;
+\aresetn_d[1]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^p_0_in\(0),
+      I1 => aresetn,
+      O => \aresetn_d[1]_i_1_n_0\
+    );
 \aresetn_d_reg[0]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
@@ -47,9 +61,9 @@ begin
         port map (
       C => aclk,
       CE => '1',
-      D => '1',
-      Q => p_0_in(1),
-      R => SR(0)
+      D => aresetn,
+      Q => \^p_0_in\(0),
+      R => '0'
     );
 \aresetn_d_reg[1]\: unisim.vcomponents.FDRE
     generic map(
@@ -58,9 +72,9 @@ begin
         port map (
       C => aclk,
       CE => '1',
-      D => p_0_in(1),
-      Q => \aresetn_d_reg_n_0_[1]\,
-      R => SR(0)
+      D => \aresetn_d[1]_i_1_n_0\,
+      Q => \^m_valid_i_reg_0\,
+      R => '0'
     );
 \m_payload_i[53]_i_1\: unisim.vcomponents.LUT1
     generic map(
@@ -71,10 +85,7 @@ begin
       O => \m_payload_i[53]_i_1_n_0\
     );
 \m_payload_i_reg[0]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(0),
@@ -82,10 +93,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[10]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(10),
@@ -93,10 +101,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[11]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(11),
@@ -104,10 +109,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[12]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(12),
@@ -115,10 +117,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[13]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(13),
@@ -126,10 +125,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[14]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(14),
@@ -137,10 +133,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[15]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(15),
@@ -148,10 +141,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[16]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(16),
@@ -159,10 +149,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[17]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(17),
@@ -170,10 +157,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[18]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(18),
@@ -181,10 +165,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[19]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(19),
@@ -192,10 +173,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[1]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(1),
@@ -203,10 +181,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[20]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(20),
@@ -214,10 +189,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[21]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(21),
@@ -225,10 +197,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[22]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(22),
@@ -236,10 +205,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[23]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(23),
@@ -247,10 +213,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[24]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(24),
@@ -258,10 +221,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[25]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(25),
@@ -269,10 +229,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[26]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(26),
@@ -280,10 +237,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[27]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(27),
@@ -291,10 +245,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[28]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(28),
@@ -302,10 +253,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[29]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(29),
@@ -313,10 +261,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[2]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(2),
@@ -324,10 +269,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[30]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(30),
@@ -335,10 +277,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[31]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(31),
@@ -346,10 +285,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[32]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(32),
@@ -357,10 +293,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[33]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(33),
@@ -368,10 +301,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[34]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(34),
@@ -379,10 +309,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[35]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(35),
@@ -390,10 +317,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[36]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(36),
@@ -401,10 +325,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[37]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(37),
@@ -412,10 +333,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[38]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(38),
@@ -423,10 +341,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[39]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(39),
@@ -434,10 +349,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[3]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(3),
@@ -445,10 +357,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[40]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(40),
@@ -456,10 +365,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[41]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(41),
@@ -467,10 +373,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[42]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(42),
@@ -478,10 +381,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[43]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(43),
@@ -489,10 +389,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[44]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(44),
@@ -500,10 +397,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[45]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(45),
@@ -511,10 +405,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[46]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(46),
@@ -522,10 +413,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[47]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(47),
@@ -533,10 +421,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[48]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(48),
@@ -544,10 +429,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[49]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(49),
@@ -555,10 +437,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[4]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(4),
@@ -566,10 +445,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[50]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(50),
@@ -577,10 +453,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[51]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(51),
@@ -588,10 +461,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[52]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(52),
@@ -599,10 +469,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[53]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(53),
@@ -610,10 +477,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[54]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(54),
@@ -621,10 +485,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[55]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(55),
@@ -632,10 +493,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[56]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(56),
@@ -643,10 +501,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[57]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(57),
@@ -654,10 +509,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[58]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(58),
@@ -665,10 +517,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[59]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(59),
@@ -676,10 +525,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[5]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(5),
@@ -687,10 +533,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[60]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(60),
@@ -698,10 +541,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[61]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(61),
@@ -709,10 +549,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[6]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(6),
@@ -720,10 +557,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[7]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(7),
@@ -731,10 +565,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[8]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(8),
@@ -742,55 +573,46 @@ begin
       R => '0'
     );
 \m_payload_i_reg[9]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[53]_i_1_n_0\,
       D => D(9),
       Q => Q(9),
       R => '0'
     );
-m_valid_i_i_1: unisim.vcomponents.LUT4
+\m_valid_i_i_1__0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"A202"
+      INIT => X"D100"
     )
         port map (
-      I0 => \aresetn_d_reg_n_0_[1]\,
-      I1 => m_axi_arready,
-      I2 => \^s_axi_arready\,
-      I3 => s_axi_arvalid,
-      O => m_valid_i_i_1_n_0
+      I0 => m_axi_arready,
+      I1 => \^s_axi_arready\,
+      I2 => s_axi_arvalid,
+      I3 => \^m_valid_i_reg_0\,
+      O => \m_valid_i_i_1__0_n_0\
     );
 m_valid_i_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => '1',
-      D => m_valid_i_i_1_n_0,
+      D => \m_valid_i_i_1__0_n_0\,
       Q => \^m_axi_arvalid\,
       R => '0'
     );
 s_ready_i_i_1: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"A222A2AA"
+      INIT => X"D5DF0000"
     )
         port map (
-      I0 => p_0_in(1),
-      I1 => \aresetn_d_reg_n_0_[1]\,
-      I2 => m_axi_arready,
-      I3 => \^m_axi_arvalid\,
-      I4 => s_axi_arvalid,
+      I0 => \^m_valid_i_reg_0\,
+      I1 => m_axi_arready,
+      I2 => \^m_axi_arvalid\,
+      I3 => s_axi_arvalid,
+      I4 => \^p_0_in\(0),
       O => s_ready_i_i_1_n_0
     );
 s_ready_i_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => '1',
       D => s_ready_i_i_1_n_0,
@@ -802,34 +624,31 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity \linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axic_register_slice__parameterized3\ is
+entity \linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axic_register_slice__parameterized3\ is
   port (
     s_axi_rvalid : out STD_LOGIC;
     m_axi_rready : out STD_LOGIC;
-    SR : out STD_LOGIC_VECTOR ( 0 to 0 );
     Q : out STD_LOGIC_VECTOR ( 67 downto 0 );
     aclk : in STD_LOGIC;
-    aresetn : in STD_LOGIC;
     m_axi_rvalid : in STD_LOGIC;
     s_axi_rready : in STD_LOGIC;
+    \aresetn_d_reg[1]\ : in STD_LOGIC;
+    p_0_in : in STD_LOGIC_VECTOR ( 0 to 0 );
     m_axi_rid : in STD_LOGIC_VECTOR ( 0 to 0 );
     m_axi_rlast : in STD_LOGIC;
     m_axi_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     m_axi_rdata : in STD_LOGIC_VECTOR ( 63 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axic_register_slice__parameterized3\ : entity is "axi_register_slice_v2_1_7_axic_register_slice";
-end \linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axic_register_slice__parameterized3\;
+  attribute ORIG_REF_NAME of \linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axic_register_slice__parameterized3\ : entity is "axi_register_slice_v2_1_8_axic_register_slice";
+end \linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axic_register_slice__parameterized3\;
 
-architecture STRUCTURE of \linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axic_register_slice__parameterized3\ is
-  signal \^sr\ : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal \aresetn_d_reg_n_0_[0]\ : STD_LOGIC;
-  signal \aresetn_d_reg_n_0_[1]\ : STD_LOGIC;
+architecture STRUCTURE of \linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axic_register_slice__parameterized3\ is
   signal \^m_axi_rready\ : STD_LOGIC;
   signal \m_payload_i[67]_i_1_n_0\ : STD_LOGIC;
-  signal \m_valid_i_i_1__0_n_0\ : STD_LOGIC;
+  signal m_valid_i_i_1_n_0 : STD_LOGIC;
   signal \^s_axi_rvalid\ : STD_LOGIC;
-  signal \s_ready_i_i_1__0_n_0\ : STD_LOGIC;
+  signal s_ready_i_i_1_n_0 : STD_LOGIC;
   signal skid_buffer : STD_LOGIC_VECTOR ( 67 downto 0 );
   signal \skid_buffer_reg_n_0_[0]\ : STD_LOGIC;
   signal \skid_buffer_reg_n_0_[10]\ : STD_LOGIC;
@@ -969,39 +788,8 @@ architecture STRUCTURE of \linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi
   attribute SOFT_HLUTNM of \m_payload_i[8]_i_1\ : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of \m_payload_i[9]_i_1\ : label is "soft_lutpair4";
 begin
-  SR(0) <= \^sr\(0);
   m_axi_rready <= \^m_axi_rready\;
   s_axi_rvalid <= \^s_axi_rvalid\;
-\aresetn_d[1]_i_1\: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => aresetn,
-      O => \^sr\(0)
-    );
-\aresetn_d_reg[0]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => '1',
-      D => '1',
-      Q => \aresetn_d_reg_n_0_[0]\,
-      R => \^sr\(0)
-    );
-\aresetn_d_reg[1]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => '1',
-      D => \aresetn_d_reg_n_0_[0]\,
-      Q => \aresetn_d_reg_n_0_[1]\,
-      R => \^sr\(0)
-    );
 \m_payload_i[0]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"AC"
@@ -1692,10 +1480,7 @@ begin
       O => skid_buffer(9)
     );
 \m_payload_i_reg[0]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(0),
@@ -1703,10 +1488,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[10]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(10),
@@ -1714,10 +1496,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[11]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(11),
@@ -1725,10 +1504,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[12]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(12),
@@ -1736,10 +1512,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[13]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(13),
@@ -1747,10 +1520,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[14]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(14),
@@ -1758,10 +1528,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[15]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(15),
@@ -1769,10 +1536,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[16]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(16),
@@ -1780,10 +1544,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[17]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(17),
@@ -1791,10 +1552,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[18]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(18),
@@ -1802,10 +1560,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[19]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(19),
@@ -1813,10 +1568,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[1]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(1),
@@ -1824,10 +1576,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[20]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(20),
@@ -1835,10 +1584,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[21]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(21),
@@ -1846,10 +1592,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[22]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(22),
@@ -1857,10 +1600,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[23]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(23),
@@ -1868,10 +1608,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[24]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(24),
@@ -1879,10 +1616,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[25]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(25),
@@ -1890,10 +1624,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[26]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(26),
@@ -1901,10 +1632,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[27]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(27),
@@ -1912,10 +1640,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[28]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(28),
@@ -1923,10 +1648,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[29]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(29),
@@ -1934,10 +1656,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[2]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(2),
@@ -1945,10 +1664,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[30]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(30),
@@ -1956,10 +1672,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[31]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(31),
@@ -1967,10 +1680,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[32]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(32),
@@ -1978,10 +1688,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[33]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(33),
@@ -1989,10 +1696,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[34]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(34),
@@ -2000,10 +1704,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[35]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(35),
@@ -2011,10 +1712,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[36]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(36),
@@ -2022,10 +1720,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[37]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(37),
@@ -2033,10 +1728,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[38]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(38),
@@ -2044,10 +1736,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[39]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(39),
@@ -2055,10 +1744,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[3]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(3),
@@ -2066,10 +1752,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[40]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(40),
@@ -2077,10 +1760,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[41]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(41),
@@ -2088,10 +1768,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[42]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(42),
@@ -2099,10 +1776,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[43]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(43),
@@ -2110,10 +1784,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[44]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(44),
@@ -2121,10 +1792,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[45]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(45),
@@ -2132,10 +1800,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[46]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(46),
@@ -2143,10 +1808,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[47]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(47),
@@ -2154,10 +1816,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[48]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(48),
@@ -2165,10 +1824,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[49]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(49),
@@ -2176,10 +1832,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[4]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(4),
@@ -2187,10 +1840,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[50]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(50),
@@ -2198,10 +1848,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[51]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(51),
@@ -2209,10 +1856,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[52]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(52),
@@ -2220,10 +1864,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[53]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(53),
@@ -2231,10 +1872,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[54]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(54),
@@ -2242,10 +1880,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[55]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(55),
@@ -2253,10 +1888,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[56]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(56),
@@ -2264,10 +1896,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[57]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(57),
@@ -2275,10 +1904,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[58]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(58),
@@ -2286,10 +1912,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[59]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(59),
@@ -2297,10 +1920,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[5]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(5),
@@ -2308,10 +1928,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[60]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(60),
@@ -2319,10 +1936,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[61]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(61),
@@ -2330,10 +1944,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[62]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(62),
@@ -2341,10 +1952,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[63]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(63),
@@ -2352,10 +1960,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[64]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(64),
@@ -2363,10 +1968,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[65]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(65),
@@ -2374,10 +1976,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[66]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(66),
@@ -2385,10 +1984,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[67]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(67),
@@ -2396,10 +1992,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[6]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(6),
@@ -2407,10 +2000,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[7]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(7),
@@ -2418,10 +2008,7 @@ begin
       R => '0'
     );
 \m_payload_i_reg[8]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(8),
@@ -2429,67 +2016,55 @@ begin
       R => '0'
     );
 \m_payload_i_reg[9]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \m_payload_i[67]_i_1_n_0\,
       D => skid_buffer(9),
       Q => Q(9),
       R => '0'
     );
-\m_valid_i_i_1__0\: unisim.vcomponents.LUT5
+m_valid_i_i_1: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"8A88AAAA"
+      INIT => X"BAFF0000"
     )
         port map (
-      I0 => \aresetn_d_reg_n_0_[1]\,
-      I1 => m_axi_rvalid,
-      I2 => s_axi_rready,
-      I3 => \^s_axi_rvalid\,
-      I4 => \^m_axi_rready\,
-      O => \m_valid_i_i_1__0_n_0\
+      I0 => m_axi_rvalid,
+      I1 => s_axi_rready,
+      I2 => \^s_axi_rvalid\,
+      I3 => \^m_axi_rready\,
+      I4 => \aresetn_d_reg[1]\,
+      O => m_valid_i_i_1_n_0
     );
 m_valid_i_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => '1',
-      D => \m_valid_i_i_1__0_n_0\,
+      D => m_valid_i_i_1_n_0,
       Q => \^s_axi_rvalid\,
       R => '0'
     );
-\s_ready_i_i_1__0\: unisim.vcomponents.LUT5
+s_ready_i_i_1: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"AA08AAAA"
+      INIT => X"F2FF0000"
     )
         port map (
-      I0 => \aresetn_d_reg_n_0_[0]\,
-      I1 => \^m_axi_rready\,
-      I2 => m_axi_rvalid,
-      I3 => s_axi_rready,
-      I4 => \^s_axi_rvalid\,
-      O => \s_ready_i_i_1__0_n_0\
+      I0 => \^m_axi_rready\,
+      I1 => m_axi_rvalid,
+      I2 => s_axi_rready,
+      I3 => \^s_axi_rvalid\,
+      I4 => p_0_in(0),
+      O => s_ready_i_i_1_n_0
     );
 s_ready_i_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => '1',
-      D => \s_ready_i_i_1__0_n_0\,
+      D => s_ready_i_i_1_n_0,
       Q => \^m_axi_rready\,
       R => '0'
     );
 \skid_buffer_reg[0]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(0),
@@ -2497,10 +2072,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[10]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(10),
@@ -2508,10 +2080,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[11]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(11),
@@ -2519,10 +2088,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[12]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(12),
@@ -2530,10 +2096,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[13]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(13),
@@ -2541,10 +2104,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[14]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(14),
@@ -2552,10 +2112,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[15]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(15),
@@ -2563,10 +2120,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[16]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(16),
@@ -2574,10 +2128,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[17]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(17),
@@ -2585,10 +2136,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[18]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(18),
@@ -2596,10 +2144,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[19]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(19),
@@ -2607,10 +2152,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[1]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(1),
@@ -2618,10 +2160,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[20]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(20),
@@ -2629,10 +2168,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[21]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(21),
@@ -2640,10 +2176,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[22]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(22),
@@ -2651,10 +2184,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[23]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(23),
@@ -2662,10 +2192,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[24]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(24),
@@ -2673,10 +2200,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[25]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(25),
@@ -2684,10 +2208,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[26]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(26),
@@ -2695,10 +2216,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[27]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(27),
@@ -2706,10 +2224,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[28]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(28),
@@ -2717,10 +2232,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[29]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(29),
@@ -2728,10 +2240,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[2]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(2),
@@ -2739,10 +2248,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[30]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(30),
@@ -2750,10 +2256,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[31]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(31),
@@ -2761,10 +2264,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[32]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(32),
@@ -2772,10 +2272,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[33]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(33),
@@ -2783,10 +2280,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[34]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(34),
@@ -2794,10 +2288,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[35]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(35),
@@ -2805,10 +2296,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[36]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(36),
@@ -2816,10 +2304,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[37]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(37),
@@ -2827,10 +2312,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[38]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(38),
@@ -2838,10 +2320,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[39]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(39),
@@ -2849,10 +2328,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[3]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(3),
@@ -2860,10 +2336,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[40]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(40),
@@ -2871,10 +2344,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[41]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(41),
@@ -2882,10 +2352,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[42]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(42),
@@ -2893,10 +2360,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[43]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(43),
@@ -2904,10 +2368,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[44]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(44),
@@ -2915,10 +2376,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[45]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(45),
@@ -2926,10 +2384,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[46]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(46),
@@ -2937,10 +2392,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[47]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(47),
@@ -2948,10 +2400,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[48]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(48),
@@ -2959,10 +2408,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[49]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(49),
@@ -2970,10 +2416,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[4]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(4),
@@ -2981,10 +2424,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[50]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(50),
@@ -2992,10 +2432,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[51]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(51),
@@ -3003,10 +2440,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[52]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(52),
@@ -3014,10 +2448,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[53]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(53),
@@ -3025,10 +2456,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[54]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(54),
@@ -3036,10 +2464,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[55]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(55),
@@ -3047,10 +2472,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[56]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(56),
@@ -3058,10 +2480,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[57]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(57),
@@ -3069,10 +2488,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[58]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(58),
@@ -3080,10 +2496,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[59]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(59),
@@ -3091,10 +2504,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[5]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(5),
@@ -3102,10 +2512,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[60]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(60),
@@ -3113,10 +2520,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[61]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(61),
@@ -3124,10 +2528,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[62]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(62),
@@ -3135,10 +2536,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[63]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(63),
@@ -3146,10 +2544,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[64]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rresp(0),
@@ -3157,10 +2552,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[65]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rresp(1),
@@ -3168,10 +2560,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[66]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rlast,
@@ -3179,10 +2568,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[67]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rid(0),
@@ -3190,10 +2576,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[6]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(6),
@@ -3201,10 +2584,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[7]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(7),
@@ -3212,10 +2592,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[8]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(8),
@@ -3223,10 +2600,7 @@ s_ready_i_reg: unisim.vcomponents.FDRE
       R => '0'
     );
 \skid_buffer_reg[9]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
+     port map (
       C => aclk,
       CE => \^m_axi_rready\,
       D => m_axi_rdata(9),
@@ -3238,7 +2612,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice is
+entity linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice is
   port (
     aclk : in STD_LOGIC;
     aresetn : in STD_LOGIC;
@@ -3334,203 +2708,204 @@ entity linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice is
     m_axi_rready : out STD_LOGIC
   );
   attribute C_AXI_ADDR_WIDTH : integer;
-  attribute C_AXI_ADDR_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 32;
+  attribute C_AXI_ADDR_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 32;
   attribute C_AXI_ARUSER_WIDTH : integer;
-  attribute C_AXI_ARUSER_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 1;
+  attribute C_AXI_ARUSER_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 1;
   attribute C_AXI_AWUSER_WIDTH : integer;
-  attribute C_AXI_AWUSER_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 1;
+  attribute C_AXI_AWUSER_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 1;
   attribute C_AXI_BUSER_WIDTH : integer;
-  attribute C_AXI_BUSER_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 1;
+  attribute C_AXI_BUSER_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 1;
   attribute C_AXI_DATA_WIDTH : integer;
-  attribute C_AXI_DATA_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 64;
+  attribute C_AXI_DATA_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 64;
   attribute C_AXI_ID_WIDTH : integer;
-  attribute C_AXI_ID_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 1;
+  attribute C_AXI_ID_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 1;
   attribute C_AXI_PROTOCOL : integer;
-  attribute C_AXI_PROTOCOL of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 0;
+  attribute C_AXI_PROTOCOL of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 0;
   attribute C_AXI_RUSER_WIDTH : integer;
-  attribute C_AXI_RUSER_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 1;
+  attribute C_AXI_RUSER_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 1;
   attribute C_AXI_SUPPORTS_REGION_SIGNALS : integer;
-  attribute C_AXI_SUPPORTS_REGION_SIGNALS of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 1;
+  attribute C_AXI_SUPPORTS_REGION_SIGNALS of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 1;
   attribute C_AXI_SUPPORTS_USER_SIGNALS : integer;
-  attribute C_AXI_SUPPORTS_USER_SIGNALS of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 0;
+  attribute C_AXI_SUPPORTS_USER_SIGNALS of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 0;
   attribute C_AXI_WUSER_WIDTH : integer;
-  attribute C_AXI_WUSER_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 1;
+  attribute C_AXI_WUSER_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 1;
   attribute C_FAMILY : string;
-  attribute C_FAMILY of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is "zynq";
+  attribute C_FAMILY of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is "zynq";
   attribute C_REG_CONFIG_AR : integer;
-  attribute C_REG_CONFIG_AR of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 7;
+  attribute C_REG_CONFIG_AR of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 7;
   attribute C_REG_CONFIG_AW : integer;
-  attribute C_REG_CONFIG_AW of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 0;
+  attribute C_REG_CONFIG_AW of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 0;
   attribute C_REG_CONFIG_B : integer;
-  attribute C_REG_CONFIG_B of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 0;
+  attribute C_REG_CONFIG_B of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 0;
   attribute C_REG_CONFIG_R : integer;
-  attribute C_REG_CONFIG_R of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 1;
+  attribute C_REG_CONFIG_R of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 1;
   attribute C_REG_CONFIG_W : integer;
-  attribute C_REG_CONFIG_W of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 0;
+  attribute C_REG_CONFIG_W of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 0;
   attribute DowngradeIPIdentifiedWarnings : string;
-  attribute DowngradeIPIdentifiedWarnings of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is "yes";
+  attribute DowngradeIPIdentifiedWarnings of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is "yes";
   attribute G_AXI_ARADDR_INDEX : integer;
-  attribute G_AXI_ARADDR_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 0;
+  attribute G_AXI_ARADDR_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 0;
   attribute G_AXI_ARADDR_WIDTH : integer;
-  attribute G_AXI_ARADDR_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 32;
+  attribute G_AXI_ARADDR_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 32;
   attribute G_AXI_ARBURST_INDEX : integer;
-  attribute G_AXI_ARBURST_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 38;
+  attribute G_AXI_ARBURST_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 38;
   attribute G_AXI_ARBURST_WIDTH : integer;
-  attribute G_AXI_ARBURST_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 2;
+  attribute G_AXI_ARBURST_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 2;
   attribute G_AXI_ARCACHE_INDEX : integer;
-  attribute G_AXI_ARCACHE_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 40;
+  attribute G_AXI_ARCACHE_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 40;
   attribute G_AXI_ARCACHE_WIDTH : integer;
-  attribute G_AXI_ARCACHE_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 4;
+  attribute G_AXI_ARCACHE_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 4;
   attribute G_AXI_ARID_INDEX : integer;
-  attribute G_AXI_ARID_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 53;
+  attribute G_AXI_ARID_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 53;
   attribute G_AXI_ARID_WIDTH : integer;
-  attribute G_AXI_ARID_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 1;
+  attribute G_AXI_ARID_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 1;
   attribute G_AXI_ARLEN_INDEX : integer;
-  attribute G_AXI_ARLEN_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 44;
+  attribute G_AXI_ARLEN_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 44;
   attribute G_AXI_ARLEN_WIDTH : integer;
-  attribute G_AXI_ARLEN_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 8;
+  attribute G_AXI_ARLEN_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 8;
   attribute G_AXI_ARLOCK_INDEX : integer;
-  attribute G_AXI_ARLOCK_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 52;
+  attribute G_AXI_ARLOCK_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 52;
   attribute G_AXI_ARLOCK_WIDTH : integer;
-  attribute G_AXI_ARLOCK_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 1;
+  attribute G_AXI_ARLOCK_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 1;
   attribute G_AXI_ARPAYLOAD_WIDTH : integer;
-  attribute G_AXI_ARPAYLOAD_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 62;
+  attribute G_AXI_ARPAYLOAD_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 62;
   attribute G_AXI_ARPROT_INDEX : integer;
-  attribute G_AXI_ARPROT_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 32;
+  attribute G_AXI_ARPROT_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 32;
   attribute G_AXI_ARPROT_WIDTH : integer;
-  attribute G_AXI_ARPROT_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 3;
+  attribute G_AXI_ARPROT_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 3;
   attribute G_AXI_ARQOS_INDEX : integer;
-  attribute G_AXI_ARQOS_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 54;
+  attribute G_AXI_ARQOS_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 54;
   attribute G_AXI_ARQOS_WIDTH : integer;
-  attribute G_AXI_ARQOS_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 4;
+  attribute G_AXI_ARQOS_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 4;
   attribute G_AXI_ARREGION_INDEX : integer;
-  attribute G_AXI_ARREGION_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 58;
+  attribute G_AXI_ARREGION_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 58;
   attribute G_AXI_ARREGION_WIDTH : integer;
-  attribute G_AXI_ARREGION_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 4;
+  attribute G_AXI_ARREGION_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 4;
   attribute G_AXI_ARSIZE_INDEX : integer;
-  attribute G_AXI_ARSIZE_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 35;
+  attribute G_AXI_ARSIZE_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 35;
   attribute G_AXI_ARSIZE_WIDTH : integer;
-  attribute G_AXI_ARSIZE_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 3;
+  attribute G_AXI_ARSIZE_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 3;
   attribute G_AXI_ARUSER_INDEX : integer;
-  attribute G_AXI_ARUSER_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 62;
+  attribute G_AXI_ARUSER_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 62;
   attribute G_AXI_ARUSER_WIDTH : integer;
-  attribute G_AXI_ARUSER_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 0;
+  attribute G_AXI_ARUSER_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 0;
   attribute G_AXI_AWADDR_INDEX : integer;
-  attribute G_AXI_AWADDR_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 0;
+  attribute G_AXI_AWADDR_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 0;
   attribute G_AXI_AWADDR_WIDTH : integer;
-  attribute G_AXI_AWADDR_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 32;
+  attribute G_AXI_AWADDR_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 32;
   attribute G_AXI_AWBURST_INDEX : integer;
-  attribute G_AXI_AWBURST_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 38;
+  attribute G_AXI_AWBURST_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 38;
   attribute G_AXI_AWBURST_WIDTH : integer;
-  attribute G_AXI_AWBURST_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 2;
+  attribute G_AXI_AWBURST_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 2;
   attribute G_AXI_AWCACHE_INDEX : integer;
-  attribute G_AXI_AWCACHE_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 40;
+  attribute G_AXI_AWCACHE_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 40;
   attribute G_AXI_AWCACHE_WIDTH : integer;
-  attribute G_AXI_AWCACHE_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 4;
+  attribute G_AXI_AWCACHE_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 4;
   attribute G_AXI_AWID_INDEX : integer;
-  attribute G_AXI_AWID_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 53;
+  attribute G_AXI_AWID_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 53;
   attribute G_AXI_AWID_WIDTH : integer;
-  attribute G_AXI_AWID_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 1;
+  attribute G_AXI_AWID_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 1;
   attribute G_AXI_AWLEN_INDEX : integer;
-  attribute G_AXI_AWLEN_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 44;
+  attribute G_AXI_AWLEN_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 44;
   attribute G_AXI_AWLEN_WIDTH : integer;
-  attribute G_AXI_AWLEN_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 8;
+  attribute G_AXI_AWLEN_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 8;
   attribute G_AXI_AWLOCK_INDEX : integer;
-  attribute G_AXI_AWLOCK_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 52;
+  attribute G_AXI_AWLOCK_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 52;
   attribute G_AXI_AWLOCK_WIDTH : integer;
-  attribute G_AXI_AWLOCK_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 1;
+  attribute G_AXI_AWLOCK_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 1;
   attribute G_AXI_AWPAYLOAD_WIDTH : integer;
-  attribute G_AXI_AWPAYLOAD_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 62;
+  attribute G_AXI_AWPAYLOAD_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 62;
   attribute G_AXI_AWPROT_INDEX : integer;
-  attribute G_AXI_AWPROT_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 32;
+  attribute G_AXI_AWPROT_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 32;
   attribute G_AXI_AWPROT_WIDTH : integer;
-  attribute G_AXI_AWPROT_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 3;
+  attribute G_AXI_AWPROT_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 3;
   attribute G_AXI_AWQOS_INDEX : integer;
-  attribute G_AXI_AWQOS_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 54;
+  attribute G_AXI_AWQOS_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 54;
   attribute G_AXI_AWQOS_WIDTH : integer;
-  attribute G_AXI_AWQOS_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 4;
+  attribute G_AXI_AWQOS_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 4;
   attribute G_AXI_AWREGION_INDEX : integer;
-  attribute G_AXI_AWREGION_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 58;
+  attribute G_AXI_AWREGION_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 58;
   attribute G_AXI_AWREGION_WIDTH : integer;
-  attribute G_AXI_AWREGION_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 4;
+  attribute G_AXI_AWREGION_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 4;
   attribute G_AXI_AWSIZE_INDEX : integer;
-  attribute G_AXI_AWSIZE_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 35;
+  attribute G_AXI_AWSIZE_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 35;
   attribute G_AXI_AWSIZE_WIDTH : integer;
-  attribute G_AXI_AWSIZE_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 3;
+  attribute G_AXI_AWSIZE_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 3;
   attribute G_AXI_AWUSER_INDEX : integer;
-  attribute G_AXI_AWUSER_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 62;
+  attribute G_AXI_AWUSER_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 62;
   attribute G_AXI_AWUSER_WIDTH : integer;
-  attribute G_AXI_AWUSER_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 0;
+  attribute G_AXI_AWUSER_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 0;
   attribute G_AXI_BID_INDEX : integer;
-  attribute G_AXI_BID_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 2;
+  attribute G_AXI_BID_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 2;
   attribute G_AXI_BID_WIDTH : integer;
-  attribute G_AXI_BID_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 1;
+  attribute G_AXI_BID_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 1;
   attribute G_AXI_BPAYLOAD_WIDTH : integer;
-  attribute G_AXI_BPAYLOAD_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 3;
+  attribute G_AXI_BPAYLOAD_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 3;
   attribute G_AXI_BRESP_INDEX : integer;
-  attribute G_AXI_BRESP_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 0;
+  attribute G_AXI_BRESP_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 0;
   attribute G_AXI_BRESP_WIDTH : integer;
-  attribute G_AXI_BRESP_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 2;
+  attribute G_AXI_BRESP_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 2;
   attribute G_AXI_BUSER_INDEX : integer;
-  attribute G_AXI_BUSER_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 3;
+  attribute G_AXI_BUSER_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 3;
   attribute G_AXI_BUSER_WIDTH : integer;
-  attribute G_AXI_BUSER_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 0;
+  attribute G_AXI_BUSER_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 0;
   attribute G_AXI_RDATA_INDEX : integer;
-  attribute G_AXI_RDATA_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 0;
+  attribute G_AXI_RDATA_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 0;
   attribute G_AXI_RDATA_WIDTH : integer;
-  attribute G_AXI_RDATA_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 64;
+  attribute G_AXI_RDATA_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 64;
   attribute G_AXI_RID_INDEX : integer;
-  attribute G_AXI_RID_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 67;
+  attribute G_AXI_RID_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 67;
   attribute G_AXI_RID_WIDTH : integer;
-  attribute G_AXI_RID_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 1;
+  attribute G_AXI_RID_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 1;
   attribute G_AXI_RLAST_INDEX : integer;
-  attribute G_AXI_RLAST_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 66;
+  attribute G_AXI_RLAST_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 66;
   attribute G_AXI_RLAST_WIDTH : integer;
-  attribute G_AXI_RLAST_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 1;
+  attribute G_AXI_RLAST_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 1;
   attribute G_AXI_RPAYLOAD_WIDTH : integer;
-  attribute G_AXI_RPAYLOAD_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 68;
+  attribute G_AXI_RPAYLOAD_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 68;
   attribute G_AXI_RRESP_INDEX : integer;
-  attribute G_AXI_RRESP_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 64;
+  attribute G_AXI_RRESP_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 64;
   attribute G_AXI_RRESP_WIDTH : integer;
-  attribute G_AXI_RRESP_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 2;
+  attribute G_AXI_RRESP_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 2;
   attribute G_AXI_RUSER_INDEX : integer;
-  attribute G_AXI_RUSER_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 68;
+  attribute G_AXI_RUSER_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 68;
   attribute G_AXI_RUSER_WIDTH : integer;
-  attribute G_AXI_RUSER_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 0;
+  attribute G_AXI_RUSER_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 0;
   attribute G_AXI_WDATA_INDEX : integer;
-  attribute G_AXI_WDATA_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 0;
+  attribute G_AXI_WDATA_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 0;
   attribute G_AXI_WDATA_WIDTH : integer;
-  attribute G_AXI_WDATA_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 64;
+  attribute G_AXI_WDATA_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 64;
   attribute G_AXI_WID_INDEX : integer;
-  attribute G_AXI_WID_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 73;
+  attribute G_AXI_WID_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 73;
   attribute G_AXI_WID_WIDTH : integer;
-  attribute G_AXI_WID_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 0;
+  attribute G_AXI_WID_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 0;
   attribute G_AXI_WLAST_INDEX : integer;
-  attribute G_AXI_WLAST_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 72;
+  attribute G_AXI_WLAST_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 72;
   attribute G_AXI_WLAST_WIDTH : integer;
-  attribute G_AXI_WLAST_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 1;
+  attribute G_AXI_WLAST_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 1;
   attribute G_AXI_WPAYLOAD_WIDTH : integer;
-  attribute G_AXI_WPAYLOAD_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 73;
+  attribute G_AXI_WPAYLOAD_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 73;
   attribute G_AXI_WSTRB_INDEX : integer;
-  attribute G_AXI_WSTRB_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 64;
+  attribute G_AXI_WSTRB_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 64;
   attribute G_AXI_WSTRB_WIDTH : integer;
-  attribute G_AXI_WSTRB_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 8;
+  attribute G_AXI_WSTRB_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 8;
   attribute G_AXI_WUSER_INDEX : integer;
-  attribute G_AXI_WUSER_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 73;
+  attribute G_AXI_WUSER_INDEX of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 73;
   attribute G_AXI_WUSER_WIDTH : integer;
-  attribute G_AXI_WUSER_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is 0;
+  attribute G_AXI_WUSER_WIDTH of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is 0;
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice : entity is "axi_register_slice_v2_1_7_axi_register_slice";
-end linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice;
+  attribute ORIG_REF_NAME of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice : entity is "axi_register_slice_v2_1_8_axi_register_slice";
+end linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice;
 
-architecture STRUCTURE of linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice is
+architecture STRUCTURE of linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice is
   signal \<const0>\ : STD_LOGIC;
+  signal ar_pipe_n_2 : STD_LOGIC;
   signal \^m_axi_awready\ : STD_LOGIC;
   signal \^m_axi_bid\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \^m_axi_bresp\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal \^m_axi_bvalid\ : STD_LOGIC;
   signal \^m_axi_wready\ : STD_LOGIC;
-  signal reset : STD_LOGIC;
+  signal p_0_in : STD_LOGIC_VECTOR ( 1 to 1 );
   signal \^s_axi_awaddr\ : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal \^s_axi_awburst\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal \^s_axi_awcache\ : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -3600,7 +2975,7 @@ GND: unisim.vcomponents.GND
      port map (
       G => \<const0>\
     );
-ar_pipe: entity work.\linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axic_register_slice__parameterized2\
+ar_pipe: entity work.\linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axic_register_slice__parameterized2\
      port map (
       D(61 downto 58) => s_axi_arregion(3 downto 0),
       D(57 downto 54) => s_axi_arqos(3 downto 0),
@@ -3622,28 +2997,30 @@ ar_pipe: entity work.\linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axic_reg
       Q(37 downto 35) => m_axi_arsize(2 downto 0),
       Q(34 downto 32) => m_axi_arprot(2 downto 0),
       Q(31 downto 0) => m_axi_araddr(31 downto 0),
-      SR(0) => reset,
       aclk => aclk,
+      aresetn => aresetn,
       m_axi_arready => m_axi_arready,
       m_axi_arvalid => m_axi_arvalid,
+      m_valid_i_reg_0 => ar_pipe_n_2,
+      p_0_in(0) => p_0_in(1),
       s_axi_arready => s_axi_arready,
       s_axi_arvalid => s_axi_arvalid
     );
-r_pipe: entity work.\linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axic_register_slice__parameterized3\
+r_pipe: entity work.\linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axic_register_slice__parameterized3\
      port map (
       Q(67) => s_axi_rid(0),
       Q(66) => s_axi_rlast,
       Q(65 downto 64) => s_axi_rresp(1 downto 0),
       Q(63 downto 0) => s_axi_rdata(63 downto 0),
-      SR(0) => reset,
       aclk => aclk,
-      aresetn => aresetn,
+      \aresetn_d_reg[1]\ => ar_pipe_n_2,
       m_axi_rdata(63 downto 0) => m_axi_rdata(63 downto 0),
       m_axi_rid(0) => m_axi_rid(0),
       m_axi_rlast => m_axi_rlast,
       m_axi_rready => m_axi_rready,
       m_axi_rresp(1 downto 0) => m_axi_rresp(1 downto 0),
       m_axi_rvalid => m_axi_rvalid,
+      p_0_in(0) => p_0_in(1),
       s_axi_rready => s_axi_rready,
       s_axi_rvalid => s_axi_rvalid
     );
@@ -3692,13 +3069,11 @@ entity linux_bd_s00_regslice_0 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of linux_bd_s00_regslice_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of linux_bd_s00_regslice_0 : entity is "linux_bd_s00_regslice_0,axi_register_slice_v2_1_7_axi_register_slice,{}";
-  attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of linux_bd_s00_regslice_0 : entity is "linux_bd_s00_regslice_0,axi_register_slice_v2_1_7_axi_register_slice,{x_ipProduct=Vivado 2015.4,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_register_slice,x_ipVersion=2.1,x_ipCoreRevision=7,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_AXI_PROTOCOL=0,C_AXI_ID_WIDTH=1,C_AXI_ADDR_WIDTH=32,C_AXI_DATA_WIDTH=64,C_AXI_SUPPORTS_USER_SIGNALS=0,C_AXI_AWUSER_WIDTH=1,C_AXI_ARUSER_WIDTH=1,C_AXI_WUSER_WIDTH=1,C_AXI_RUSER_WIDTH=1,C_AXI_BUSER_WIDTH=1,C_REG_CONFIG_AW=0,C_REG_CONFIG_W=0,C_REG_CONFIG_B=0,C_REG_CONFIG_AR=7,C_REG_CONFIG_R=1}";
+  attribute CHECK_LICENSE_TYPE of linux_bd_s00_regslice_0 : entity is "linux_bd_s00_regslice_0,axi_register_slice_v2_1_8_axi_register_slice,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of linux_bd_s00_regslice_0 : entity is "yes";
   attribute X_CORE_INFO : string;
-  attribute X_CORE_INFO of linux_bd_s00_regslice_0 : entity is "axi_register_slice_v2_1_7_axi_register_slice,Vivado 2015.4";
+  attribute X_CORE_INFO of linux_bd_s00_regslice_0 : entity is "axi_register_slice_v2_1_8_axi_register_slice,Vivado 2016.1";
 end linux_bd_s00_regslice_0;
 
 architecture STRUCTURE of linux_bd_s00_regslice_0 is
@@ -3917,7 +3292,7 @@ architecture STRUCTURE of linux_bd_s00_regslice_0 is
   attribute G_AXI_WUSER_WIDTH : integer;
   attribute G_AXI_WUSER_WIDTH of inst : label is 0;
 begin
-inst: entity work.linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register_slice
+inst: entity work.linux_bd_s00_regslice_0_axi_register_slice_v2_1_8_axi_register_slice
      port map (
       aclk => aclk,
       aresetn => aresetn,
@@ -3980,7 +3355,7 @@ inst: entity work.linux_bd_s00_regslice_0_axi_register_slice_v2_1_7_axi_register
       s_axi_aruser(0) => '0',
       s_axi_arvalid => s_axi_arvalid,
       s_axi_awaddr(31 downto 0) => B"00000000000000000000000000000000",
-      s_axi_awburst(1 downto 0) => B"00",
+      s_axi_awburst(1 downto 0) => B"01",
       s_axi_awcache(3 downto 0) => B"0000",
       s_axi_awid(0) => '0',
       s_axi_awlen(7 downto 0) => B"00000000",

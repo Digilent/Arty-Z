@@ -47,14 +47,14 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:v_tc:6.1
--- IP Revision: 6
+-- IP Revision: 7
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-LIBRARY v_tc_v6_1_6;
-USE v_tc_v6_1_6.v_tc;
+LIBRARY v_tc_v6_1_7;
+USE v_tc_v6_1_7.v_tc;
 
 ENTITY linux_bd_v_tc_0_0 IS
   PORT (
@@ -94,9 +94,8 @@ ENTITY linux_bd_v_tc_0_0 IS
 END linux_bd_v_tc_0_0;
 
 ARCHITECTURE linux_bd_v_tc_0_0_arch OF linux_bd_v_tc_0_0 IS
-  ATTRIBUTE DowngradeIPIdentifiedWarnings : string;
+  ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF linux_bd_v_tc_0_0_arch: ARCHITECTURE IS "yes";
-
   COMPONENT v_tc IS
     GENERIC (
       C_HAS_AXI4_LITE : INTEGER;

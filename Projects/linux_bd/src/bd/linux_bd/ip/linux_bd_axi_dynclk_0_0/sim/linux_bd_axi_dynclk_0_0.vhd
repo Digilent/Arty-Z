@@ -84,9 +84,8 @@ ENTITY linux_bd_axi_dynclk_0_0 IS
 END linux_bd_axi_dynclk_0_0;
 
 ARCHITECTURE linux_bd_axi_dynclk_0_0_arch OF linux_bd_axi_dynclk_0_0 IS
-  ATTRIBUTE DowngradeIPIdentifiedWarnings : string;
+  ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF linux_bd_axi_dynclk_0_0_arch: ARCHITECTURE IS "yes";
-
   COMPONENT axi_dynclk IS
     GENERIC (
       C_S00_AXI_DATA_WIDTH : INTEGER;

@@ -1,10 +1,10 @@
--- Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
--- Date        : Sun May 29 23:58:59 2016
--- Host        : localhost.localdomain running 64-bit Fedora release 22 (Twenty Two)
+-- Tool Version: Vivado v.2016.1 (win64) Build 1538259 Fri Apr  8 15:45:27 MDT 2016
+-- Date        : Fri Jun 03 18:30:07 2016
+-- Host        : WK73 running 64-bit Service Pack 1  (build 7601)
 -- Command     : write_vhdl -force -mode synth_stub
---               /home/samb/sam_work/git/digilent/Arty-Z/Projects/linux_bd/src/bd/linux_bd/ip/linux_bd_s00_data_fifo_0/linux_bd_s00_data_fifo_0_stub.vhdl
+--               c:/sam_work/git/digilent/Arty-Z/Projects/linux_bd/src/bd/linux_bd/ip/linux_bd_s00_data_fifo_0/linux_bd_s00_data_fifo_0_stub.vhdl
 -- Design      : linux_bd_s00_data_fifo_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-1
@@ -56,6 +56,6 @@ attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
 attribute black_box_pad_pin of stub : architecture is "aclk,aresetn,s_axi_araddr[31:0],s_axi_arlen[3:0],s_axi_arsize[2:0],s_axi_arburst[1:0],s_axi_arlock[1:0],s_axi_arcache[3:0],s_axi_arprot[2:0],s_axi_arqos[3:0],s_axi_arvalid,s_axi_arready,s_axi_rdata[63:0],s_axi_rresp[1:0],s_axi_rlast,s_axi_rvalid,s_axi_rready,m_axi_araddr[31:0],m_axi_arlen[3:0],m_axi_arsize[2:0],m_axi_arburst[1:0],m_axi_arlock[1:0],m_axi_arcache[3:0],m_axi_arprot[2:0],m_axi_arqos[3:0],m_axi_arvalid,m_axi_arready,m_axi_rdata[63:0],m_axi_rresp[1:0],m_axi_rlast,m_axi_rvalid,m_axi_rready";
 attribute X_CORE_INFO : string;
-attribute X_CORE_INFO of stub : architecture is "axi_data_fifo_v2_1_6_axi_data_fifo,Vivado 2015.4";
+attribute X_CORE_INFO of stub : architecture is "axi_data_fifo_v2_1_7_axi_data_fifo,Vivado 2016.1";
 begin
 end;

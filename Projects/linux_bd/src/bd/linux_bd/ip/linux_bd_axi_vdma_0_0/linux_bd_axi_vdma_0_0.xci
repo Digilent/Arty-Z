@@ -44,65 +44,16 @@
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.HAS_WSTRB">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.ID_WIDTH">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.MAX_BURST_LENGTH">16</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.NUM_READ_OUTSTANDING">2</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.NUM_WRITE_OUTSTANDING">8</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.PHASE">0.000</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.PROTOCOL">AXI4</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.READ_WRITE_MODE">READ_ONLY</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.RUSER_WIDTH">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.SUPPORTS_NARROW_BURST">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.WUSER_WIDTH">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S_ACLK.ASSOCIATED_RESET"/>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S_ACLK.CLK_DOMAIN">linux_bd_processing_system7_0_0_FCLK_CLK1</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S_ACLK.FREQ_HZ">142857132</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S_ACLK.PHASE">0.000</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.ADDR_WIDTH">32</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.ARUSER_WIDTH">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.AWUSER_WIDTH">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.BUSER_WIDTH">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.CLK_DOMAIN"/>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.DATA_WIDTH">64</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.FREQ_HZ">100000000</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.HAS_BRESP">1</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.HAS_BURST">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.HAS_CACHE">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.HAS_LOCK">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.HAS_PROT">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.HAS_QOS">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.HAS_REGION">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.HAS_RRESP">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.HAS_WSTRB">1</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.ID_WIDTH">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.MAX_BURST_LENGTH">8</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.NUM_READ_OUTSTANDING">2</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.NUM_WRITE_OUTSTANDING">2</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.PHASE">0.000</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.PROTOCOL">AXI4</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.READ_WRITE_MODE">WRITE_ONLY</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.RUSER_WIDTH">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.SUPPORTS_NARROW_BURST">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.WUSER_WIDTH">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM_ACLK.ASSOCIATED_RESET"/>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM_ACLK.CLK_DOMAIN"/>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM_ACLK.FREQ_HZ">100000000</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM_ACLK.PHASE">0.000</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.S2MM_INTROUT.PortWidth">1</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.S_AXIS_S2MM.CLK_DOMAIN"/>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.S_AXIS_S2MM.FREQ_HZ">100000000</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.S_AXIS_S2MM.HAS_TKEEP">1</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.S_AXIS_S2MM.HAS_TLAST">1</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.S_AXIS_S2MM.HAS_TREADY">1</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.S_AXIS_S2MM.HAS_TSTRB">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.S_AXIS_S2MM.LAYERED_METADATA">undef</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.S_AXIS_S2MM.PHASE">0.000</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.S_AXIS_S2MM.TDATA_NUM_BYTES">4</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.S_AXIS_S2MM.TDEST_WIDTH">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.S_AXIS_S2MM.TID_WIDTH">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.S_AXIS_S2MM.TUSER_WIDTH">1</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.S_AXIS_S2MM_ACLK.ASSOCIATED_RESET"/>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.S_AXIS_S2MM_ACLK.CLK_DOMAIN"/>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.S_AXIS_S2MM_ACLK.FREQ_HZ">100000000</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.S_AXIS_S2MM_ACLK.PHASE">0.000</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.S_AXI_LITE.ADDR_WIDTH">9</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.S_AXI_LITE.ARUSER_WIDTH">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.S_AXI_LITE.AWUSER_WIDTH">0</spirit:configurableElementValue>
@@ -187,6 +138,7 @@
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_S2MM_LINEBUFFER_THRESH">4</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_S2MM_MAX_BURST_LENGTH">8</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_S2MM_SOF_ENABLE">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_SELECT_XPM">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_S_AXIS_S2MM_TDATA_WIDTH">32</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_S_AXIS_S2MM_TUSER_BITS">1</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_S_AXI_LITE_ADDR_WIDTH">9</spirit:configurableElementValue>
@@ -194,6 +146,7 @@
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USE_FSYNC">1</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USE_MM2S_FSYNC">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USE_S2MM_FSYNC">2</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_SELECT_XPM">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.Component_Name">linux_bd_axi_vdma_0_0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.c_addr_width">32</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.c_dlytmr_resolution">125</spirit:configurableElementValue>
@@ -259,14 +212,13 @@
         <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.TEMPERATURE_GRADE">C</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.USE_RDI_CUSTOMIZATION">TRUE</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.USE_RDI_GENERATION">TRUE</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPCACHEID">97b9d0bc6f89159f</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPCONTEXT">IP_Integrator</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPREVISION">6</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPREVISION">7</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.MANAGED">TRUE</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.OUTPUTDIR">.</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.SELECTEDSIMMODEL"/>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.SHAREDDIR">.</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.SWVERSION">2015.4</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.SWVERSION">2016.1</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.SYNTHESISFLOW">OUT_OF_CONTEXT</spirit:configurableElementValue>
       </spirit:configurableElementValues>
       <spirit:vendorExtensions>
@@ -293,7 +245,7 @@
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.DATA_WIDTH" xilinx:valueSource="user"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.FREQ_HZ" xilinx:valueSource="user_prop"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.HAS_BRESP" xilinx:valueSource="constant"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.HAS_BURST" xilinx:valueSource="user"/>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.HAS_BURST" xilinx:valueSource="constant"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.HAS_CACHE" xilinx:valueSource="user"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.HAS_LOCK" xilinx:valueSource="constant"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.HAS_PROT" xilinx:valueSource="user"/>
@@ -303,40 +255,13 @@
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.HAS_WSTRB" xilinx:valueSource="constant"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.ID_WIDTH" xilinx:valueSource="constant"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.MAX_BURST_LENGTH" xilinx:valueSource="user"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.NUM_READ_OUTSTANDING" xilinx:valueSource="constant"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.NUM_WRITE_OUTSTANDING" xilinx:valueSource="constant_prop"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.PROTOCOL" xilinx:valueSource="user"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.READ_WRITE_MODE" xilinx:valueSource="user"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.RUSER_WIDTH" xilinx:valueSource="constant"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.SUPPORTS_NARROW_BURST" xilinx:valueSource="constant"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.WUSER_WIDTH" xilinx:valueSource="constant"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S_ACLK.CLK_DOMAIN" xilinx:valueSource="default_prop"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S_ACLK.FREQ_HZ" xilinx:valueSource="user_prop"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.ADDR_WIDTH" xilinx:valueSource="user"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.ARUSER_WIDTH" xilinx:valueSource="constant"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.AWUSER_WIDTH" xilinx:valueSource="constant"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.BUSER_WIDTH" xilinx:valueSource="constant"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.DATA_WIDTH" xilinx:valueSource="user"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.HAS_BRESP" xilinx:valueSource="user"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.HAS_BURST" xilinx:valueSource="user"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.HAS_CACHE" xilinx:valueSource="user"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.HAS_LOCK" xilinx:valueSource="constant"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.HAS_PROT" xilinx:valueSource="user"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.HAS_QOS" xilinx:valueSource="constant"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.HAS_REGION" xilinx:valueSource="constant"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.HAS_RRESP" xilinx:valueSource="constant"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.HAS_WSTRB" xilinx:valueSource="user"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.ID_WIDTH" xilinx:valueSource="constant"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.MAX_BURST_LENGTH" xilinx:valueSource="user"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.NUM_WRITE_OUTSTANDING" xilinx:valueSource="constant"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.PROTOCOL" xilinx:valueSource="user"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.READ_WRITE_MODE" xilinx:valueSource="user"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.RUSER_WIDTH" xilinx:valueSource="constant"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.SUPPORTS_NARROW_BURST" xilinx:valueSource="constant"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.WUSER_WIDTH" xilinx:valueSource="constant"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_S2MM.HAS_TSTRB" xilinx:valueSource="constant"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_S2MM.TDEST_WIDTH" xilinx:valueSource="constant"/>
-            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_S2MM.TID_WIDTH" xilinx:valueSource="constant"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_LITE.ADDR_WIDTH" xilinx:valueSource="user"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_LITE.ARUSER_WIDTH" xilinx:valueSource="constant"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_LITE.AWUSER_WIDTH" xilinx:valueSource="constant"/>

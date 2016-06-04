@@ -48,11 +48,12 @@
 
 
 // IP VLNV: xilinx.com:ip:axi_data_fifo:2.1
-// IP Revision: 6
+// IP Revision: 7
 
-(* X_CORE_INFO = "axi_data_fifo_v2_1_6_axi_data_fifo,Vivado 2015.4" *)
-(* CHECK_LICENSE_TYPE = "linux_bd_s00_data_fifo_0,axi_data_fifo_v2_1_6_axi_data_fifo,{}" *)
-(* CORE_GENERATION_INFO = "linux_bd_s00_data_fifo_0,axi_data_fifo_v2_1_6_axi_data_fifo,{x_ipProduct=Vivado 2015.4,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_data_fifo,x_ipVersion=2.1,x_ipCoreRevision=6,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_AXI_PROTOCOL=1,C_AXI_ID_WIDTH=1,C_AXI_ADDR_WIDTH=32,C_AXI_DATA_WIDTH=64,C_AXI_SUPPORTS_USER_SIGNALS=0,C_AXI_AWUSER_WIDTH=1,C_AXI_ARUSER_WIDTH=1,C_AXI_WUSER_WIDTH=1,C_AXI_RUSER_WIDTH=1,C_AXI_BUSER_WIDTH=1,C_AXI_WRITE_FIFO_DEPTH=0,C_AXI_WRITE_FIFO_TYPE=lut,C_AXI_WRITE_FIFO_DELAY=0,C_AXI_READ_FIFO_DEPTH=512,C_AXI_READ_FIFO_TYPE=bram,C_AXI_READ_FIFO_DELAY=1}" *)
+(* X_CORE_INFO = "axi_data_fifo_v2_1_7_axi_data_fifo,Vivado 2016.1" *)
+(* CHECK_LICENSE_TYPE = "linux_bd_s00_data_fifo_0,axi_data_fifo_v2_1_7_axi_data_fifo,{}" *)
+(* CORE_GENERATION_INFO = "linux_bd_s00_data_fifo_0,axi_data_fifo_v2_1_7_axi_data_fifo,{x_ipProduct=Vivado 2016.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_data_fifo,x_ipVersion=2.1,x_ipCoreRevision=7,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_AXI_PROTOCOL=1,C_AXI_ID_WIDTH=1,C_AXI_ADDR_WIDTH=32,C_AXI_DATA_WIDTH=64,C_AXI_SUPPORTS_USER_SIGNALS=0,C_AXI_AWUSER_WIDTH=1,C_AXI_ARUSER_WIDTH=1,C_AXI_WUSER_WIDTH=1,C_AXI_RUSER_WIDTH=1,C_AXI_BUSER_WIDTH=1,C_AXI_WRITE_FIFO_DEPTH=0,C_AXI_WRITE_FIFO_TYPE=lut,C_AX\
+I_WRITE_FIFO_DELAY=0,C_AXI_READ_FIFO_DEPTH=512,C_AXI_READ_FIFO_TYPE=bram,C_AXI_READ_FIFO_DELAY=1}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module linux_bd_s00_data_fifo_0 (
   aclk,
@@ -154,7 +155,7 @@ input wire m_axi_rvalid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI RREADY" *)
 output wire m_axi_rready;
 
-  axi_data_fifo_v2_1_6_axi_data_fifo #(
+  axi_data_fifo_v2_1_7_axi_data_fifo #(
     .C_FAMILY("zynq"),
     .C_AXI_PROTOCOL(1),
     .C_AXI_ID_WIDTH(1),
@@ -179,7 +180,7 @@ output wire m_axi_rready;
     .s_axi_awaddr(32'H00000000),
     .s_axi_awlen(4'H0),
     .s_axi_awsize(3'H0),
-    .s_axi_awburst(2'H0),
+    .s_axi_awburst(2'H1),
     .s_axi_awlock(2'H0),
     .s_axi_awcache(4'H0),
     .s_axi_awprot(3'H0),

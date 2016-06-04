@@ -46,8 +46,8 @@
 -- 
 -- DO NOT MODIFY THIS FILE.
 
--- IP VLNV: digilentinc.com:ip:rgb2dvi:1.2
--- IP Revision: 7
+-- IP VLNV: digilentinc.com:ip:rgb2dvi:1.3
+-- IP Revision: 1
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -70,9 +70,8 @@ ENTITY linux_bd_rgb2dvi_0_0 IS
 END linux_bd_rgb2dvi_0_0;
 
 ARCHITECTURE linux_bd_rgb2dvi_0_0_arch OF linux_bd_rgb2dvi_0_0 IS
-  ATTRIBUTE DowngradeIPIdentifiedWarnings : string;
+  ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF linux_bd_rgb2dvi_0_0_arch: ARCHITECTURE IS "yes";
-
   COMPONENT rgb2dvi IS
     GENERIC (
       kGenerateSerialClk : BOOLEAN;
@@ -111,7 +110,7 @@ BEGIN
   U0 : rgb2dvi
     GENERIC MAP (
       kGenerateSerialClk => false,
-      kClkPrimitive => "MMCM",
+      kClkPrimitive => "PLL",
       kRstActiveHigh => false,
       kClkRange => 2
     )

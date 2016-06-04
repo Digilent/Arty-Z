@@ -48,11 +48,12 @@
 
 
 // IP VLNV: xilinx.com:ip:axis_subset_converter:1.1
-// IP Revision: 7
+// IP Revision: 8
 
-(* X_CORE_INFO = "axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0,Vivado 2015.4" *)
-(* CHECK_LICENSE_TYPE = "linux_bd_axis_subset_converter_0_0,axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0,{}" *)
-(* CORE_GENERATION_INFO = "linux_bd_axis_subset_converter_0_0,axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0,{x_ipProduct=Vivado 2015.4,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axis_subset_converter,x_ipVersion=1.1,x_ipCoreRevision=7,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_S_AXIS_TDATA_WIDTH=32,C_S_AXIS_TID_WIDTH=1,C_S_AXIS_TDEST_WIDTH=1,C_S_AXIS_TUSER_WIDTH=1,C_S_AXIS_SIGNAL_SET=0b00000000000000000000000010011011,C_M_AXIS_TDATA_WIDTH=24,C_M_AXIS_TID_WIDTH=1,C_M_AXIS_TDEST_WIDTH=1,C_M_AXIS_SIGNAL_SET=0b00000000000000000000000010011011,C_M_AXIS_TUSER_WIDTH=1,C_DEFAULT_TLAST=0}" *)
+(* X_CORE_INFO = "top_linux_bd_axis_subset_converter_0_0,Vivado 2016.1" *)
+(* CHECK_LICENSE_TYPE = "linux_bd_axis_subset_converter_0_0,top_linux_bd_axis_subset_converter_0_0,{}" *)
+(* CORE_GENERATION_INFO = "linux_bd_axis_subset_converter_0_0,top_linux_bd_axis_subset_converter_0_0,{x_ipProduct=Vivado 2016.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axis_subset_converter,x_ipVersion=1.1,x_ipCoreRevision=8,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_S_AXIS_TDATA_WIDTH=32,C_S_AXIS_TID_WIDTH=1,C_S_AXIS_TDEST_WIDTH=1,C_S_AXIS_TUSER_WIDTH=1,C_S_AXIS_SIGNAL_SET=0b00000000000000000000000010011011,C_M_AXIS_TDATA_WIDTH=24,C_M_AXIS_TID_WIDTH=1,C_M_AXIS_TDEST_WIDTH=1,C_M_AXIS_SIGNAL_SET=0b000\
+00000000000000000000010011011,C_M_AXIS_TUSER_WIDTH=1,C_DEFAULT_TLAST=0}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module linux_bd_axis_subset_converter_0_0 (
   aclk,
@@ -100,7 +101,7 @@ output wire m_axis_tlast;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TUSER" *)
 output wire [0 : 0] m_axis_tuser;
 
-  axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 #(
+  top_linux_bd_axis_subset_converter_0_0 #(
     .C_FAMILY("zynq"),
     .C_S_AXIS_TDATA_WIDTH(32),
     .C_S_AXIS_TID_WIDTH(1),

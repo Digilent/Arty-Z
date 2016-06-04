@@ -7,41 +7,6 @@
   <spirit:model>
     <spirit:views>
       <spirit:view>
-        <spirit:name>xilinx_veriloginstantiationtemplate</spirit:name>
-        <spirit:displayName>Verilog Instantiation Template</spirit:displayName>
-        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis.template</spirit:envIdentifier>
-        <spirit:language>verilog</spirit:language>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_veriloginstantiationtemplate_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>6b8c6cd2</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>customizationCRCversion</spirit:name>
-            <spirit:value>5</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>60ed205a</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>boundaryCRCversion</spirit:name>
-            <spirit:value>1</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 30 02:27:27 UTC 2016</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>StaleAtRelink</spirit:name>
-            <spirit:value>false</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
         <spirit:name>xilinx_verilogsynthesis</spirit:name>
         <spirit:displayName>Verilog Synthesis</spirit:displayName>
         <spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
@@ -51,28 +16,24 @@
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
-            <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>6b8c6cd2</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>customizationCRCversion</spirit:name>
-            <spirit:value>5</spirit:value>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Sat Jun 04 01:23:31 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>60ed205a</spirit:value>
+            <spirit:value>e4e2f846</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
             <spirit:value>1</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 30 02:27:27 UTC 2016</spirit:value>
+            <spirit:name>customizationCRC</spirit:name>
+            <spirit:value>4fc456d1</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
-            <spirit:name>StaleAtRelink</spirit:name>
-            <spirit:value>false</spirit:value>
+            <spirit:name>customizationCRCversion</spirit:name>
+            <spirit:value>6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -86,28 +47,24 @@
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
-            <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>6b8c6cd2</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>customizationCRCversion</spirit:name>
-            <spirit:value>5</spirit:value>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Sat Jun 04 01:23:31 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>60ed205a</spirit:value>
+            <spirit:value>e4e2f846</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
             <spirit:value>1</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 30 02:27:27 UTC 2016</spirit:value>
+            <spirit:name>customizationCRC</spirit:name>
+            <spirit:value>4fc456d1</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
-            <spirit:name>StaleAtRelink</spirit:name>
-            <spirit:value>false</spirit:value>
+            <spirit:name>customizationCRCversion</spirit:name>
+            <spirit:value>6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -121,28 +78,24 @@
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
-            <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>98d5d1b3</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>customizationCRCversion</spirit:name>
-            <spirit:value>5</spirit:value>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Sat Jun 04 01:23:31 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>60ed205a</spirit:value>
+            <spirit:value>e4e2f846</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
             <spirit:value>1</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 30 02:27:27 UTC 2016</spirit:value>
+            <spirit:name>customizationCRC</spirit:name>
+            <spirit:value>976c9a08</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
-            <spirit:name>StaleAtRelink</spirit:name>
-            <spirit:value>false</spirit:value>
+            <spirit:name>customizationCRCversion</spirit:name>
+            <spirit:value>6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -156,62 +109,24 @@
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
-            <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>98d5d1b3</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>customizationCRCversion</spirit:name>
-            <spirit:value>5</spirit:value>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Sat Jun 04 01:23:31 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>60ed205a</spirit:value>
+            <spirit:value>e4e2f846</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
             <spirit:value>1</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 30 02:27:27 UTC 2016</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>StaleAtRelink</spirit:name>
-            <spirit:value>false</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_versioninformation</spirit:name>
-        <spirit:displayName>Version Information</spirit:displayName>
-        <spirit:envIdentifier>:vivado.xilinx.com:docs.versioninfo</spirit:envIdentifier>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_versioninformation_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>6b8c6cd2</spirit:value>
+            <spirit:value>976c9a08</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
-            <spirit:value>5</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>60ed205a</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>boundaryCRCversion</spirit:name>
-            <spirit:value>1</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 30 02:27:27 UTC 2016</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>StaleAtRelink</spirit:name>
-            <spirit:value>false</spirit:value>
+            <spirit:value>6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -224,28 +139,24 @@
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
-            <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>6b8c6cd2</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>customizationCRCversion</spirit:name>
-            <spirit:value>5</spirit:value>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Sat Jun 04 01:24:37 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>60ed205a</spirit:value>
+            <spirit:value>e4e2f846</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
             <spirit:value>1</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 30 06:57:55 UTC 2016</spirit:value>
+            <spirit:name>customizationCRC</spirit:name>
+            <spirit:value>4fc456d1</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
-            <spirit:name>StaleAtRelink</spirit:name>
-            <spirit:value>false</spirit:value>
+            <spirit:name>customizationCRCversion</spirit:name>
+            <spirit:value>6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -414,7 +325,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.NUM_PORTS&apos;)) > 6)">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.NUM_PORTS&apos;)) > 6)">true</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -1024,7 +935,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.dout_width&apos;)) - 1)">5</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.dout_width&apos;)) - 1)">6</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1201,27 +1112,16 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>dout_width</spirit:name>
         <spirit:displayName>Dout Width</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.dout_width">6</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.dout_width">7</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>NUM_PORTS</spirit:name>
         <spirit:displayName>Number of Ports</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.NUM_PORTS">6</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.NUM_PORTS">7</spirit:value>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
   <spirit:fileSets>
-    <spirit:fileSet>
-      <spirit:name>xilinx_veriloginstantiationtemplate_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>linux_bd_xlconcat_0_0.vho</spirit:name>
-        <spirit:userFileType>vhdlTemplate</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>linux_bd_xlconcat_0_0.veo</spirit:name>
-        <spirit:userFileType>verilogTemplate</spirit:userFileType>
-      </spirit:file>
-    </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
       <spirit:file>
@@ -1252,13 +1152,6 @@
         <spirit:name>sim/linux_bd_xlconcat_0_0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_versioninformation_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>doc/xlconcat_v2_1_changelog.txt</spirit:name>
-        <spirit:userFileType>text</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -1303,7 +1196,7 @@
     <spirit:parameter>
       <spirit:name>NUM_PORTS</spirit:name>
       <spirit:displayName>Number of Ports</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_PORTS" spirit:order="10000" spirit:configGroups="Page 1 UnGrouped" spirit:minimum="1" spirit:maximum="32" spirit:rangeType="long">6</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_PORTS" spirit:order="10000" spirit:configGroups="Page 1 UnGrouped" spirit:minimum="1" spirit:maximum="32" spirit:rangeType="long">7</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>IN0_WIDTH</spirit:name>
@@ -1472,7 +1365,7 @@
     <spirit:parameter>
       <spirit:name>dout_width</spirit:name>
       <spirit:displayName>Dout Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.dout_width" spirit:order="13300" spirit:configGroups="Page 1">6</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.dout_width" spirit:order="13300" spirit:configGroups="Page 1">7</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
@@ -1486,6 +1379,7 @@
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.IN3_WIDTH" xilinx:valueSource="propagated"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.IN4_WIDTH" xilinx:valueSource="propagated"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.IN5_WIDTH" xilinx:valueSource="propagated"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.IN6_WIDTH" xilinx:valueSource="propagated"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.NUM_PORTS" xilinx:valueSource="user"/>
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>

@@ -5836,7 +5836,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="float" spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.FCLK_CLK2.FREQ_HZ" spirit:dependency="(spirit:decode(id(PARAM_VALUE.PCW_CLK2_FREQ)))" spirit:minimum="100000" spirit:maximum="333000000">50000000</spirit:value>
+          <spirit:value spirit:format="float" spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.FCLK_CLK2.FREQ_HZ" spirit:dependency="(spirit:decode(id(PARAM_VALUE.PCW_CLK2_FREQ)))" spirit:minimum="100000" spirit:maximum="333000000">10000000</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
       <spirit:vendorExtensions>
@@ -5865,7 +5865,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="float" spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.FCLK_CLK3.FREQ_HZ" spirit:dependency="(spirit:decode(id(PARAM_VALUE.PCW_CLK3_FREQ)))" spirit:minimum="100000" spirit:maximum="333000000">50000000</spirit:value>
+          <spirit:value spirit:format="float" spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.FCLK_CLK3.FREQ_HZ" spirit:dependency="(spirit:decode(id(PARAM_VALUE.PCW_CLK3_FREQ)))" spirit:minimum="100000" spirit:maximum="333000000">10000000</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
       <spirit:vendorExtensions>
@@ -6833,11 +6833,11 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>SENSITIVITY</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.IRQ_F2P.SENSITIVITY">LEVEL_HIGH:LEVEL_HIGH:LEVEL_HIGH:LEVEL_HIGH:LEVEL_HIGH:LEVEL_HIGH</spirit:value>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.IRQ_F2P.SENSITIVITY">LEVEL_HIGH:LEVEL_HIGH:LEVEL_HIGH:LEVEL_HIGH:LEVEL_HIGH:LEVEL_HIGH:LEVEL_HIGH</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>PortWidth</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.IRQ_F2P.PortWidth">6</spirit:value>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.IRQ_F2P.PortWidth">7</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
       <spirit:vendorExtensions>
@@ -9860,41 +9860,6 @@
   <spirit:model>
     <spirit:views>
       <spirit:view>
-        <spirit:name>xilinx_veriloginstantiationtemplate</spirit:name>
-        <spirit:displayName>Verilog Instantiation Template</spirit:displayName>
-        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis.template</spirit:envIdentifier>
-        <spirit:language>verilog</spirit:language>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_veriloginstantiationtemplate_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>8c4a5366</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>customizationCRCversion</spirit:name>
-            <spirit:value>5</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>97558a74</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>boundaryCRCversion</spirit:name>
-            <spirit:value>1</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 30 02:27:14 UTC 2016</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>StaleAtRelink</spirit:name>
-            <spirit:value>false</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
         <spirit:name>xilinx_anylanguagesynthesis</spirit:name>
         <spirit:displayName>Synthesis</spirit:displayName>
         <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
@@ -9903,28 +9868,24 @@
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
-            <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>8c4a5366</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>customizationCRCversion</spirit:name>
-            <spirit:value>5</spirit:value>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Sat Jun 04 01:23:28 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>97558a74</spirit:value>
+            <spirit:value>f702a644</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
             <spirit:value>1</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 30 02:27:26 UTC 2016</spirit:value>
+            <spirit:name>customizationCRC</spirit:name>
+            <spirit:value>1194e969</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
-            <spirit:name>StaleAtRelink</spirit:name>
-            <spirit:value>false</spirit:value>
+            <spirit:name>customizationCRCversion</spirit:name>
+            <spirit:value>6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -9938,28 +9899,24 @@
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
-            <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>8c4a5366</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>customizationCRCversion</spirit:name>
-            <spirit:value>5</spirit:value>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Sat Jun 04 01:23:28 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>97558a74</spirit:value>
+            <spirit:value>f702a644</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
             <spirit:value>1</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 30 02:27:26 UTC 2016</spirit:value>
+            <spirit:name>customizationCRC</spirit:name>
+            <spirit:value>1194e969</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
-            <spirit:name>StaleAtRelink</spirit:name>
-            <spirit:value>false</spirit:value>
+            <spirit:name>customizationCRCversion</spirit:name>
+            <spirit:value>6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -9972,20 +9929,20 @@
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
-            <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>9e29ee48</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>customizationCRCversion</spirit:name>
-            <spirit:value>5</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>97558a74</spirit:value>
+            <spirit:value>f702a644</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
             <spirit:value>1</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>customizationCRC</spirit:name>
+            <spirit:value>cf8d57df</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>customizationCRCversion</spirit:name>
+            <spirit:value>6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -9998,96 +9955,24 @@
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
-            <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>9e29ee48</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>customizationCRCversion</spirit:name>
-            <spirit:value>5</spirit:value>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Sat Jun 04 01:23:29 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>97558a74</spirit:value>
+            <spirit:value>f702a644</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
             <spirit:value>1</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 30 02:27:26 UTC 2016</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>StaleAtRelink</spirit:name>
-            <spirit:value>false</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_miscfiles</spirit:name>
-        <spirit:displayName>Miscellaneous</spirit:displayName>
-        <spirit:envIdentifier>:vivado.xilinx.com:misc.files</spirit:envIdentifier>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_miscfiles_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>8c4a5366</spirit:value>
+            <spirit:value>cf8d57df</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
-            <spirit:value>5</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>97558a74</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>boundaryCRCversion</spirit:name>
-            <spirit:value>1</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 30 02:27:26 UTC 2016</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>StaleAtRelink</spirit:name>
-            <spirit:value>false</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_versioninformation</spirit:name>
-        <spirit:displayName>Version Information</spirit:displayName>
-        <spirit:envIdentifier>:vivado.xilinx.com:docs.versioninfo</spirit:envIdentifier>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_versioninformation_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>8c4a5366</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>customizationCRCversion</spirit:name>
-            <spirit:value>5</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>97558a74</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>boundaryCRCversion</spirit:name>
-            <spirit:value>1</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 30 02:27:26 UTC 2016</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>StaleAtRelink</spirit:name>
-            <spirit:value>false</spirit:value>
+            <spirit:value>6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -10100,28 +9985,24 @@
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
-            <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>8c4a5366</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>customizationCRCversion</spirit:name>
-            <spirit:value>5</spirit:value>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Sat Jun 04 01:24:58 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>97558a74</spirit:value>
+            <spirit:value>f702a644</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
             <spirit:value>1</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 30 06:57:39 UTC 2016</spirit:value>
+            <spirit:name>customizationCRC</spirit:name>
+            <spirit:value>1194e969</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
-            <spirit:name>StaleAtRelink</spirit:name>
-            <spirit:value>false</spirit:value>
+            <spirit:name>customizationCRCversion</spirit:name>
+            <spirit:value>6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -23587,7 +23468,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(MODELPARAM_VALUE.C_NUM_F2P_INTR_INPUTS)) - 1)" spirit:bitStringLength="0">5</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(MODELPARAM_VALUE.C_NUM_F2P_INTR_INPUTS)) - 1)" spirit:bitStringLength="0">6</spirit:left>
             <spirit:right spirit:format="long" spirit:bitStringLength="0">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -25869,7 +25750,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="INTEGER">
         <spirit:name>C_NUM_F2P_INTR_INPUTS</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:id="MODELPARAM_VALUE.C_NUM_F2P_INTR_INPUTS" spirit:dependency="spirit:decode(id(PARAM_VALUE.PCW_NUM_F2P_INTR_INPUTS))">6</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:id="MODELPARAM_VALUE.C_NUM_F2P_INTR_INPUTS" spirit:dependency="spirit:decode(id(PARAM_VALUE.PCW_NUM_F2P_INTR_INPUTS))">7</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_IRQ_F2P_MODE</spirit:name>
@@ -27150,17 +27031,6 @@
   </spirit:choices>
   <spirit:fileSets>
     <spirit:fileSet>
-      <spirit:name>xilinx_veriloginstantiationtemplate_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>linux_bd_processing_system7_0_0.vho</spirit:name>
-        <spirit:userFileType>vhdlTemplate</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>linux_bd_processing_system7_0_0.veo</spirit:name>
-        <spirit:userFileType>verilogTemplate</spirit:userFileType>
-      </spirit:file>
-    </spirit:fileSet>
-    <spirit:fileSet>
       <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
       <spirit:file>
         <spirit:name>linux_bd_processing_system7_0_0.xdc</spirit:name>
@@ -27241,171 +27111,202 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_processing_system7_bfm_2_0__ref_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_5_local_params.v</spirit:name>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_5_local_params.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_arb_wr.v</spirit:name>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_arb_wr.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_arb_rd.v</spirit:name>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_arb_rd.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_arb_wr_4.v</spirit:name>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_arb_wr_4.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_arb_rd_4.v</spirit:name>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_arb_rd_4.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_arb_hp2_3.v</spirit:name>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_arb_hp2_3.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_arb_hp0_1.v</spirit:name>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_arb_hp0_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_ssw_hp.v</spirit:name>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_ssw_hp.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_sparse_mem.v</spirit:name>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_sparse_mem.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_5_reg_params.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-        <spirit:isIncludeFile>true</spirit:isIncludeFile>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_5_reg_init.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-        <spirit:isIncludeFile>true</spirit:isIncludeFile>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_reg_map.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_ocm_mem.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_intr_wr_mem.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_intr_rd_mem.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_fmsw_gp.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_regc.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_ocmc.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_interconnect_model.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_gen_reset.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_gen_clock.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_ddrc.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_axi_slave.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_axi_master.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_afi_slave.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_5_apis.v</spirit:name>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_5_reg_params.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_5_unused_ports.v</spirit:name>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_5_reg_init.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_5_axi_gp.v</spirit:name>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_reg_map.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_ocm_mem.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_intr_wr_mem.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_intr_rd_mem.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_fmsw_gp.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_regc.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_ocmc.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_interconnect_model.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_gen_reset.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_gen_clock.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_ddrc.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_axi_slave.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_axi_master.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_afi_slave.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_5_apis.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_5_axi_acp.v</spirit:name>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_5_unused_ports.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_5_axi_hp.v</spirit:name>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_5_axi_gp.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/processing_system7_bfm_v2_0_processing_system7_bfm.v</spirit:name>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_5_axi_acp.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_5_axi_hp.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>processing_system7_bfm_v2_0_5/hdl/processing_system7_bfm_v2_0_processing_system7_bfm.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>processing_system7_bfm_v2_0_5</spirit:logicalName>
       </spirit:file>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="processing_system7_bfm" xilinx:version="2.0" xilinx:isGenerated="true" xilinx:checksum="3e8fe4cd">
+          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="processing_system7_bfm" xilinx:version="2.0" xilinx:isGenerated="true" xilinx:checksum="26a29913">
             <xilinx:mode xilinx:name="copy_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -27416,40 +27317,6 @@
       <spirit:file>
         <spirit:name>sim/linux_bd_processing_system7_0_0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_miscfiles_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>fixedio.xml</spirit:name>
-        <spirit:userFileType>xml</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>fixedio_rtl.xml</spirit:name>
-        <spirit:userFileType>xml</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hpstatusctrl.xml</spirit:name>
-        <spirit:userFileType>xml</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hpstatusctrl_rtl.xml</spirit:name>
-        <spirit:userFileType>xml</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>usbctrl.xml</spirit:name>
-        <spirit:userFileType>xml</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>usbctrl_rtl.xml</spirit:name>
-        <spirit:userFileType>xml</spirit:userFileType>
-      </spirit:file>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_versioninformation_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>doc/processing_system7_v5_5_changelog.txt</spirit:name>
-        <spirit:userFileType>text</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -28754,12 +28621,12 @@
     <spirit:parameter>
       <spirit:name>PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT FPGA2 PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ" spirit:order="28400" spirit:minimum="0.100000" spirit:maximum="250.000000">50.000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ" spirit:order="28400" spirit:minimum="0.100000" spirit:maximum="250.000000">10.000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT FPGA3 PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ" spirit:order="28500" spirit:minimum="0.100000" spirit:maximum="250.000000">50.000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ" spirit:order="28500" spirit:minimum="0.100000" spirit:maximum="250.000000">10.000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_TTC0_CLK0_PERIPHERAL_FREQMHZ</spirit:name>
@@ -28804,12 +28671,12 @@
     <spirit:parameter>
       <spirit:name>PCW_CLK2_FREQ</spirit:name>
       <spirit:displayName>PCW CLK2 FREQ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CLK2_FREQ" spirit:order="62800" spirit:minimum="100000" spirit:maximum="333000000">50000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CLK2_FREQ" spirit:order="62800" spirit:minimum="100000" spirit:maximum="333000000">10000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_CLK3_FREQ</spirit:name>
       <spirit:displayName>PCW CLK3 FREQ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CLK3_FREQ" spirit:order="62900" spirit:minimum="100000" spirit:maximum="333000000">50000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CLK3_FREQ" spirit:order="62900" spirit:minimum="100000" spirit:maximum="333000000">10000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_OVERRIDE_BASIC_CLOCK</spirit:name>
@@ -30099,7 +29966,7 @@
     <spirit:parameter>
       <spirit:name>PCW_NUM_F2P_INTR_INPUTS</spirit:name>
       <spirit:displayName>PCW NUM F2P INTR INPUTS</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_NUM_F2P_INTR_INPUTS" spirit:order="62500" spirit:minimum="1" spirit:maximum="16" spirit:rangeType="long">6</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_NUM_F2P_INTR_INPUTS" spirit:order="62500" spirit:minimum="1" spirit:maximum="16" spirit:rangeType="long">7</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -34341,7 +34208,6 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_GP0.RUSER_WIDTH" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_GP0.SUPPORTS_NARROW_BURST" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_GP0.WUSER_WIDTH" xilinx:valueSource="constant"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_GP0_ACLK.ASSOCIATED_BUSIF" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_GP0_ACLK.CLK_DOMAIN" xilinx:valueSource="default_prop"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_GP0_ACLK.FREQ_HZ" xilinx:valueSource="user_prop"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.ADDR_WIDTH" xilinx:valueSource="user"/>
@@ -34351,24 +34217,21 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.CLK_DOMAIN" xilinx:valueSource="default_prop"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.DATA_WIDTH" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.FREQ_HZ" xilinx:valueSource="user_prop"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.HAS_BRESP" xilinx:valueSource="ip_propagated"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.HAS_BURST" xilinx:valueSource="ip_propagated"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.HAS_CACHE" xilinx:valueSource="ip_propagated"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.HAS_LOCK" xilinx:valueSource="ip_propagated"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.HAS_PROT" xilinx:valueSource="ip_propagated"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.HAS_QOS" xilinx:valueSource="ip_propagated"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.HAS_BRESP" xilinx:valueSource="propagated"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.HAS_BURST" xilinx:valueSource="propagated"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.HAS_CACHE" xilinx:valueSource="propagated"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.HAS_LOCK" xilinx:valueSource="propagated"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.HAS_PROT" xilinx:valueSource="propagated"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.HAS_QOS" xilinx:valueSource="propagated"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.HAS_REGION" xilinx:valueSource="constant"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.HAS_WSTRB" xilinx:valueSource="ip_propagated"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.ID_WIDTH" xilinx:valueSource="constant_prop"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.HAS_WSTRB" xilinx:valueSource="propagated"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.ID_WIDTH" xilinx:valueSource="propagated"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.MAX_BURST_LENGTH" xilinx:valueSource="ip_propagated"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.NUM_READ_OUTSTANDING" xilinx:valueSource="constant"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.NUM_WRITE_OUTSTANDING" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.PROTOCOL" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.READ_WRITE_MODE" xilinx:valueSource="user_prop"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.READ_WRITE_MODE" xilinx:valueSource="propagated"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.RUSER_WIDTH" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.SUPPORTS_NARROW_BURST" xilinx:valueSource="constant_prop"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0.WUSER_WIDTH" xilinx:valueSource="constant"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0_ACLK.ASSOCIATED_BUSIF" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0_ACLK.CLK_DOMAIN" xilinx:valueSource="default_prop"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_HP0_ACLK.FREQ_HZ" xilinx:valueSource="user_prop"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.PCW_ACT_APU_PERIPHERAL_FREQMHZ" xilinx:valueSource="user"/>

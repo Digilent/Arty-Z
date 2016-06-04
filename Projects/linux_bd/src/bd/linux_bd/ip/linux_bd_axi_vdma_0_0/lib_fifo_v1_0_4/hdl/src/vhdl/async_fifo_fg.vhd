@@ -173,7 +173,7 @@
 --     - Added sleep, wr_rst_busy, and rd_rst_busy signals
 --     - Changed FULL_FLAGS_RST_VAL to '1'
 -- ^^^^^^
---     - Update to use fifo_generator_v13_0_1 (New parameter C_EN_SAFETY_CKT  is added with default value as 0 or disabled)
+--     - Update to use fifo_generator_v13_0_2 (New parameter C_EN_SAFETY_CKT  is added with default value as 0 or disabled)
 --
 -------------------------------------------------------------------------------
 library IEEE;
@@ -184,8 +184,8 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 USE IEEE.std_logic_arith.ALL;
 
 
-library fifo_generator_v13_0_1;
-use fifo_generator_v13_0_1.all;
+library fifo_generator_v13_1_0;
+use fifo_generator_v13_1_0.all;
 --library lib_fifo_v1_0_4;
 --use lib_fifo_v1_0_4.lib_fifo_pkg.all;
 --use lib_fifo_v1_0_4.family_support.all;
@@ -352,6 +352,9 @@ end function log2;
     Constant FAMILY_IS_SUPPORTED  : boolean := true; --not(FAMILY_NOT_SUPPORTED);
     
     
+     Constant C_DEFAULT_VALUE           : String  := "BlankString";  -- new for FIFO Gen
+     Constant C_PRIM_FIFO_TYPE           : String  := "512x36";  -- new for FIFO Gen
+     Constant RST_VAL                   : String  := "0";  -- new for FIFO Gen
 --    Constant FAM_IS_S3_V4_V5      : boolean := (equalIgnoringCase(FAMILY_TO_USE, "spartan3" ) or 
 --                                                equalIgnoringCase(FAMILY_TO_USE, "virtex4"  ) or 
 --                                                equalIgnoringCase(FAMILY_TO_USE, "virtex5")) and
@@ -381,9 +384,9 @@ end function log2;
     Constant FG_IMP_TYPE         : integer := 2;
     
     
-    Constant C_HAS_RST_INT  : integer  := if_then_else(C_EN_SAFETY_CKT = 1,0,1);
+    Constant C_HAS_RST_INT  : integer  := 1;--if_then_else(C_EN_SAFETY_CKT = 1,0,1);
 
-    Constant C_HAS_SRST_INT : integer  := if_then_else(C_EN_SAFETY_CKT = 1,1,0);
+    Constant C_HAS_SRST_INT : integer  := 0;--if_then_else(C_EN_SAFETY_CKT = 1,1,0);
     --Constant C_HAS_SRST_INT : integer  := 0 when (C_EN_SAFETY_CKT = 1) else 1;
     
   --Signals added to fix MTI and XSIM issues caused by fix for VCS issues not to use "LIBRARY_SCAN = TRUE"
@@ -714,14 +717,14 @@ begin --(architecture implementation)
          -- legacy BRAM implementations of an Async FIFo.
          --
          -------------------------------------------------------------------------------
-         I_ASYNC_FIFO_BRAM : entity fifo_generator_v13_0_1.fifo_generator_v13_0_1
+         I_ASYNC_FIFO_BRAM : entity fifo_generator_v13_1_0.fifo_generator_v13_1_0
             generic map(
               C_COMMON_CLOCK                 =>  0,   
               C_COUNT_TYPE                   =>  0,   
               C_DATA_COUNT_WIDTH             =>  ADJUSTED_WRCNT_WIDTH,   
-              C_DEFAULT_VALUE                =>  "BlankString",          
+              C_DEFAULT_VALUE                =>  C_DEFAULT_VALUE,--"BlankString",          
               C_DIN_WIDTH                    =>  C_DATA_WIDTH,   
-              C_DOUT_RST_VAL                 =>  "0",   
+              C_DOUT_RST_VAL                 =>  RST_VAL,--"0",   
               C_DOUT_WIDTH                   =>  C_DATA_WIDTH,   
               C_ENABLE_RLOCS                 =>  C_ENABLE_RLOCS,   
               C_FAMILY                       =>  FAMILY_TO_USE,             
@@ -745,12 +748,12 @@ begin --(architecture implementation)
               C_IMPLEMENTATION_TYPE          =>  FG_IMP_TYPE,     
               C_INIT_WR_PNTR_VAL             =>  0,   
               C_MEMORY_TYPE                  =>  FG_MEM_TYPE,      
-              C_MIF_FILE_NAME                =>  "BlankString",    
+              C_MIF_FILE_NAME                =>  C_DEFAULT_VALUE,    
               C_OPTIMIZATION_MODE            =>  0,   
               C_OVERFLOW_LOW                 =>  C_WR_ERR_LOW,   
               C_PRELOAD_LATENCY              =>  C_PRELOAD_LATENCY,   ----1, Fixed CR#658129   
               C_PRELOAD_REGS                 =>  C_PRELOAD_REGS,    ----0, Fixed CR#658129   
-              C_PRIM_FIFO_TYPE               =>  "512x36",  -- only used for V5 Hard FIFO   
+              C_PRIM_FIFO_TYPE               =>  C_PRIM_FIFO_TYPE,--"512x36",  -- only used for V5 Hard FIFO   
               C_PROG_EMPTY_THRESH_ASSERT_VAL =>  2,   
               C_PROG_EMPTY_THRESH_NEGATE_VAL =>  3,   
               C_PROG_EMPTY_TYPE              =>  0,   
@@ -1321,12 +1324,12 @@ begin --(architecture implementation)
          -- legacy BRAM implementations of an Async FIFo.
          --
          -------------------------------------------------------------------------------
-         I_ASYNC_FIFO_BRAM : entity fifo_generator_v13_0_1.fifo_generator_v13_0_1
+         I_ASYNC_FIFO_BRAM : entity fifo_generator_v13_1_0.fifo_generator_v13_1_0
             generic map(
               C_COMMON_CLOCK                 =>  0,                                              
               C_COUNT_TYPE                   =>  0,                                              
               C_DATA_COUNT_WIDTH             =>  C_WR_COUNT_WIDTH,                               
-              C_DEFAULT_VALUE                =>  "BlankString",                                  
+              C_DEFAULT_VALUE                =>  C_DEFAULT_VALUE,--"BlankString",                                  
               C_DIN_WIDTH                    =>  C_DATA_WIDTH,                                   
               C_DOUT_RST_VAL                 =>  "0",                                            
               C_DOUT_WIDTH                   =>  C_DATA_WIDTH,                                   
@@ -1352,12 +1355,12 @@ begin --(architecture implementation)
               C_IMPLEMENTATION_TYPE          =>  FG_IMP_TYPE,                                    
               C_INIT_WR_PNTR_VAL             =>  0,                                              
               C_MEMORY_TYPE                  =>  FG_MEM_TYPE,                                    
-              C_MIF_FILE_NAME                =>  "BlankString",                                  
+              C_MIF_FILE_NAME                =>  C_DEFAULT_VALUE,                                  
               C_OPTIMIZATION_MODE            =>  0,                                              
               C_OVERFLOW_LOW                 =>  C_WR_ERR_LOW,                                   
               C_PRELOAD_LATENCY              =>  C_PRELOAD_LATENCY,   ----1, Fixed CR#658129                                              
               C_PRELOAD_REGS                 =>  C_PRELOAD_REGS,    ----0, Fixed CR#658129                                              
-              C_PRIM_FIFO_TYPE               =>  "512x36",  -- only used for V5 Hard FIFO        
+              C_PRIM_FIFO_TYPE               =>  C_PRIM_FIFO_TYPE,--"512x36",  -- only used for V5 Hard FIFO        
               C_PROG_EMPTY_THRESH_ASSERT_VAL =>  2,                                              
               C_PROG_EMPTY_THRESH_NEGATE_VAL =>  3,                                              
               C_PROG_EMPTY_TYPE              =>  0,                                              

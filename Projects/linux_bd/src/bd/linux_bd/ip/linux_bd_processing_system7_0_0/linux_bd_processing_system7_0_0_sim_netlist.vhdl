@@ -1,521 +1,15 @@
--- Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
--- Date        : Sun May 29 23:57:39 2016
--- Host        : localhost.localdomain running 64-bit Fedora release 22 (Twenty Two)
+-- Tool Version: Vivado v.2016.1 (win64) Build 1538259 Fri Apr  8 15:45:27 MDT 2016
+-- Date        : Fri Jun 03 18:24:57 2016
+-- Host        : WK73 running 64-bit Service Pack 1  (build 7601)
 -- Command     : write_vhdl -force -mode funcsim
---               /home/samb/sam_work/git/digilent/Arty-Z/Projects/linux_bd/src/bd/linux_bd/ip/linux_bd_processing_system7_0_0/linux_bd_processing_system7_0_0_sim_netlist.vhdl
+--               C:/sam_work/git/digilent/Arty-Z/Projects/linux_bd/src/bd/linux_bd/ip/linux_bd_processing_system7_0_0/linux_bd_processing_system7_0_0_sim_netlist.vhdl
 -- Design      : linux_bd_processing_system7_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xc7z020clg400-1
 -- --------------------------------------------------------------------------------
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
-entity linux_bd_processing_system7_0_0_xlnx_axi_wrshim_unwrap is
-  port (
-    S_AXI_GP0_AWREADY : out STD_LOGIC;
-    S_AXI_GP0_AWVALID_shim : out STD_LOGIC;
-    S_AXI_GP0_WVALID_shim : out STD_LOGIC;
-    S_AXI_GP0_WREADY : out STD_LOGIC;
-    S_AXI_GP0_ACLK : in STD_LOGIC;
-    S_AXI_GP0_AWVALID : in STD_LOGIC;
-    S_AXI_GP0_WVALID : in STD_LOGIC;
-    S_AXI_GP0_AWREADY_shim : in STD_LOGIC;
-    S_AXI_GP0_WREADY_shim : in STD_LOGIC;
-    store_first_beat_reg_0 : in STD_LOGIC;
-    S_AXI_GP0_WLAST : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of linux_bd_processing_system7_0_0_xlnx_axi_wrshim_unwrap : entity is "xlnx_axi_wrshim_unwrap";
-end linux_bd_processing_system7_0_0_xlnx_axi_wrshim_unwrap;
-
-architecture STRUCTURE of linux_bd_processing_system7_0_0_xlnx_axi_wrshim_unwrap is
-  signal burst_still_active : STD_LOGIC;
-  signal burst_still_active_i_1_n_0 : STD_LOGIC;
-  signal burst_still_active_i_2_n_0 : STD_LOGIC;
-  signal p_6_in : STD_LOGIC;
-  signal previous_cmd_done : STD_LOGIC;
-  signal previous_cmd_done_i_1_n_0 : STD_LOGIC;
-  signal previous_cmd_done_i_2_n_0 : STD_LOGIC;
-  signal stall_awvalid : STD_LOGIC;
-  signal stall_awvalid_i_1_n_0 : STD_LOGIC;
-  signal stall_awvalid_i_2_n_0 : STD_LOGIC;
-  signal store_first_beat : STD_LOGIC;
-  signal store_first_beat_i_1_n_0 : STD_LOGIC;
-  signal wlast_detect : STD_LOGIC;
-  signal wlast_detect_i_1_n_0 : STD_LOGIC;
-  attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of PS7_i_i_1 : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of PS7_i_i_2 : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of burst_still_active_i_2 : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of previous_cmd_done_i_2 : label is "soft_lutpair0";
-begin
-PS7_i_i_1: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"8A888888"
-    )
-        port map (
-      I0 => S_AXI_GP0_AWVALID,
-      I1 => store_first_beat,
-      I2 => stall_awvalid,
-      I3 => wlast_detect,
-      I4 => S_AXI_GP0_WVALID,
-      O => S_AXI_GP0_AWVALID_shim
-    );
-PS7_i_i_2: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"AAAA8000"
-    )
-        port map (
-      I0 => S_AXI_GP0_WVALID,
-      I1 => previous_cmd_done,
-      I2 => wlast_detect,
-      I3 => S_AXI_GP0_AWVALID,
-      I4 => burst_still_active,
-      O => S_AXI_GP0_WVALID_shim
-    );
-S_AXI_GP0_AWREADY_INST_0: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"8A888888"
-    )
-        port map (
-      I0 => S_AXI_GP0_AWREADY_shim,
-      I1 => store_first_beat,
-      I2 => stall_awvalid,
-      I3 => wlast_detect,
-      I4 => S_AXI_GP0_WVALID,
-      O => S_AXI_GP0_AWREADY
-    );
-S_AXI_GP0_WREADY_INST_0: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"AAAA8000"
-    )
-        port map (
-      I0 => S_AXI_GP0_WREADY_shim,
-      I1 => previous_cmd_done,
-      I2 => wlast_detect,
-      I3 => S_AXI_GP0_AWVALID,
-      I4 => burst_still_active,
-      O => S_AXI_GP0_WREADY
-    );
-burst_still_active_i_1: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7770FFF000000000"
-    )
-        port map (
-      I0 => S_AXI_GP0_WLAST,
-      I1 => S_AXI_GP0_WREADY_shim,
-      I2 => burst_still_active_i_2_n_0,
-      I3 => burst_still_active,
-      I4 => S_AXI_GP0_WVALID,
-      I5 => store_first_beat_reg_0,
-      O => burst_still_active_i_1_n_0
-    );
-burst_still_active_i_2: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"80"
-    )
-        port map (
-      I0 => previous_cmd_done,
-      I1 => wlast_detect,
-      I2 => S_AXI_GP0_AWVALID,
-      O => burst_still_active_i_2_n_0
-    );
-burst_still_active_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => S_AXI_GP0_ACLK,
-      CE => '1',
-      D => burst_still_active_i_1_n_0,
-      Q => burst_still_active,
-      R => '0'
-    );
-previous_cmd_done_i_1: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"BBFBBB3B"
-    )
-        port map (
-      I0 => previous_cmd_done,
-      I1 => store_first_beat_reg_0,
-      I2 => S_AXI_GP0_AWVALID,
-      I3 => previous_cmd_done_i_2_n_0,
-      I4 => S_AXI_GP0_AWREADY_shim,
-      O => previous_cmd_done_i_1_n_0
-    );
-previous_cmd_done_i_2: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"00F7"
-    )
-        port map (
-      I0 => S_AXI_GP0_WVALID,
-      I1 => wlast_detect,
-      I2 => stall_awvalid,
-      I3 => store_first_beat,
-      O => previous_cmd_done_i_2_n_0
-    );
-previous_cmd_done_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => S_AXI_GP0_ACLK,
-      CE => '1',
-      D => previous_cmd_done_i_1_n_0,
-      Q => previous_cmd_done,
-      R => '0'
-    );
-stall_awvalid_i_1: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0E00"
-    )
-        port map (
-      I0 => stall_awvalid,
-      I1 => stall_awvalid_i_2_n_0,
-      I2 => S_AXI_GP0_WREADY_shim,
-      I3 => store_first_beat_reg_0,
-      O => stall_awvalid_i_1_n_0
-    );
-stall_awvalid_i_2: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AAAA008000000000"
-    )
-        port map (
-      I0 => S_AXI_GP0_AWVALID,
-      I1 => S_AXI_GP0_WVALID,
-      I2 => wlast_detect,
-      I3 => stall_awvalid,
-      I4 => store_first_beat,
-      I5 => S_AXI_GP0_AWREADY_shim,
-      O => stall_awvalid_i_2_n_0
-    );
-stall_awvalid_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => S_AXI_GP0_ACLK,
-      CE => '1',
-      D => stall_awvalid_i_1_n_0,
-      Q => stall_awvalid,
-      R => '0'
-    );
-store_first_beat_i_1: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"00EA0000"
-    )
-        port map (
-      I0 => store_first_beat,
-      I1 => S_AXI_GP0_WVALID,
-      I2 => wlast_detect,
-      I3 => S_AXI_GP0_AWREADY_shim,
-      I4 => store_first_beat_reg_0,
-      O => store_first_beat_i_1_n_0
-    );
-store_first_beat_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => S_AXI_GP0_ACLK,
-      CE => '1',
-      D => store_first_beat_i_1_n_0,
-      Q => store_first_beat,
-      R => '0'
-    );
-wlast_detect_i_1: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"EF4F"
-    )
-        port map (
-      I0 => p_6_in,
-      I1 => wlast_detect,
-      I2 => store_first_beat_reg_0,
-      I3 => S_AXI_GP0_WLAST,
-      O => wlast_detect_i_1_n_0
-    );
-wlast_detect_i_2: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"A888888800000000"
-    )
-        port map (
-      I0 => S_AXI_GP0_WVALID,
-      I1 => burst_still_active,
-      I2 => S_AXI_GP0_AWVALID,
-      I3 => wlast_detect,
-      I4 => previous_cmd_done,
-      I5 => S_AXI_GP0_WREADY_shim,
-      O => p_6_in
-    );
-wlast_detect_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => S_AXI_GP0_ACLK,
-      CE => '1',
-      D => wlast_detect_i_1_n_0,
-      Q => wlast_detect,
-      R => '0'
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
-entity linux_bd_processing_system7_0_0_xlnx_axi_wrshim_unwrap_0 is
-  port (
-    S_AXI_GP1_AWREADY : out STD_LOGIC;
-    S_AXI_GP1_AWVALID_shim : out STD_LOGIC;
-    S_AXI_GP1_WVALID_shim : out STD_LOGIC;
-    S_AXI_GP1_WREADY : out STD_LOGIC;
-    S_AXI_GP1_ACLK : in STD_LOGIC;
-    S_AXI_GP1_AWVALID : in STD_LOGIC;
-    S_AXI_GP1_WVALID : in STD_LOGIC;
-    S_AXI_GP1_AWREADY_shim : in STD_LOGIC;
-    S_AXI_GP1_WREADY_shim : in STD_LOGIC;
-    store_first_beat_reg_0 : in STD_LOGIC;
-    S_AXI_GP1_WLAST : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of linux_bd_processing_system7_0_0_xlnx_axi_wrshim_unwrap_0 : entity is "xlnx_axi_wrshim_unwrap";
-end linux_bd_processing_system7_0_0_xlnx_axi_wrshim_unwrap_0;
-
-architecture STRUCTURE of linux_bd_processing_system7_0_0_xlnx_axi_wrshim_unwrap_0 is
-  signal burst_still_active : STD_LOGIC;
-  signal \burst_still_active_i_1__0_n_0\ : STD_LOGIC;
-  signal \burst_still_active_i_2__0_n_0\ : STD_LOGIC;
-  signal p_6_in : STD_LOGIC;
-  signal previous_cmd_done : STD_LOGIC;
-  signal previous_cmd_done_i_1_n_0 : STD_LOGIC;
-  signal \previous_cmd_done_i_2__0_n_0\ : STD_LOGIC;
-  signal stall_awvalid : STD_LOGIC;
-  signal \stall_awvalid_i_1__0_n_0\ : STD_LOGIC;
-  signal \stall_awvalid_i_2__0_n_0\ : STD_LOGIC;
-  signal store_first_beat : STD_LOGIC;
-  signal \store_first_beat_i_1__0_n_0\ : STD_LOGIC;
-  signal wlast_detect : STD_LOGIC;
-  signal \wlast_detect_i_1__0_n_0\ : STD_LOGIC;
-  attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of PS7_i_i_3 : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of PS7_i_i_4 : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \burst_still_active_i_2__0\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \previous_cmd_done_i_2__0\ : label is "soft_lutpair2";
-begin
-PS7_i_i_3: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"8A888888"
-    )
-        port map (
-      I0 => S_AXI_GP1_AWVALID,
-      I1 => store_first_beat,
-      I2 => stall_awvalid,
-      I3 => wlast_detect,
-      I4 => S_AXI_GP1_WVALID,
-      O => S_AXI_GP1_AWVALID_shim
-    );
-PS7_i_i_4: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"AAAA8000"
-    )
-        port map (
-      I0 => S_AXI_GP1_WVALID,
-      I1 => previous_cmd_done,
-      I2 => wlast_detect,
-      I3 => S_AXI_GP1_AWVALID,
-      I4 => burst_still_active,
-      O => S_AXI_GP1_WVALID_shim
-    );
-S_AXI_GP1_AWREADY_INST_0: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"8A888888"
-    )
-        port map (
-      I0 => S_AXI_GP1_AWREADY_shim,
-      I1 => store_first_beat,
-      I2 => stall_awvalid,
-      I3 => wlast_detect,
-      I4 => S_AXI_GP1_WVALID,
-      O => S_AXI_GP1_AWREADY
-    );
-S_AXI_GP1_WREADY_INST_0: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"AAAA8000"
-    )
-        port map (
-      I0 => S_AXI_GP1_WREADY_shim,
-      I1 => previous_cmd_done,
-      I2 => wlast_detect,
-      I3 => S_AXI_GP1_AWVALID,
-      I4 => burst_still_active,
-      O => S_AXI_GP1_WREADY
-    );
-\burst_still_active_i_1__0\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7770FFF000000000"
-    )
-        port map (
-      I0 => S_AXI_GP1_WLAST,
-      I1 => S_AXI_GP1_WREADY_shim,
-      I2 => \burst_still_active_i_2__0_n_0\,
-      I3 => burst_still_active,
-      I4 => S_AXI_GP1_WVALID,
-      I5 => store_first_beat_reg_0,
-      O => \burst_still_active_i_1__0_n_0\
-    );
-\burst_still_active_i_2__0\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"80"
-    )
-        port map (
-      I0 => previous_cmd_done,
-      I1 => wlast_detect,
-      I2 => S_AXI_GP1_AWVALID,
-      O => \burst_still_active_i_2__0_n_0\
-    );
-burst_still_active_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => S_AXI_GP1_ACLK,
-      CE => '1',
-      D => \burst_still_active_i_1__0_n_0\,
-      Q => burst_still_active,
-      R => '0'
-    );
-previous_cmd_done_i_1: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"BBFBBB3B"
-    )
-        port map (
-      I0 => previous_cmd_done,
-      I1 => store_first_beat_reg_0,
-      I2 => S_AXI_GP1_AWVALID,
-      I3 => \previous_cmd_done_i_2__0_n_0\,
-      I4 => S_AXI_GP1_AWREADY_shim,
-      O => previous_cmd_done_i_1_n_0
-    );
-\previous_cmd_done_i_2__0\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"00F7"
-    )
-        port map (
-      I0 => S_AXI_GP1_WVALID,
-      I1 => wlast_detect,
-      I2 => stall_awvalid,
-      I3 => store_first_beat,
-      O => \previous_cmd_done_i_2__0_n_0\
-    );
-previous_cmd_done_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => S_AXI_GP1_ACLK,
-      CE => '1',
-      D => previous_cmd_done_i_1_n_0,
-      Q => previous_cmd_done,
-      R => '0'
-    );
-\stall_awvalid_i_1__0\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0E00"
-    )
-        port map (
-      I0 => stall_awvalid,
-      I1 => \stall_awvalid_i_2__0_n_0\,
-      I2 => S_AXI_GP1_WREADY_shim,
-      I3 => store_first_beat_reg_0,
-      O => \stall_awvalid_i_1__0_n_0\
-    );
-\stall_awvalid_i_2__0\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AAAA008000000000"
-    )
-        port map (
-      I0 => S_AXI_GP1_AWVALID,
-      I1 => S_AXI_GP1_WVALID,
-      I2 => wlast_detect,
-      I3 => stall_awvalid,
-      I4 => store_first_beat,
-      I5 => S_AXI_GP1_AWREADY_shim,
-      O => \stall_awvalid_i_2__0_n_0\
-    );
-stall_awvalid_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => S_AXI_GP1_ACLK,
-      CE => '1',
-      D => \stall_awvalid_i_1__0_n_0\,
-      Q => stall_awvalid,
-      R => '0'
-    );
-\store_first_beat_i_1__0\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"00EA0000"
-    )
-        port map (
-      I0 => store_first_beat,
-      I1 => S_AXI_GP1_WVALID,
-      I2 => wlast_detect,
-      I3 => S_AXI_GP1_AWREADY_shim,
-      I4 => store_first_beat_reg_0,
-      O => \store_first_beat_i_1__0_n_0\
-    );
-store_first_beat_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => S_AXI_GP1_ACLK,
-      CE => '1',
-      D => \store_first_beat_i_1__0_n_0\,
-      Q => store_first_beat,
-      R => '0'
-    );
-\wlast_detect_i_1__0\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"EF4F"
-    )
-        port map (
-      I0 => p_6_in,
-      I1 => wlast_detect,
-      I2 => store_first_beat_reg_0,
-      I3 => S_AXI_GP1_WLAST,
-      O => \wlast_detect_i_1__0_n_0\
-    );
-\wlast_detect_i_2__0\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"A888888800000000"
-    )
-        port map (
-      I0 => S_AXI_GP1_WVALID,
-      I1 => burst_still_active,
-      I2 => S_AXI_GP1_AWVALID,
-      I3 => wlast_detect,
-      I4 => previous_cmd_done,
-      I5 => S_AXI_GP1_WREADY_shim,
-      O => p_6_in
-    );
-wlast_detect_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => S_AXI_GP1_ACLK,
-      CE => '1',
-      D => \wlast_detect_i_1__0_n_0\,
-      Q => wlast_detect,
-      R => '0'
-    );
-end STRUCTURE;
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
@@ -1105,7 +599,7 @@ entity linux_bd_processing_system7_0_0_processing_system7_v5_5_processing_system
     IRQ_P2F_SPI1 : out STD_LOGIC;
     IRQ_P2F_UART1 : out STD_LOGIC;
     IRQ_P2F_CAN1 : out STD_LOGIC;
-    IRQ_F2P : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    IRQ_F2P : in STD_LOGIC_VECTOR ( 6 downto 0 );
     Core0_nFIQ : in STD_LOGIC;
     Core0_nIRQ : in STD_LOGIC;
     Core1_nFIQ : in STD_LOGIC;
@@ -1208,8 +702,6 @@ entity linux_bd_processing_system7_0_0_processing_system7_v5_5_processing_system
     PS_CLK : inout STD_LOGIC;
     PS_PORB : inout STD_LOGIC
   );
-  attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of linux_bd_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is "processing_system7_v5.5 ,processing_system7_v5.5_user_configuration,{ PCW_UIPARAM_DDR_FREQ_MHZ=525, PCW_UIPARAM_DDR_BANK_ADDR_COUNT=3, PCW_UIPARAM_DDR_ROW_ADDR_COUNT=14, PCW_UIPARAM_DDR_COL_ADDR_COUNT=10, PCW_UIPARAM_DDR_CL=7, PCW_UIPARAM_DDR_CWL=6, PCW_UIPARAM_DDR_T_RCD=7, PCW_UIPARAM_DDR_T_RP=7, PCW_UIPARAM_DDR_T_RC=48.75, PCW_UIPARAM_DDR_T_RAS_MIN=35.0, PCW_UIPARAM_DDR_T_FAW=40.0, PCW_UIPARAM_DDR_AL=0, PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0=0.040, PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1=0.058, PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2=-0.009, PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3=-0.033, PCW_UIPARAM_DDR_BOARD_DELAY0=0.223, PCW_UIPARAM_DDR_BOARD_DELAY1=0.212, PCW_UIPARAM_DDR_BOARD_DELAY2=0.085, PCW_UIPARAM_DDR_BOARD_DELAY3=0.092, PCW_UIPARAM_DDR_DQS_0_LENGTH_MM=15.6, PCW_UIPARAM_DDR_DQS_1_LENGTH_MM=18.8, PCW_UIPARAM_DDR_DQS_2_LENGTH_MM=0, PCW_UIPARAM_DDR_DQS_3_LENGTH_MM=0, PCW_UIPARAM_DDR_DQ_0_LENGTH_MM=16.5, PCW_UIPARAM_DDR_DQ_1_LENGTH_MM=18, PCW_UIPARAM_DDR_DQ_2_LENGTH_MM=0, PCW_UIPARAM_DDR_DQ_3_LENGTH_MM=0, PCW_UIPARAM_DDR_CLOCK_0_LENGTH_MM=25.8, PCW_UIPARAM_DDR_CLOCK_1_LENGTH_MM=25.8, PCW_UIPARAM_DDR_CLOCK_2_LENGTH_MM=0, PCW_UIPARAM_DDR_CLOCK_3_LENGTH_MM=0, PCW_UIPARAM_DDR_DQS_0_PACKAGE_LENGTH=105.056, PCW_UIPARAM_DDR_DQS_1_PACKAGE_LENGTH=66.904, PCW_UIPARAM_DDR_DQS_2_PACKAGE_LENGTH=89.1715, PCW_UIPARAM_DDR_DQS_3_PACKAGE_LENGTH=113.63, PCW_UIPARAM_DDR_DQ_0_PACKAGE_LENGTH=98.503, PCW_UIPARAM_DDR_DQ_1_PACKAGE_LENGTH=68.5855, PCW_UIPARAM_DDR_DQ_2_PACKAGE_LENGTH=90.295, PCW_UIPARAM_DDR_DQ_3_PACKAGE_LENGTH=103.977, PCW_UIPARAM_DDR_CLOCK_0_PACKAGE_LENGTH=80.4535, PCW_UIPARAM_DDR_CLOCK_1_PACKAGE_LENGTH=80.4535, PCW_UIPARAM_DDR_CLOCK_2_PACKAGE_LENGTH=80.4535, PCW_UIPARAM_DDR_CLOCK_3_PACKAGE_LENGTH=80.4535, PCW_UIPARAM_DDR_DQS_0_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_DQS_1_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_DQS_2_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_DQS_3_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_DQ_0_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_DQ_1_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_DQ_2_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_DQ_3_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_CLOCK_0_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_CLOCK_1_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_CLOCK_2_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_CLOCK_3_PROPOGATION_DELAY=160, PCW_CRYSTAL_PERIPHERAL_FREQMHZ=50, PCW_APU_PERIPHERAL_FREQMHZ=650, PCW_DCI_PERIPHERAL_FREQMHZ=10.159, PCW_QSPI_PERIPHERAL_FREQMHZ=200, PCW_SMC_PERIPHERAL_FREQMHZ=100, PCW_USB0_PERIPHERAL_FREQMHZ=60, PCW_USB1_PERIPHERAL_FREQMHZ=60, PCW_SDIO_PERIPHERAL_FREQMHZ=50, PCW_UART_PERIPHERAL_FREQMHZ=100, PCW_SPI_PERIPHERAL_FREQMHZ=166.666666, PCW_CAN_PERIPHERAL_FREQMHZ=100, PCW_CAN0_PERIPHERAL_FREQMHZ=-1, PCW_CAN1_PERIPHERAL_FREQMHZ=-1, PCW_WDT_PERIPHERAL_FREQMHZ=133.333333, PCW_TTC_PERIPHERAL_FREQMHZ=50, PCW_TTC0_CLK0_PERIPHERAL_FREQMHZ=133.333333, PCW_TTC0_CLK1_PERIPHERAL_FREQMHZ=133.333333, PCW_TTC0_CLK2_PERIPHERAL_FREQMHZ=133.333333, PCW_TTC1_CLK0_PERIPHERAL_FREQMHZ=133.333333, PCW_TTC1_CLK1_PERIPHERAL_FREQMHZ=133.333333, PCW_TTC1_CLK2_PERIPHERAL_FREQMHZ=133.333333, PCW_PCAP_PERIPHERAL_FREQMHZ=200, PCW_TPIU_PERIPHERAL_FREQMHZ=200, PCW_FPGA0_PERIPHERAL_FREQMHZ=100, PCW_FPGA1_PERIPHERAL_FREQMHZ=142, PCW_FPGA2_PERIPHERAL_FREQMHZ=50, PCW_FPGA3_PERIPHERAL_FREQMHZ=50, PCW_OVERRIDE_BASIC_CLOCK=0, PCW_ARMPLL_CTRL_FBDIV=26, PCW_IOPLL_CTRL_FBDIV=20, PCW_DDRPLL_CTRL_FBDIV=21, PCW_CPU_CPU_PLL_FREQMHZ=1300.000, PCW_IO_IO_PLL_FREQMHZ=1000.000, PCW_DDR_DDR_PLL_FREQMHZ=1050.000, PCW_USE_M_AXI_GP0=1, PCW_USE_M_AXI_GP1=0, PCW_USE_S_AXI_GP0=0, PCW_USE_S_AXI_GP1=0, PCW_USE_S_AXI_ACP=0, PCW_USE_S_AXI_HP0=1, PCW_USE_S_AXI_HP1=0, PCW_USE_S_AXI_HP2=0, PCW_USE_S_AXI_HP3=0, PCW_M_AXI_GP0_FREQMHZ=10, PCW_M_AXI_GP1_FREQMHZ=10, PCW_S_AXI_GP0_FREQMHZ=10, PCW_S_AXI_GP1_FREQMHZ=10, PCW_S_AXI_ACP_FREQMHZ=10, PCW_S_AXI_HP0_FREQMHZ=10, PCW_S_AXI_HP1_FREQMHZ=10, PCW_S_AXI_HP2_FREQMHZ=10, PCW_S_AXI_HP3_FREQMHZ=10, PCW_USE_CROSS_TRIGGER=0, PCW_UART0_BAUD_RATE=115200, PCW_UART1_BAUD_RATE=115200, PCW_S_AXI_HP0_DATA_WIDTH=64, PCW_S_AXI_HP1_DATA_WIDTH=64, PCW_S_AXI_HP2_DATA_WIDTH=64, PCW_S_AXI_HP3_DATA_WIDTH=64, PCW_IRQ_F2P_MODE=DIRECT, PCW_PRESET_BANK0_VOLTAGE=LVCMOS 3.3V, PCW_PRESET_BANK1_VOLTAGE=LVCMOS 1.8V, PCW_UIPARAM_DDR_ENABLE=1, PCW_UIPARAM_DDR_ADV_ENABLE=0, PCW_UIPARAM_DDR_MEMORY_TYPE=DDR 3, PCW_UIPARAM_DDR_ECC=Disabled, PCW_UIPARAM_DDR_BUS_WIDTH=16 Bit, PCW_UIPARAM_DDR_BL=8, PCW_UIPARAM_DDR_HIGH_TEMP=Normal (0-85), PCW_UIPARAM_DDR_PARTNO=MT41K128M16 JT-125, PCW_UIPARAM_DDR_DRAM_WIDTH=16 Bits, PCW_UIPARAM_DDR_DEVICE_CAPACITY=2048 MBits, PCW_UIPARAM_DDR_SPEED_BIN=DDR3_1066F, PCW_UIPARAM_DDR_TRAIN_WRITE_LEVEL=1, PCW_UIPARAM_DDR_TRAIN_READ_GATE=1, PCW_UIPARAM_DDR_TRAIN_DATA_EYE=1, PCW_UIPARAM_DDR_CLOCK_STOP_EN=0, PCW_UIPARAM_DDR_USE_INTERNAL_VREF=0, PCW_DDR_PORT0_HPR_ENABLE=0, PCW_DDR_PORT1_HPR_ENABLE=0, PCW_DDR_PORT2_HPR_ENABLE=0, PCW_DDR_PORT3_HPR_ENABLE=0, PCW_DDR_HPRLPR_QUEUE_PARTITION=HPR(0)/LPR(32), PCW_DDR_LPR_TO_CRITICAL_PRIORITY_LEVEL=2, PCW_DDR_HPR_TO_CRITICAL_PRIORITY_LEVEL=15, PCW_DDR_WRITE_TO_CRITICAL_PRIORITY_LEVEL=2, PCW_NAND_PERIPHERAL_ENABLE=0, PCW_NAND_GRP_D8_ENABLE=0, PCW_NOR_PERIPHERAL_ENABLE=0, PCW_NOR_GRP_A25_ENABLE=0, PCW_NOR_GRP_CS0_ENABLE=0, PCW_NOR_GRP_SRAM_CS0_ENABLE=0, PCW_NOR_GRP_CS1_ENABLE=0, PCW_NOR_GRP_SRAM_CS1_ENABLE=0, PCW_NOR_GRP_SRAM_INT_ENABLE=0, PCW_QSPI_PERIPHERAL_ENABLE=1, PCW_QSPI_QSPI_IO=MIO 1 .. 6, PCW_QSPI_GRP_SINGLE_SS_ENABLE=1, PCW_QSPI_GRP_SINGLE_SS_IO=MIO 1 .. 6, PCW_QSPI_GRP_SS1_ENABLE=0, PCW_QSPI_GRP_IO1_ENABLE=0, PCW_QSPI_GRP_FBCLK_ENABLE=1, PCW_QSPI_GRP_FBCLK_IO=MIO 8, PCW_QSPI_INTERNAL_HIGHADDRESS=0xFCFFFFFF, PCW_ENET0_PERIPHERAL_ENABLE=1, PCW_ENET0_ENET0_IO=MIO 16 .. 27, PCW_ENET0_GRP_MDIO_ENABLE=1, PCW_ENET0_RESET_ENABLE=1, PCW_ENET0_RESET_IO=MIO 9, PCW_ENET1_PERIPHERAL_ENABLE=0, PCW_ENET1_GRP_MDIO_ENABLE=0, PCW_ENET1_RESET_ENABLE=0, PCW_SD0_PERIPHERAL_ENABLE=1, PCW_SD0_SD0_IO=MIO 40 .. 45, PCW_SD0_GRP_CD_ENABLE=1, PCW_SD0_GRP_CD_IO=MIO 47, PCW_SD0_GRP_WP_ENABLE=0, PCW_SD0_GRP_POW_ENABLE=0, PCW_SD1_PERIPHERAL_ENABLE=0, PCW_SD1_GRP_CD_ENABLE=0, PCW_SD1_GRP_WP_ENABLE=0, PCW_SD1_GRP_POW_ENABLE=0, PCW_UART0_PERIPHERAL_ENABLE=1, PCW_UART0_UART0_IO=MIO 14 .. 15, PCW_UART0_GRP_FULL_ENABLE=0, PCW_UART1_PERIPHERAL_ENABLE=0, PCW_UART1_GRP_FULL_ENABLE=0, PCW_SPI0_PERIPHERAL_ENABLE=1, PCW_SPI0_SPI0_IO=EMIO, PCW_SPI0_GRP_SS0_ENABLE=1, PCW_SPI0_GRP_SS0_IO=EMIO, PCW_SPI0_GRP_SS1_ENABLE=1, PCW_SPI0_GRP_SS1_IO=EMIO, PCW_SPI0_GRP_SS2_ENABLE=1, PCW_SPI0_GRP_SS2_IO=EMIO, PCW_SPI1_PERIPHERAL_ENABLE=0, PCW_SPI1_GRP_SS0_ENABLE=0, PCW_SPI1_GRP_SS1_ENABLE=0, PCW_SPI1_GRP_SS2_ENABLE=0, PCW_CAN0_PERIPHERAL_ENABLE=0, PCW_CAN0_GRP_CLK_ENABLE=0, PCW_CAN1_PERIPHERAL_ENABLE=0, PCW_CAN1_GRP_CLK_ENABLE=0, PCW_TRACE_PERIPHERAL_ENABLE=0, PCW_TRACE_GRP_2BIT_ENABLE=0, PCW_TRACE_GRP_4BIT_ENABLE=0, PCW_TRACE_GRP_8BIT_ENABLE=0, PCW_TRACE_GRP_16BIT_ENABLE=0, PCW_TRACE_GRP_32BIT_ENABLE=0, PCW_WDT_PERIPHERAL_ENABLE=0, PCW_TTC0_PERIPHERAL_ENABLE=0, PCW_TTC1_PERIPHERAL_ENABLE=0, PCW_PJTAG_PERIPHERAL_ENABLE=0, PCW_USB0_PERIPHERAL_ENABLE=1, PCW_USB0_USB0_IO=MIO 28 .. 39, PCW_USB0_RESET_ENABLE=1, PCW_USB0_RESET_IO=MIO 46, PCW_USB1_PERIPHERAL_ENABLE=0, PCW_USB1_RESET_ENABLE=0, PCW_I2C0_PERIPHERAL_ENABLE=1, PCW_I2C0_I2C0_IO=EMIO, PCW_I2C0_GRP_INT_ENABLE=1, PCW_I2C0_GRP_INT_IO=EMIO, PCW_I2C0_RESET_ENABLE=0, PCW_I2C1_PERIPHERAL_ENABLE=1, PCW_I2C1_I2C1_IO=EMIO, PCW_I2C1_GRP_INT_ENABLE=1, PCW_I2C1_GRP_INT_IO=EMIO, PCW_I2C1_RESET_ENABLE=0, PCW_GPIO_PERIPHERAL_ENABLE=0, PCW_GPIO_MIO_GPIO_ENABLE=1, PCW_GPIO_MIO_GPIO_IO=MIO, PCW_GPIO_EMIO_GPIO_ENABLE=1, PCW_GPIO_EMIO_GPIO_IO=6, PCW_APU_CLK_RATIO_ENABLE=6:2:1, PCW_ENET0_PERIPHERAL_FREQMHZ=1000 Mbps, PCW_ENET1_PERIPHERAL_FREQMHZ=1000 Mbps, PCW_CPU_PERIPHERAL_CLKSRC=ARM PLL, PCW_DDR_PERIPHERAL_CLKSRC=DDR PLL, PCW_SMC_PERIPHERAL_CLKSRC=IO PLL, PCW_QSPI_PERIPHERAL_CLKSRC=IO PLL, PCW_SDIO_PERIPHERAL_CLKSRC=IO PLL, PCW_UART_PERIPHERAL_CLKSRC=IO PLL, PCW_SPI_PERIPHERAL_CLKSRC=IO PLL, PCW_CAN_PERIPHERAL_CLKSRC=IO PLL, PCW_FCLK0_PERIPHERAL_CLKSRC=IO PLL, PCW_FCLK1_PERIPHERAL_CLKSRC=IO PLL, PCW_FCLK2_PERIPHERAL_CLKSRC=IO PLL, PCW_FCLK3_PERIPHERAL_CLKSRC=IO PLL, PCW_ENET0_PERIPHERAL_CLKSRC=IO PLL, PCW_ENET1_PERIPHERAL_CLKSRC=IO PLL, PCW_CAN0_PERIPHERAL_CLKSRC=External, PCW_CAN1_PERIPHERAL_CLKSRC=External, PCW_TPIU_PERIPHERAL_CLKSRC=External, PCW_TTC0_CLK0_PERIPHERAL_CLKSRC=CPU_1X, PCW_TTC0_CLK1_PERIPHERAL_CLKSRC=CPU_1X, PCW_TTC0_CLK2_PERIPHERAL_CLKSRC=CPU_1X, PCW_TTC1_CLK0_PERIPHERAL_CLKSRC=CPU_1X, PCW_TTC1_CLK1_PERIPHERAL_CLKSRC=CPU_1X, PCW_TTC1_CLK2_PERIPHERAL_CLKSRC=CPU_1X, PCW_WDT_PERIPHERAL_CLKSRC=CPU_1X, PCW_DCI_PERIPHERAL_CLKSRC=DDR PLL, PCW_PCAP_PERIPHERAL_CLKSRC=IO PLL, PCW_USB_RESET_POLARITY=Active Low, PCW_ENET_RESET_POLARITY=Active Low, PCW_I2C_RESET_POLARITY=Active Low, PCW_FPGA_FCLK0_ENABLE=1, PCW_FPGA_FCLK1_ENABLE=1, PCW_FPGA_FCLK2_ENABLE=0, PCW_FPGA_FCLK3_ENABLE=0, PCW_NOR_SRAM_CS0_T_TR=1, PCW_NOR_SRAM_CS0_T_PC=1, PCW_NOR_SRAM_CS0_T_WP=1, PCW_NOR_SRAM_CS0_T_CEOE=1, PCW_NOR_SRAM_CS0_T_WC=11, PCW_NOR_SRAM_CS0_T_RC=11, PCW_NOR_SRAM_CS0_WE_TIME=0, PCW_NOR_SRAM_CS1_T_TR=1, PCW_NOR_SRAM_CS1_T_PC=1, PCW_NOR_SRAM_CS1_T_WP=1, PCW_NOR_SRAM_CS1_T_CEOE=1, PCW_NOR_SRAM_CS1_T_WC=11, PCW_NOR_SRAM_CS1_T_RC=11, PCW_NOR_SRAM_CS1_WE_TIME=0, PCW_NOR_CS0_T_TR=1, PCW_NOR_CS0_T_PC=1, PCW_NOR_CS0_T_WP=1, PCW_NOR_CS0_T_CEOE=1, PCW_NOR_CS0_T_WC=11, PCW_NOR_CS0_T_RC=11, PCW_NOR_CS0_WE_TIME=0, PCW_NOR_CS1_T_TR=1, PCW_NOR_CS1_T_PC=1, PCW_NOR_CS1_T_WP=1, PCW_NOR_CS1_T_CEOE=1, PCW_NOR_CS1_T_WC=11, PCW_NOR_CS1_T_RC=11, PCW_NOR_CS1_WE_TIME=0, PCW_NAND_CYCLES_T_RR=1, PCW_NAND_CYCLES_T_AR=1, PCW_NAND_CYCLES_T_CLR=1, PCW_NAND_CYCLES_T_WP=1, PCW_NAND_CYCLES_T_REA=1, PCW_NAND_CYCLES_T_WC=11, PCW_NAND_CYCLES_T_RC=11 }";
   attribute C_DM_WIDTH : integer;
   attribute C_DM_WIDTH of linux_bd_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is 4;
   attribute C_DQS_WIDTH : integer;
@@ -1255,7 +747,7 @@ entity linux_bd_processing_system7_0_0_processing_system7_v5_5_processing_system
   attribute C_M_AXI_GP1_THREAD_ID_WIDTH : integer;
   attribute C_M_AXI_GP1_THREAD_ID_WIDTH of linux_bd_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is 12;
   attribute C_NUM_F2P_INTR_INPUTS : integer;
-  attribute C_NUM_F2P_INTR_INPUTS of linux_bd_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is 6;
+  attribute C_NUM_F2P_INTR_INPUTS of linux_bd_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is 7;
   attribute C_PACKAGE_NAME : string;
   attribute C_PACKAGE_NAME of linux_bd_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is "clg400";
   attribute C_PS7_SI_REV : string;
@@ -1339,8 +831,6 @@ architecture STRUCTURE of linux_bd_processing_system7_0_0_processing_system7_v5_
   signal \^m_axi_gp0_awsize\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal \^m_axi_gp1_arsize\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal \^m_axi_gp1_awsize\ : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal PS7_i_i_13_n_0 : STD_LOGIC;
-  signal PS7_i_i_14_n_0 : STD_LOGIC;
   signal SDIO0_CMD_T_n : STD_LOGIC;
   signal SDIO0_DATA_T_n : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal SDIO1_CMD_T_n : STD_LOGIC;
@@ -1353,39 +843,6 @@ architecture STRUCTURE of linux_bd_processing_system7_0_0_processing_system7_v5_
   signal SPI1_MOSI_T_n : STD_LOGIC;
   signal SPI1_SCLK_T_n : STD_LOGIC;
   signal SPI1_SS_T_n : STD_LOGIC;
-  signal \^s_axi_gp0_aresetn\ : STD_LOGIC;
-  signal S_AXI_GP0_AWADDR_shim : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal S_AXI_GP0_AWREADY_shim : STD_LOGIC;
-  signal S_AXI_GP0_AWSIZE_shim : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal S_AXI_GP0_AWVALID_shim : STD_LOGIC;
-  signal S_AXI_GP0_WREADY_shim : STD_LOGIC;
-  signal S_AXI_GP0_WVALID_shim : STD_LOGIC;
-  signal \^s_axi_gp1_aresetn\ : STD_LOGIC;
-  signal S_AXI_GP1_AWADDR_shim : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal S_AXI_GP1_AWREADY_shim : STD_LOGIC;
-  signal S_AXI_GP1_AWSIZE_shim : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal S_AXI_GP1_AWVALID_shim : STD_LOGIC;
-  signal S_AXI_GP1_WREADY_shim : STD_LOGIC;
-  signal S_AXI_GP1_WVALID_shim : STD_LOGIC;
-  signal \TRACE_CTL_PIPE[0]\ : STD_LOGIC;
-  attribute RTL_KEEP : string;
-  attribute RTL_KEEP of \TRACE_CTL_PIPE[0]\ : signal is "true";
-  signal \TRACE_CTL_PIPE[1]\ : STD_LOGIC;
-  signal \TRACE_CTL_PIPE[2]\ : STD_LOGIC;
-  signal \TRACE_CTL_PIPE[3]\ : STD_LOGIC;
-  signal \TRACE_CTL_PIPE[4]\ : STD_LOGIC;
-  signal \TRACE_CTL_PIPE[5]\ : STD_LOGIC;
-  signal \TRACE_CTL_PIPE[6]\ : STD_LOGIC;
-  signal \TRACE_CTL_PIPE[7]\ : STD_LOGIC;
-  signal \TRACE_DATA_PIPE[0]\ : STD_LOGIC_VECTOR ( 1 downto 0 );
-  attribute RTL_KEEP of \TRACE_DATA_PIPE[0]\ : signal is "true";
-  signal \TRACE_DATA_PIPE[1]\ : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal \TRACE_DATA_PIPE[2]\ : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal \TRACE_DATA_PIPE[3]\ : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal \TRACE_DATA_PIPE[4]\ : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal \TRACE_DATA_PIPE[5]\ : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal \TRACE_DATA_PIPE[6]\ : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal \TRACE_DATA_PIPE[7]\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal buffered_DDR_Addr : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal buffered_DDR_BankAddr : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal buffered_DDR_CAS_n : STD_LOGIC;
@@ -1584,11 +1041,10 @@ begin
   M_AXI_GP1_AWSIZE(2) <= \<const0>\;
   M_AXI_GP1_AWSIZE(1 downto 0) <= \^m_axi_gp1_awsize\(1 downto 0);
   PJTAG_TDO <= \<const0>\;
-  S_AXI_GP0_ARESETN <= \^s_axi_gp0_aresetn\;
-  S_AXI_GP1_ARESETN <= \^s_axi_gp1_aresetn\;
   TRACE_CLK_OUT <= \<const0>\;
-  TRACE_CTL <= \TRACE_CTL_PIPE[0]\;
-  TRACE_DATA(1 downto 0) <= \TRACE_DATA_PIPE[0]\(1 downto 0);
+  TRACE_CTL <= \<const0>\;
+  TRACE_DATA(1) <= \<const0>\;
+  TRACE_DATA(0) <= \<const0>\;
 DDR_CAS_n_BIBUF: unisim.vcomponents.BIBUF
      port map (
       IO => buffered_DDR_CAS_n,
@@ -2010,8 +1466,8 @@ PS7_i: unisim.vcomponents.PS7
       IRQF2P(18) => Core0_nFIQ,
       IRQF2P(17) => Core1_nIRQ,
       IRQF2P(16) => Core0_nIRQ,
-      IRQF2P(15 downto 6) => B"0000000000",
-      IRQF2P(5 downto 0) => IRQ_F2P(5 downto 0),
+      IRQF2P(15 downto 7) => B"000000000",
+      IRQF2P(6 downto 0) => IRQ_F2P(6 downto 0),
       IRQP2F(28) => IRQ_P2F_DMAC_ABORT,
       IRQP2F(27) => IRQ_P2F_DMAC7,
       IRQP2F(26) => IRQ_P2F_DMAC6,
@@ -2171,7 +1627,7 @@ PS7_i: unisim.vcomponents.PS7
       SAXIGP0ARADDR(31 downto 0) => S_AXI_GP0_ARADDR(31 downto 0),
       SAXIGP0ARBURST(1 downto 0) => S_AXI_GP0_ARBURST(1 downto 0),
       SAXIGP0ARCACHE(3 downto 0) => S_AXI_GP0_ARCACHE(3 downto 0),
-      SAXIGP0ARESETN => \^s_axi_gp0_aresetn\,
+      SAXIGP0ARESETN => S_AXI_GP0_ARESETN,
       SAXIGP0ARID(5 downto 0) => S_AXI_GP0_ARID(5 downto 0),
       SAXIGP0ARLEN(3 downto 0) => S_AXI_GP0_ARLEN(3 downto 0),
       SAXIGP0ARLOCK(1 downto 0) => S_AXI_GP0_ARLOCK(1 downto 0),
@@ -2180,8 +1636,7 @@ PS7_i: unisim.vcomponents.PS7
       SAXIGP0ARREADY => S_AXI_GP0_ARREADY,
       SAXIGP0ARSIZE(1 downto 0) => S_AXI_GP0_ARSIZE(1 downto 0),
       SAXIGP0ARVALID => S_AXI_GP0_ARVALID,
-      SAXIGP0AWADDR(31 downto 2) => S_AXI_GP0_AWADDR(31 downto 2),
-      SAXIGP0AWADDR(1 downto 0) => S_AXI_GP0_AWADDR_shim(1 downto 0),
+      SAXIGP0AWADDR(31 downto 0) => S_AXI_GP0_AWADDR(31 downto 0),
       SAXIGP0AWBURST(1 downto 0) => S_AXI_GP0_AWBURST(1 downto 0),
       SAXIGP0AWCACHE(3 downto 0) => S_AXI_GP0_AWCACHE(3 downto 0),
       SAXIGP0AWID(5 downto 0) => S_AXI_GP0_AWID(5 downto 0),
@@ -2189,9 +1644,9 @@ PS7_i: unisim.vcomponents.PS7
       SAXIGP0AWLOCK(1 downto 0) => S_AXI_GP0_AWLOCK(1 downto 0),
       SAXIGP0AWPROT(2 downto 0) => S_AXI_GP0_AWPROT(2 downto 0),
       SAXIGP0AWQOS(3 downto 0) => S_AXI_GP0_AWQOS(3 downto 0),
-      SAXIGP0AWREADY => S_AXI_GP0_AWREADY_shim,
-      SAXIGP0AWSIZE(1 downto 0) => S_AXI_GP0_AWSIZE_shim(1 downto 0),
-      SAXIGP0AWVALID => S_AXI_GP0_AWVALID_shim,
+      SAXIGP0AWREADY => S_AXI_GP0_AWREADY,
+      SAXIGP0AWSIZE(1 downto 0) => S_AXI_GP0_AWSIZE(1 downto 0),
+      SAXIGP0AWVALID => S_AXI_GP0_AWVALID,
       SAXIGP0BID(5 downto 0) => S_AXI_GP0_BID(5 downto 0),
       SAXIGP0BREADY => S_AXI_GP0_BREADY,
       SAXIGP0BRESP(1 downto 0) => S_AXI_GP0_BRESP(1 downto 0),
@@ -2205,14 +1660,14 @@ PS7_i: unisim.vcomponents.PS7
       SAXIGP0WDATA(31 downto 0) => S_AXI_GP0_WDATA(31 downto 0),
       SAXIGP0WID(5 downto 0) => S_AXI_GP0_WID(5 downto 0),
       SAXIGP0WLAST => S_AXI_GP0_WLAST,
-      SAXIGP0WREADY => S_AXI_GP0_WREADY_shim,
+      SAXIGP0WREADY => S_AXI_GP0_WREADY,
       SAXIGP0WSTRB(3 downto 0) => S_AXI_GP0_WSTRB(3 downto 0),
-      SAXIGP0WVALID => S_AXI_GP0_WVALID_shim,
+      SAXIGP0WVALID => S_AXI_GP0_WVALID,
       SAXIGP1ACLK => S_AXI_GP1_ACLK,
       SAXIGP1ARADDR(31 downto 0) => S_AXI_GP1_ARADDR(31 downto 0),
       SAXIGP1ARBURST(1 downto 0) => S_AXI_GP1_ARBURST(1 downto 0),
       SAXIGP1ARCACHE(3 downto 0) => S_AXI_GP1_ARCACHE(3 downto 0),
-      SAXIGP1ARESETN => \^s_axi_gp1_aresetn\,
+      SAXIGP1ARESETN => S_AXI_GP1_ARESETN,
       SAXIGP1ARID(5 downto 0) => S_AXI_GP1_ARID(5 downto 0),
       SAXIGP1ARLEN(3 downto 0) => S_AXI_GP1_ARLEN(3 downto 0),
       SAXIGP1ARLOCK(1 downto 0) => S_AXI_GP1_ARLOCK(1 downto 0),
@@ -2221,8 +1676,7 @@ PS7_i: unisim.vcomponents.PS7
       SAXIGP1ARREADY => S_AXI_GP1_ARREADY,
       SAXIGP1ARSIZE(1 downto 0) => S_AXI_GP1_ARSIZE(1 downto 0),
       SAXIGP1ARVALID => S_AXI_GP1_ARVALID,
-      SAXIGP1AWADDR(31 downto 2) => S_AXI_GP1_AWADDR(31 downto 2),
-      SAXIGP1AWADDR(1 downto 0) => S_AXI_GP1_AWADDR_shim(1 downto 0),
+      SAXIGP1AWADDR(31 downto 0) => S_AXI_GP1_AWADDR(31 downto 0),
       SAXIGP1AWBURST(1 downto 0) => S_AXI_GP1_AWBURST(1 downto 0),
       SAXIGP1AWCACHE(3 downto 0) => S_AXI_GP1_AWCACHE(3 downto 0),
       SAXIGP1AWID(5 downto 0) => S_AXI_GP1_AWID(5 downto 0),
@@ -2230,9 +1684,9 @@ PS7_i: unisim.vcomponents.PS7
       SAXIGP1AWLOCK(1 downto 0) => S_AXI_GP1_AWLOCK(1 downto 0),
       SAXIGP1AWPROT(2 downto 0) => S_AXI_GP1_AWPROT(2 downto 0),
       SAXIGP1AWQOS(3 downto 0) => S_AXI_GP1_AWQOS(3 downto 0),
-      SAXIGP1AWREADY => S_AXI_GP1_AWREADY_shim,
-      SAXIGP1AWSIZE(1 downto 0) => S_AXI_GP1_AWSIZE_shim(1 downto 0),
-      SAXIGP1AWVALID => S_AXI_GP1_AWVALID_shim,
+      SAXIGP1AWREADY => S_AXI_GP1_AWREADY,
+      SAXIGP1AWSIZE(1 downto 0) => S_AXI_GP1_AWSIZE(1 downto 0),
+      SAXIGP1AWVALID => S_AXI_GP1_AWVALID,
       SAXIGP1BID(5 downto 0) => S_AXI_GP1_BID(5 downto 0),
       SAXIGP1BREADY => S_AXI_GP1_BREADY,
       SAXIGP1BRESP(1 downto 0) => S_AXI_GP1_BRESP(1 downto 0),
@@ -2246,9 +1700,9 @@ PS7_i: unisim.vcomponents.PS7
       SAXIGP1WDATA(31 downto 0) => S_AXI_GP1_WDATA(31 downto 0),
       SAXIGP1WID(5 downto 0) => S_AXI_GP1_WID(5 downto 0),
       SAXIGP1WLAST => S_AXI_GP1_WLAST,
-      SAXIGP1WREADY => S_AXI_GP1_WREADY_shim,
+      SAXIGP1WREADY => S_AXI_GP1_WREADY,
       SAXIGP1WSTRB(3 downto 0) => S_AXI_GP1_WSTRB(3 downto 0),
-      SAXIGP1WVALID => S_AXI_GP1_WVALID_shim,
+      SAXIGP1WVALID => S_AXI_GP1_WVALID,
       SAXIHP0ACLK => S_AXI_HP0_ACLK,
       SAXIHP0ARADDR(31 downto 0) => S_AXI_HP0_ARADDR(31 downto 0),
       SAXIHP0ARBURST(1 downto 0) => S_AXI_HP0_ARBURST(1 downto 0),
@@ -2433,134 +1887,6 @@ PS7_i: unisim.vcomponents.PS7
       SAXIHP3WRISSUECAP1EN => S_AXI_HP3_WRISSUECAP1_EN,
       SAXIHP3WSTRB(7 downto 0) => S_AXI_HP3_WSTRB(7 downto 0),
       SAXIHP3WVALID => S_AXI_HP3_WVALID
-    );
-PS7_i_i_10: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0006FFFF00060000"
-    )
-        port map (
-      I0 => S_AXI_GP0_WSTRB(1),
-      I1 => S_AXI_GP0_WSTRB(3),
-      I2 => S_AXI_GP0_WSTRB(0),
-      I3 => S_AXI_GP0_WSTRB(2),
-      I4 => PS7_i_i_13_n_0,
-      I5 => S_AXI_GP0_AWADDR(0),
-      O => S_AXI_GP0_AWADDR_shim(0)
-    );
-PS7_i_i_11: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"000EFFFF000E0000"
-    )
-        port map (
-      I0 => S_AXI_GP1_WSTRB(2),
-      I1 => S_AXI_GP1_WSTRB(3),
-      I2 => S_AXI_GP1_WSTRB(0),
-      I3 => S_AXI_GP1_WSTRB(1),
-      I4 => PS7_i_i_14_n_0,
-      I5 => S_AXI_GP1_AWADDR(1),
-      O => S_AXI_GP1_AWADDR_shim(1)
-    );
-PS7_i_i_12: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0006FFFF00060000"
-    )
-        port map (
-      I0 => S_AXI_GP1_WSTRB(1),
-      I1 => S_AXI_GP1_WSTRB(3),
-      I2 => S_AXI_GP1_WSTRB(0),
-      I3 => S_AXI_GP1_WSTRB(2),
-      I4 => PS7_i_i_14_n_0,
-      I5 => S_AXI_GP1_AWADDR(0),
-      O => S_AXI_GP1_AWADDR_shim(0)
-    );
-PS7_i_i_13: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"00000004"
-    )
-        port map (
-      I0 => S_AXI_GP0_AWLEN(0),
-      I1 => S_AXI_GP0_AWVALID,
-      I2 => S_AXI_GP0_AWLEN(3),
-      I3 => S_AXI_GP0_AWLEN(2),
-      I4 => S_AXI_GP0_AWLEN(1),
-      O => PS7_i_i_13_n_0
-    );
-PS7_i_i_14: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"00000004"
-    )
-        port map (
-      I0 => S_AXI_GP1_AWLEN(0),
-      I1 => S_AXI_GP1_AWVALID,
-      I2 => S_AXI_GP1_AWLEN(3),
-      I3 => S_AXI_GP1_AWLEN(2),
-      I4 => S_AXI_GP1_AWLEN(1),
-      O => PS7_i_i_14_n_0
-    );
-PS7_i_i_5: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"A8A8A802AAAAAAAA"
-    )
-        port map (
-      I0 => S_AXI_GP0_AWSIZE(1),
-      I1 => S_AXI_GP0_WSTRB(2),
-      I2 => S_AXI_GP0_WSTRB(3),
-      I3 => S_AXI_GP0_WSTRB(0),
-      I4 => S_AXI_GP0_WSTRB(1),
-      I5 => PS7_i_i_13_n_0,
-      O => S_AXI_GP0_AWSIZE_shim(1)
-    );
-PS7_i_i_6: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"ABA8A8C2AAAAAAAA"
-    )
-        port map (
-      I0 => S_AXI_GP0_AWSIZE(0),
-      I1 => S_AXI_GP0_WSTRB(2),
-      I2 => S_AXI_GP0_WSTRB(3),
-      I3 => S_AXI_GP0_WSTRB(0),
-      I4 => S_AXI_GP0_WSTRB(1),
-      I5 => PS7_i_i_13_n_0,
-      O => S_AXI_GP0_AWSIZE_shim(0)
-    );
-PS7_i_i_7: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"A8A8A802AAAAAAAA"
-    )
-        port map (
-      I0 => S_AXI_GP1_AWSIZE(1),
-      I1 => S_AXI_GP1_WSTRB(2),
-      I2 => S_AXI_GP1_WSTRB(3),
-      I3 => S_AXI_GP1_WSTRB(0),
-      I4 => S_AXI_GP1_WSTRB(1),
-      I5 => PS7_i_i_14_n_0,
-      O => S_AXI_GP1_AWSIZE_shim(1)
-    );
-PS7_i_i_8: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"ABA8A8C2AAAAAAAA"
-    )
-        port map (
-      I0 => S_AXI_GP1_AWSIZE(0),
-      I1 => S_AXI_GP1_WSTRB(2),
-      I2 => S_AXI_GP1_WSTRB(3),
-      I3 => S_AXI_GP1_WSTRB(0),
-      I4 => S_AXI_GP1_WSTRB(1),
-      I5 => PS7_i_i_14_n_0,
-      O => S_AXI_GP1_AWSIZE_shim(0)
-    );
-PS7_i_i_9: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"000EFFFF000E0000"
-    )
-        port map (
-      I0 => S_AXI_GP0_WSTRB(2),
-      I1 => S_AXI_GP0_WSTRB(3),
-      I2 => S_AXI_GP0_WSTRB(0),
-      I3 => S_AXI_GP0_WSTRB(1),
-      I4 => PS7_i_i_13_n_0,
-      I5 => S_AXI_GP0_AWADDR(1),
-      O => S_AXI_GP0_AWADDR_shim(1)
     );
 PS_CLK_BIBUF: unisim.vcomponents.BIBUF
      port map (
@@ -3311,226 +2637,6 @@ SPI1_SS_T_INST_0: unisim.vcomponents.LUT1
       IO => buffered_DDR_DQS(3),
       PAD => DDR_DQS(3)
     );
-i_0: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_CTL_PIPE[0]\
-    );
-i_1: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_DATA_PIPE[0]\(1)
-    );
-i_10: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_DATA_PIPE[7]\(1)
-    );
-i_11: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_DATA_PIPE[7]\(0)
-    );
-i_12: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_DATA_PIPE[6]\(1)
-    );
-i_13: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_DATA_PIPE[6]\(0)
-    );
-i_14: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_DATA_PIPE[5]\(1)
-    );
-i_15: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_DATA_PIPE[5]\(0)
-    );
-i_16: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_DATA_PIPE[4]\(1)
-    );
-i_17: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_DATA_PIPE[4]\(0)
-    );
-i_18: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_DATA_PIPE[3]\(1)
-    );
-i_19: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_DATA_PIPE[3]\(0)
-    );
-i_2: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_DATA_PIPE[0]\(0)
-    );
-i_20: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_DATA_PIPE[2]\(1)
-    );
-i_21: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_DATA_PIPE[2]\(0)
-    );
-i_22: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_DATA_PIPE[1]\(1)
-    );
-i_23: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_DATA_PIPE[1]\(0)
-    );
-i_3: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_CTL_PIPE[7]\
-    );
-i_4: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_CTL_PIPE[6]\
-    );
-i_5: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_CTL_PIPE[5]\
-    );
-i_6: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_CTL_PIPE[4]\
-    );
-i_7: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_CTL_PIPE[3]\
-    );
-i_8: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_CTL_PIPE[2]\
-    );
-i_9: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => '0',
-      O => \TRACE_CTL_PIPE[1]\
-    );
-xlnx_axi_wrshim_unwrap_inst_gp0: entity work.linux_bd_processing_system7_0_0_xlnx_axi_wrshim_unwrap
-     port map (
-      S_AXI_GP0_ACLK => S_AXI_GP0_ACLK,
-      S_AXI_GP0_AWREADY => S_AXI_GP0_AWREADY,
-      S_AXI_GP0_AWREADY_shim => S_AXI_GP0_AWREADY_shim,
-      S_AXI_GP0_AWVALID => S_AXI_GP0_AWVALID,
-      S_AXI_GP0_AWVALID_shim => S_AXI_GP0_AWVALID_shim,
-      S_AXI_GP0_WLAST => S_AXI_GP0_WLAST,
-      S_AXI_GP0_WREADY => S_AXI_GP0_WREADY,
-      S_AXI_GP0_WREADY_shim => S_AXI_GP0_WREADY_shim,
-      S_AXI_GP0_WVALID => S_AXI_GP0_WVALID,
-      S_AXI_GP0_WVALID_shim => S_AXI_GP0_WVALID_shim,
-      store_first_beat_reg_0 => \^s_axi_gp0_aresetn\
-    );
-xlnx_axi_wrshim_unwrap_inst_gp1: entity work.linux_bd_processing_system7_0_0_xlnx_axi_wrshim_unwrap_0
-     port map (
-      S_AXI_GP1_ACLK => S_AXI_GP1_ACLK,
-      S_AXI_GP1_AWREADY => S_AXI_GP1_AWREADY,
-      S_AXI_GP1_AWREADY_shim => S_AXI_GP1_AWREADY_shim,
-      S_AXI_GP1_AWVALID => S_AXI_GP1_AWVALID,
-      S_AXI_GP1_AWVALID_shim => S_AXI_GP1_AWVALID_shim,
-      S_AXI_GP1_WLAST => S_AXI_GP1_WLAST,
-      S_AXI_GP1_WREADY => S_AXI_GP1_WREADY,
-      S_AXI_GP1_WREADY_shim => S_AXI_GP1_WREADY_shim,
-      S_AXI_GP1_WVALID => S_AXI_GP1_WVALID,
-      S_AXI_GP1_WVALID_shim => S_AXI_GP1_WVALID_shim,
-      store_first_beat_reg_0 => \^s_axi_gp1_aresetn\
-    );
 end STRUCTURE;
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -3654,7 +2760,7 @@ entity linux_bd_processing_system7_0_0 is
     S_AXI_HP0_WID : in STD_LOGIC_VECTOR ( 5 downto 0 );
     S_AXI_HP0_WDATA : in STD_LOGIC_VECTOR ( 63 downto 0 );
     S_AXI_HP0_WSTRB : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    IRQ_F2P : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    IRQ_F2P : in STD_LOGIC_VECTOR ( 6 downto 0 );
     FCLK_CLK0 : out STD_LOGIC;
     FCLK_CLK1 : out STD_LOGIC;
     FCLK_RESET0_N : out STD_LOGIC;
@@ -3684,12 +2790,10 @@ entity linux_bd_processing_system7_0_0 is
   attribute NotValidForBitStream of linux_bd_processing_system7_0_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of linux_bd_processing_system7_0_0 : entity is "linux_bd_processing_system7_0_0,processing_system7_v5_5_processing_system7,{}";
-  attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of linux_bd_processing_system7_0_0 : entity is "linux_bd_processing_system7_0_0,processing_system7_v5_5_processing_system7,{x_ipProduct=Vivado 2015.4,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=processing_system7,x_ipVersion=5.5,x_ipCoreRevision=3,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_EN_EMIO_PJTAG=0,C_EN_EMIO_ENET0=0,C_EN_EMIO_ENET1=0,C_EN_EMIO_TRACE=0,C_INCLUDE_TRACE_BUFFER=0,C_TRACE_BUFFER_FIFO_SIZE=128,USE_TRACE_DATA_EDGE_DETECTOR=0,C_TRACE_PIPELINE_WIDTH=8,C_TRACE_BUFFER_CLOCK_DELAY=12,C_EMIO_GPIO_WIDTH=6,C_INCLUDE_ACP_TRANS_CHECK=0,C_USE_DEFAULT_ACP_USER_VAL=0,C_S_AXI_ACP_ARUSER_VAL=31,C_S_AXI_ACP_AWUSER_VAL=31,C_M_AXI_GP0_ID_WIDTH=12,C_M_AXI_GP0_ENABLE_STATIC_REMAP=0,C_M_AXI_GP1_ID_WIDTH=12,C_M_AXI_GP1_ENABLE_STATIC_REMAP=0,C_S_AXI_GP0_ID_WIDTH=6,C_S_AXI_GP1_ID_WIDTH=6,C_S_AXI_ACP_ID_WIDTH=3,C_S_AXI_HP0_ID_WIDTH=6,C_S_AXI_HP0_DATA_WIDTH=64,C_S_AXI_HP1_ID_WIDTH=6,C_S_AXI_HP1_DATA_WIDTH=64,C_S_AXI_HP2_ID_WIDTH=6,C_S_AXI_HP2_DATA_WIDTH=64,C_S_AXI_HP3_ID_WIDTH=6,C_S_AXI_HP3_DATA_WIDTH=64,C_M_AXI_GP0_THREAD_ID_WIDTH=12,C_M_AXI_GP1_THREAD_ID_WIDTH=12,C_NUM_F2P_INTR_INPUTS=6,C_IRQ_F2P_MODE=DIRECT,C_DQ_WIDTH=32,C_DQS_WIDTH=4,C_DM_WIDTH=4,C_MIO_PRIMITIVE=54,C_TRACE_INTERNAL_WIDTH=2,C_USE_AXI_NONSECURE=0,C_USE_M_AXI_GP0=1,C_USE_M_AXI_GP1=0,C_USE_S_AXI_GP0=0,C_USE_S_AXI_HP0=1,C_USE_S_AXI_HP1=0,C_USE_S_AXI_HP2=0,C_USE_S_AXI_HP3=0,C_USE_S_AXI_ACP=0,C_PS7_SI_REV=PRODUCTION,C_FCLK_CLK0_BUF=true,C_FCLK_CLK1_BUF=true,C_FCLK_CLK2_BUF=false,C_FCLK_CLK3_BUF=false,C_PACKAGE_NAME=clg400}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of linux_bd_processing_system7_0_0 : entity is "yes";
   attribute X_CORE_INFO : string;
-  attribute X_CORE_INFO of linux_bd_processing_system7_0_0 : entity is "processing_system7_v5_5_processing_system7,Vivado 2015.4";
+  attribute X_CORE_INFO of linux_bd_processing_system7_0_0 : entity is "processing_system7_v5_5_processing_system7,Vivado 2016.1";
 end linux_bd_processing_system7_0_0;
 
 architecture STRUCTURE of linux_bd_processing_system7_0_0 is
@@ -3948,7 +3052,6 @@ architecture STRUCTURE of linux_bd_processing_system7_0_0 is
   signal NLW_inst_S_AXI_HP3_WCOUNT_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal NLW_inst_TRACE_DATA_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_inst_USB1_PORT_INDCTL_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
-  attribute CORE_GENERATION_INFO of inst : label is "processing_system7_v5.5 ,processing_system7_v5.5_user_configuration,{ PCW_UIPARAM_DDR_FREQ_MHZ=525, PCW_UIPARAM_DDR_BANK_ADDR_COUNT=3, PCW_UIPARAM_DDR_ROW_ADDR_COUNT=14, PCW_UIPARAM_DDR_COL_ADDR_COUNT=10, PCW_UIPARAM_DDR_CL=7, PCW_UIPARAM_DDR_CWL=6, PCW_UIPARAM_DDR_T_RCD=7, PCW_UIPARAM_DDR_T_RP=7, PCW_UIPARAM_DDR_T_RC=48.75, PCW_UIPARAM_DDR_T_RAS_MIN=35.0, PCW_UIPARAM_DDR_T_FAW=40.0, PCW_UIPARAM_DDR_AL=0, PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0=0.040, PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1=0.058, PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2=-0.009, PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3=-0.033, PCW_UIPARAM_DDR_BOARD_DELAY0=0.223, PCW_UIPARAM_DDR_BOARD_DELAY1=0.212, PCW_UIPARAM_DDR_BOARD_DELAY2=0.085, PCW_UIPARAM_DDR_BOARD_DELAY3=0.092, PCW_UIPARAM_DDR_DQS_0_LENGTH_MM=15.6, PCW_UIPARAM_DDR_DQS_1_LENGTH_MM=18.8, PCW_UIPARAM_DDR_DQS_2_LENGTH_MM=0, PCW_UIPARAM_DDR_DQS_3_LENGTH_MM=0, PCW_UIPARAM_DDR_DQ_0_LENGTH_MM=16.5, PCW_UIPARAM_DDR_DQ_1_LENGTH_MM=18, PCW_UIPARAM_DDR_DQ_2_LENGTH_MM=0, PCW_UIPARAM_DDR_DQ_3_LENGTH_MM=0, PCW_UIPARAM_DDR_CLOCK_0_LENGTH_MM=25.8, PCW_UIPARAM_DDR_CLOCK_1_LENGTH_MM=25.8, PCW_UIPARAM_DDR_CLOCK_2_LENGTH_MM=0, PCW_UIPARAM_DDR_CLOCK_3_LENGTH_MM=0, PCW_UIPARAM_DDR_DQS_0_PACKAGE_LENGTH=105.056, PCW_UIPARAM_DDR_DQS_1_PACKAGE_LENGTH=66.904, PCW_UIPARAM_DDR_DQS_2_PACKAGE_LENGTH=89.1715, PCW_UIPARAM_DDR_DQS_3_PACKAGE_LENGTH=113.63, PCW_UIPARAM_DDR_DQ_0_PACKAGE_LENGTH=98.503, PCW_UIPARAM_DDR_DQ_1_PACKAGE_LENGTH=68.5855, PCW_UIPARAM_DDR_DQ_2_PACKAGE_LENGTH=90.295, PCW_UIPARAM_DDR_DQ_3_PACKAGE_LENGTH=103.977, PCW_UIPARAM_DDR_CLOCK_0_PACKAGE_LENGTH=80.4535, PCW_UIPARAM_DDR_CLOCK_1_PACKAGE_LENGTH=80.4535, PCW_UIPARAM_DDR_CLOCK_2_PACKAGE_LENGTH=80.4535, PCW_UIPARAM_DDR_CLOCK_3_PACKAGE_LENGTH=80.4535, PCW_UIPARAM_DDR_DQS_0_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_DQS_1_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_DQS_2_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_DQS_3_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_DQ_0_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_DQ_1_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_DQ_2_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_DQ_3_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_CLOCK_0_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_CLOCK_1_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_CLOCK_2_PROPOGATION_DELAY=160, PCW_UIPARAM_DDR_CLOCK_3_PROPOGATION_DELAY=160, PCW_CRYSTAL_PERIPHERAL_FREQMHZ=50, PCW_APU_PERIPHERAL_FREQMHZ=650, PCW_DCI_PERIPHERAL_FREQMHZ=10.159, PCW_QSPI_PERIPHERAL_FREQMHZ=200, PCW_SMC_PERIPHERAL_FREQMHZ=100, PCW_USB0_PERIPHERAL_FREQMHZ=60, PCW_USB1_PERIPHERAL_FREQMHZ=60, PCW_SDIO_PERIPHERAL_FREQMHZ=50, PCW_UART_PERIPHERAL_FREQMHZ=100, PCW_SPI_PERIPHERAL_FREQMHZ=166.666666, PCW_CAN_PERIPHERAL_FREQMHZ=100, PCW_CAN0_PERIPHERAL_FREQMHZ=-1, PCW_CAN1_PERIPHERAL_FREQMHZ=-1, PCW_WDT_PERIPHERAL_FREQMHZ=133.333333, PCW_TTC_PERIPHERAL_FREQMHZ=50, PCW_TTC0_CLK0_PERIPHERAL_FREQMHZ=133.333333, PCW_TTC0_CLK1_PERIPHERAL_FREQMHZ=133.333333, PCW_TTC0_CLK2_PERIPHERAL_FREQMHZ=133.333333, PCW_TTC1_CLK0_PERIPHERAL_FREQMHZ=133.333333, PCW_TTC1_CLK1_PERIPHERAL_FREQMHZ=133.333333, PCW_TTC1_CLK2_PERIPHERAL_FREQMHZ=133.333333, PCW_PCAP_PERIPHERAL_FREQMHZ=200, PCW_TPIU_PERIPHERAL_FREQMHZ=200, PCW_FPGA0_PERIPHERAL_FREQMHZ=100, PCW_FPGA1_PERIPHERAL_FREQMHZ=142, PCW_FPGA2_PERIPHERAL_FREQMHZ=50, PCW_FPGA3_PERIPHERAL_FREQMHZ=50, PCW_OVERRIDE_BASIC_CLOCK=0, PCW_ARMPLL_CTRL_FBDIV=26, PCW_IOPLL_CTRL_FBDIV=20, PCW_DDRPLL_CTRL_FBDIV=21, PCW_CPU_CPU_PLL_FREQMHZ=1300.000, PCW_IO_IO_PLL_FREQMHZ=1000.000, PCW_DDR_DDR_PLL_FREQMHZ=1050.000, PCW_USE_M_AXI_GP0=1, PCW_USE_M_AXI_GP1=0, PCW_USE_S_AXI_GP0=0, PCW_USE_S_AXI_GP1=0, PCW_USE_S_AXI_ACP=0, PCW_USE_S_AXI_HP0=1, PCW_USE_S_AXI_HP1=0, PCW_USE_S_AXI_HP2=0, PCW_USE_S_AXI_HP3=0, PCW_M_AXI_GP0_FREQMHZ=10, PCW_M_AXI_GP1_FREQMHZ=10, PCW_S_AXI_GP0_FREQMHZ=10, PCW_S_AXI_GP1_FREQMHZ=10, PCW_S_AXI_ACP_FREQMHZ=10, PCW_S_AXI_HP0_FREQMHZ=10, PCW_S_AXI_HP1_FREQMHZ=10, PCW_S_AXI_HP2_FREQMHZ=10, PCW_S_AXI_HP3_FREQMHZ=10, PCW_USE_CROSS_TRIGGER=0, PCW_UART0_BAUD_RATE=115200, PCW_UART1_BAUD_RATE=115200, PCW_S_AXI_HP0_DATA_WIDTH=64, PCW_S_AXI_HP1_DATA_WIDTH=64, PCW_S_AXI_HP2_DATA_WIDTH=64, PCW_S_AXI_HP3_DATA_WIDTH=64, PCW_IRQ_F2P_MODE=DIRECT, PCW_PRESET_BANK0_VOLTAGE=LVCMOS 3.3V, PCW_PRESET_BANK1_VOLTAGE=LVCMOS 1.8V, PCW_UIPARAM_DDR_ENABLE=1, PCW_UIPARAM_DDR_ADV_ENABLE=0, PCW_UIPARAM_DDR_MEMORY_TYPE=DDR 3, PCW_UIPARAM_DDR_ECC=Disabled, PCW_UIPARAM_DDR_BUS_WIDTH=16 Bit, PCW_UIPARAM_DDR_BL=8, PCW_UIPARAM_DDR_HIGH_TEMP=Normal (0-85), PCW_UIPARAM_DDR_PARTNO=MT41K128M16 JT-125, PCW_UIPARAM_DDR_DRAM_WIDTH=16 Bits, PCW_UIPARAM_DDR_DEVICE_CAPACITY=2048 MBits, PCW_UIPARAM_DDR_SPEED_BIN=DDR3_1066F, PCW_UIPARAM_DDR_TRAIN_WRITE_LEVEL=1, PCW_UIPARAM_DDR_TRAIN_READ_GATE=1, PCW_UIPARAM_DDR_TRAIN_DATA_EYE=1, PCW_UIPARAM_DDR_CLOCK_STOP_EN=0, PCW_UIPARAM_DDR_USE_INTERNAL_VREF=0, PCW_DDR_PORT0_HPR_ENABLE=0, PCW_DDR_PORT1_HPR_ENABLE=0, PCW_DDR_PORT2_HPR_ENABLE=0, PCW_DDR_PORT3_HPR_ENABLE=0, PCW_DDR_HPRLPR_QUEUE_PARTITION=HPR(0)/LPR(32), PCW_DDR_LPR_TO_CRITICAL_PRIORITY_LEVEL=2, PCW_DDR_HPR_TO_CRITICAL_PRIORITY_LEVEL=15, PCW_DDR_WRITE_TO_CRITICAL_PRIORITY_LEVEL=2, PCW_NAND_PERIPHERAL_ENABLE=0, PCW_NAND_GRP_D8_ENABLE=0, PCW_NOR_PERIPHERAL_ENABLE=0, PCW_NOR_GRP_A25_ENABLE=0, PCW_NOR_GRP_CS0_ENABLE=0, PCW_NOR_GRP_SRAM_CS0_ENABLE=0, PCW_NOR_GRP_CS1_ENABLE=0, PCW_NOR_GRP_SRAM_CS1_ENABLE=0, PCW_NOR_GRP_SRAM_INT_ENABLE=0, PCW_QSPI_PERIPHERAL_ENABLE=1, PCW_QSPI_QSPI_IO=MIO 1 .. 6, PCW_QSPI_GRP_SINGLE_SS_ENABLE=1, PCW_QSPI_GRP_SINGLE_SS_IO=MIO 1 .. 6, PCW_QSPI_GRP_SS1_ENABLE=0, PCW_QSPI_GRP_IO1_ENABLE=0, PCW_QSPI_GRP_FBCLK_ENABLE=1, PCW_QSPI_GRP_FBCLK_IO=MIO 8, PCW_QSPI_INTERNAL_HIGHADDRESS=0xFCFFFFFF, PCW_ENET0_PERIPHERAL_ENABLE=1, PCW_ENET0_ENET0_IO=MIO 16 .. 27, PCW_ENET0_GRP_MDIO_ENABLE=1, PCW_ENET0_RESET_ENABLE=1, PCW_ENET0_RESET_IO=MIO 9, PCW_ENET1_PERIPHERAL_ENABLE=0, PCW_ENET1_GRP_MDIO_ENABLE=0, PCW_ENET1_RESET_ENABLE=0, PCW_SD0_PERIPHERAL_ENABLE=1, PCW_SD0_SD0_IO=MIO 40 .. 45, PCW_SD0_GRP_CD_ENABLE=1, PCW_SD0_GRP_CD_IO=MIO 47, PCW_SD0_GRP_WP_ENABLE=0, PCW_SD0_GRP_POW_ENABLE=0, PCW_SD1_PERIPHERAL_ENABLE=0, PCW_SD1_GRP_CD_ENABLE=0, PCW_SD1_GRP_WP_ENABLE=0, PCW_SD1_GRP_POW_ENABLE=0, PCW_UART0_PERIPHERAL_ENABLE=1, PCW_UART0_UART0_IO=MIO 14 .. 15, PCW_UART0_GRP_FULL_ENABLE=0, PCW_UART1_PERIPHERAL_ENABLE=0, PCW_UART1_GRP_FULL_ENABLE=0, PCW_SPI0_PERIPHERAL_ENABLE=1, PCW_SPI0_SPI0_IO=EMIO, PCW_SPI0_GRP_SS0_ENABLE=1, PCW_SPI0_GRP_SS0_IO=EMIO, PCW_SPI0_GRP_SS1_ENABLE=1, PCW_SPI0_GRP_SS1_IO=EMIO, PCW_SPI0_GRP_SS2_ENABLE=1, PCW_SPI0_GRP_SS2_IO=EMIO, PCW_SPI1_PERIPHERAL_ENABLE=0, PCW_SPI1_GRP_SS0_ENABLE=0, PCW_SPI1_GRP_SS1_ENABLE=0, PCW_SPI1_GRP_SS2_ENABLE=0, PCW_CAN0_PERIPHERAL_ENABLE=0, PCW_CAN0_GRP_CLK_ENABLE=0, PCW_CAN1_PERIPHERAL_ENABLE=0, PCW_CAN1_GRP_CLK_ENABLE=0, PCW_TRACE_PERIPHERAL_ENABLE=0, PCW_TRACE_GRP_2BIT_ENABLE=0, PCW_TRACE_GRP_4BIT_ENABLE=0, PCW_TRACE_GRP_8BIT_ENABLE=0, PCW_TRACE_GRP_16BIT_ENABLE=0, PCW_TRACE_GRP_32BIT_ENABLE=0, PCW_WDT_PERIPHERAL_ENABLE=0, PCW_TTC0_PERIPHERAL_ENABLE=0, PCW_TTC1_PERIPHERAL_ENABLE=0, PCW_PJTAG_PERIPHERAL_ENABLE=0, PCW_USB0_PERIPHERAL_ENABLE=1, PCW_USB0_USB0_IO=MIO 28 .. 39, PCW_USB0_RESET_ENABLE=1, PCW_USB0_RESET_IO=MIO 46, PCW_USB1_PERIPHERAL_ENABLE=0, PCW_USB1_RESET_ENABLE=0, PCW_I2C0_PERIPHERAL_ENABLE=1, PCW_I2C0_I2C0_IO=EMIO, PCW_I2C0_GRP_INT_ENABLE=1, PCW_I2C0_GRP_INT_IO=EMIO, PCW_I2C0_RESET_ENABLE=0, PCW_I2C1_PERIPHERAL_ENABLE=1, PCW_I2C1_I2C1_IO=EMIO, PCW_I2C1_GRP_INT_ENABLE=1, PCW_I2C1_GRP_INT_IO=EMIO, PCW_I2C1_RESET_ENABLE=0, PCW_GPIO_PERIPHERAL_ENABLE=0, PCW_GPIO_MIO_GPIO_ENABLE=1, PCW_GPIO_MIO_GPIO_IO=MIO, PCW_GPIO_EMIO_GPIO_ENABLE=1, PCW_GPIO_EMIO_GPIO_IO=6, PCW_APU_CLK_RATIO_ENABLE=6:2:1, PCW_ENET0_PERIPHERAL_FREQMHZ=1000 Mbps, PCW_ENET1_PERIPHERAL_FREQMHZ=1000 Mbps, PCW_CPU_PERIPHERAL_CLKSRC=ARM PLL, PCW_DDR_PERIPHERAL_CLKSRC=DDR PLL, PCW_SMC_PERIPHERAL_CLKSRC=IO PLL, PCW_QSPI_PERIPHERAL_CLKSRC=IO PLL, PCW_SDIO_PERIPHERAL_CLKSRC=IO PLL, PCW_UART_PERIPHERAL_CLKSRC=IO PLL, PCW_SPI_PERIPHERAL_CLKSRC=IO PLL, PCW_CAN_PERIPHERAL_CLKSRC=IO PLL, PCW_FCLK0_PERIPHERAL_CLKSRC=IO PLL, PCW_FCLK1_PERIPHERAL_CLKSRC=IO PLL, PCW_FCLK2_PERIPHERAL_CLKSRC=IO PLL, PCW_FCLK3_PERIPHERAL_CLKSRC=IO PLL, PCW_ENET0_PERIPHERAL_CLKSRC=IO PLL, PCW_ENET1_PERIPHERAL_CLKSRC=IO PLL, PCW_CAN0_PERIPHERAL_CLKSRC=External, PCW_CAN1_PERIPHERAL_CLKSRC=External, PCW_TPIU_PERIPHERAL_CLKSRC=External, PCW_TTC0_CLK0_PERIPHERAL_CLKSRC=CPU_1X, PCW_TTC0_CLK1_PERIPHERAL_CLKSRC=CPU_1X, PCW_TTC0_CLK2_PERIPHERAL_CLKSRC=CPU_1X, PCW_TTC1_CLK0_PERIPHERAL_CLKSRC=CPU_1X, PCW_TTC1_CLK1_PERIPHERAL_CLKSRC=CPU_1X, PCW_TTC1_CLK2_PERIPHERAL_CLKSRC=CPU_1X, PCW_WDT_PERIPHERAL_CLKSRC=CPU_1X, PCW_DCI_PERIPHERAL_CLKSRC=DDR PLL, PCW_PCAP_PERIPHERAL_CLKSRC=IO PLL, PCW_USB_RESET_POLARITY=Active Low, PCW_ENET_RESET_POLARITY=Active Low, PCW_I2C_RESET_POLARITY=Active Low, PCW_FPGA_FCLK0_ENABLE=1, PCW_FPGA_FCLK1_ENABLE=1, PCW_FPGA_FCLK2_ENABLE=0, PCW_FPGA_FCLK3_ENABLE=0, PCW_NOR_SRAM_CS0_T_TR=1, PCW_NOR_SRAM_CS0_T_PC=1, PCW_NOR_SRAM_CS0_T_WP=1, PCW_NOR_SRAM_CS0_T_CEOE=1, PCW_NOR_SRAM_CS0_T_WC=11, PCW_NOR_SRAM_CS0_T_RC=11, PCW_NOR_SRAM_CS0_WE_TIME=0, PCW_NOR_SRAM_CS1_T_TR=1, PCW_NOR_SRAM_CS1_T_PC=1, PCW_NOR_SRAM_CS1_T_WP=1, PCW_NOR_SRAM_CS1_T_CEOE=1, PCW_NOR_SRAM_CS1_T_WC=11, PCW_NOR_SRAM_CS1_T_RC=11, PCW_NOR_SRAM_CS1_WE_TIME=0, PCW_NOR_CS0_T_TR=1, PCW_NOR_CS0_T_PC=1, PCW_NOR_CS0_T_WP=1, PCW_NOR_CS0_T_CEOE=1, PCW_NOR_CS0_T_WC=11, PCW_NOR_CS0_T_RC=11, PCW_NOR_CS0_WE_TIME=0, PCW_NOR_CS1_T_TR=1, PCW_NOR_CS1_T_PC=1, PCW_NOR_CS1_T_WP=1, PCW_NOR_CS1_T_CEOE=1, PCW_NOR_CS1_T_WC=11, PCW_NOR_CS1_T_RC=11, PCW_NOR_CS1_WE_TIME=0, PCW_NAND_CYCLES_T_RR=1, PCW_NAND_CYCLES_T_AR=1, PCW_NAND_CYCLES_T_CLR=1, PCW_NAND_CYCLES_T_WP=1, PCW_NAND_CYCLES_T_REA=1, PCW_NAND_CYCLES_T_WC=11, PCW_NAND_CYCLES_T_RC=11 }";
   attribute C_DM_WIDTH : integer;
   attribute C_DM_WIDTH of inst : label is 4;
   attribute C_DQS_WIDTH : integer;
@@ -3994,7 +3097,7 @@ architecture STRUCTURE of linux_bd_processing_system7_0_0 is
   attribute C_M_AXI_GP1_THREAD_ID_WIDTH : integer;
   attribute C_M_AXI_GP1_THREAD_ID_WIDTH of inst : label is 12;
   attribute C_NUM_F2P_INTR_INPUTS : integer;
-  attribute C_NUM_F2P_INTR_INPUTS of inst : label is 6;
+  attribute C_NUM_F2P_INTR_INPUTS of inst : label is 7;
   attribute C_PACKAGE_NAME : string;
   attribute C_PACKAGE_NAME of inst : label is "clg400";
   attribute C_PS7_SI_REV : string;
@@ -4062,6 +3165,282 @@ architecture STRUCTURE of linux_bd_processing_system7_0_0 is
   attribute USE_TRACE_DATA_EDGE_DETECTOR : integer;
   attribute USE_TRACE_DATA_EDGE_DETECTOR of inst : label is 0;
 begin
+pullup_DDR_DM_2inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DM(2)
+    );
+pullup_DDR_DM_3inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DM(3)
+    );
+pullup_DDR_DQ_16inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DQ(16)
+    );
+pullup_DDR_DQ_17inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DQ(17)
+    );
+pullup_DDR_DQ_18inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DQ(18)
+    );
+pullup_DDR_DQ_19inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DQ(19)
+    );
+pullup_DDR_DQ_20inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DQ(20)
+    );
+pullup_DDR_DQ_21inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DQ(21)
+    );
+pullup_DDR_DQ_22inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DQ(22)
+    );
+pullup_DDR_DQ_23inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DQ(23)
+    );
+pullup_DDR_DQ_24inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DQ(24)
+    );
+pullup_DDR_DQ_25inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DQ(25)
+    );
+pullup_DDR_DQ_26inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DQ(26)
+    );
+pullup_DDR_DQ_27inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DQ(27)
+    );
+pullup_DDR_DQ_28inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DQ(28)
+    );
+pullup_DDR_DQ_29inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DQ(29)
+    );
+pullup_DDR_DQ_30inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DQ(30)
+    );
+pullup_DDR_DQ_31inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DQ(31)
+    );
+pullup_DDR_DQS_2inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DQS(2)
+    );
+pullup_DDR_DQS_3inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DQS(3)
+    );
+pullup_DDR_DQS_n_2inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DQS_n(2)
+    );
+pullup_DDR_DQS_n_3inst: unisim.vcomponents.PULLUP
+    port map (
+      O => DDR_DQS_n(3)
+    );
+pullup_MIO_0inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(0)
+    );
+pullup_MIO_1inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(1)
+    );
+pullup_MIO_9inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(9)
+    );
+pullup_MIO_10inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(10)
+    );
+pullup_MIO_11inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(11)
+    );
+pullup_MIO_12inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(12)
+    );
+pullup_MIO_13inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(13)
+    );
+pullup_MIO_14inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(14)
+    );
+pullup_MIO_15inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(15)
+    );
+pullup_MIO_16inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(16)
+    );
+pullup_MIO_17inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(17)
+    );
+pullup_MIO_18inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(18)
+    );
+pullup_MIO_19inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(19)
+    );
+pullup_MIO_20inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(20)
+    );
+pullup_MIO_21inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(21)
+    );
+pullup_MIO_22inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(22)
+    );
+pullup_MIO_23inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(23)
+    );
+pullup_MIO_24inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(24)
+    );
+pullup_MIO_25inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(25)
+    );
+pullup_MIO_26inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(26)
+    );
+pullup_MIO_27inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(27)
+    );
+pullup_MIO_28inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(28)
+    );
+pullup_MIO_29inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(29)
+    );
+pullup_MIO_30inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(30)
+    );
+pullup_MIO_31inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(31)
+    );
+pullup_MIO_32inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(32)
+    );
+pullup_MIO_33inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(33)
+    );
+pullup_MIO_34inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(34)
+    );
+pullup_MIO_35inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(35)
+    );
+pullup_MIO_36inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(36)
+    );
+pullup_MIO_37inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(37)
+    );
+pullup_MIO_38inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(38)
+    );
+pullup_MIO_39inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(39)
+    );
+pullup_MIO_40inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(40)
+    );
+pullup_MIO_41inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(41)
+    );
+pullup_MIO_42inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(42)
+    );
+pullup_MIO_43inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(43)
+    );
+pullup_MIO_44inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(44)
+    );
+pullup_MIO_45inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(45)
+    );
+pullup_MIO_46inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(46)
+    );
+pullup_MIO_47inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(47)
+    );
+pullup_MIO_48inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(48)
+    );
+pullup_MIO_49inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(49)
+    );
+pullup_MIO_50inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(50)
+    );
+pullup_MIO_51inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(51)
+    );
+pullup_MIO_52inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(52)
+    );
+pullup_MIO_53inst: unisim.vcomponents.PULLUP
+    port map (
+      O => MIO(53)
+    );
 inst: entity work.linux_bd_processing_system7_0_0_processing_system7_v5_5_processing_system7
      port map (
       CAN0_PHY_RX => '0',
@@ -4230,7 +3609,7 @@ inst: entity work.linux_bd_processing_system7_0_0_processing_system7_v5_5_proces
       I2C1_SDA_I => I2C1_SDA_I,
       I2C1_SDA_O => I2C1_SDA_O,
       I2C1_SDA_T => I2C1_SDA_T,
-      IRQ_F2P(5 downto 0) => IRQ_F2P(5 downto 0),
+      IRQ_F2P(6 downto 0) => IRQ_F2P(6 downto 0),
       IRQ_P2F_CAN0 => NLW_inst_IRQ_P2F_CAN0_UNCONNECTED,
       IRQ_P2F_CAN1 => NLW_inst_IRQ_P2F_CAN1_UNCONNECTED,
       IRQ_P2F_CTI => NLW_inst_IRQ_P2F_CTI_UNCONNECTED,

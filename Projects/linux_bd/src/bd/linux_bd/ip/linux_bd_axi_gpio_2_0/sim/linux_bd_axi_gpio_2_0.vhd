@@ -47,14 +47,14 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:axi_gpio:2.0
--- IP Revision: 9
+-- IP Revision: 10
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-LIBRARY axi_gpio_v2_0_9;
-USE axi_gpio_v2_0_9.axi_gpio;
+LIBRARY axi_gpio_v2_0_10;
+USE axi_gpio_v2_0_10.axi_gpio;
 
 ENTITY linux_bd_axi_gpio_2_0 IS
   PORT (
@@ -82,9 +82,8 @@ ENTITY linux_bd_axi_gpio_2_0 IS
 END linux_bd_axi_gpio_2_0;
 
 ARCHITECTURE linux_bd_axi_gpio_2_0_arch OF linux_bd_axi_gpio_2_0 IS
-  ATTRIBUTE DowngradeIPIdentifiedWarnings : string;
+  ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF linux_bd_axi_gpio_2_0_arch: ARCHITECTURE IS "yes";
-
   COMPONENT axi_gpio IS
     GENERIC (
       C_FAMILY : STRING;

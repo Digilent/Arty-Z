@@ -1,10 +1,10 @@
-// Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-// Date        : Sun May 29 23:58:35 2016
-// Host        : localhost.localdomain running 64-bit Fedora release 22 (Twenty Two)
+// Tool Version: Vivado v.2016.1 (win64) Build 1538259 Fri Apr  8 15:45:27 MDT 2016
+// Date        : Fri Jun 03 18:26:02 2016
+// Host        : WK73 running 64-bit Service Pack 1  (build 7601)
 // Command     : write_verilog -force -mode funcsim
-//               /home/samb/sam_work/git/digilent/Arty-Z/Projects/linux_bd/src/bd/linux_bd/ip/linux_bd_rst_processing_system7_0_142M_0/linux_bd_rst_processing_system7_0_142M_0_sim_netlist.v
+//               C:/sam_work/git/digilent/Arty-Z/Projects/linux_bd/src/bd/linux_bd/ip/linux_bd_rst_processing_system7_0_142M_0/linux_bd_rst_processing_system7_0_142M_0_sim_netlist.v
 // Design      : linux_bd_rst_processing_system7_0_142M_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,8 +12,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "linux_bd_rst_processing_system7_0_100M_0,proc_sys_reset,{}" *) (* ORIG_REF_NAME = "linux_bd_rst_processing_system7_0_100M_0" *) (* core_generation_info = "linux_bd_rst_processing_system7_0_100M_0,proc_sys_reset,{x_ipProduct=Vivado 2015.4,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=proc_sys_reset,x_ipVersion=5.0,x_ipCoreRevision=8,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_EXT_RST_WIDTH=4,C_AUX_RST_WIDTH=4,C_EXT_RESET_HIGH=0,C_AUX_RESET_HIGH=0,C_NUM_BUS_RST=1,C_NUM_PERP_RST=1,C_NUM_INTERCONNECT_ARESETN=1,C_NUM_PERP_ARESETN=1}" *) 
-(* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "proc_sys_reset,Vivado 2015.4" *) 
+(* CHECK_LICENSE_TYPE = "linux_bd_rst_processing_system7_0_142M_0,proc_sys_reset,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "proc_sys_reset,Vivado 2016.1" *) 
 (* NotValidForBitStream *)
 module linux_bd_rst_processing_system7_0_142M_0
    (slowest_sync_clk,
@@ -48,6 +47,15 @@ module linux_bd_rst_processing_system7_0_142M_0
   wire [0:0]peripheral_reset;
   wire slowest_sync_clk;
 
+  (* C_AUX_RESET_HIGH = "1'b0" *) 
+  (* C_AUX_RST_WIDTH = "4" *) 
+  (* C_EXT_RESET_HIGH = "1'b0" *) 
+  (* C_EXT_RST_WIDTH = "4" *) 
+  (* C_FAMILY = "zynq" *) 
+  (* C_NUM_BUS_RST = "1" *) 
+  (* C_NUM_INTERCONNECT_ARESETN = "1" *) 
+  (* C_NUM_PERP_ARESETN = "1" *) 
+  (* C_NUM_PERP_RST = "1" *) 
   linux_bd_rst_processing_system7_0_142M_0_proc_sys_reset U0
        (.aux_reset_in(aux_reset_in),
         .bus_struct_reset(bus_struct_reset),
@@ -157,17 +165,17 @@ endmodule
 module linux_bd_rst_processing_system7_0_142M_0_cdc_sync_0
    (lpf_exr_reg,
     scndry_out,
-    mb_debug_sys_rst,
-    ext_reset_in,
     lpf_exr,
     p_3_out,
+    mb_debug_sys_rst,
+    ext_reset_in,
     slowest_sync_clk);
   output lpf_exr_reg;
   output scndry_out;
-  input mb_debug_sys_rst;
-  input ext_reset_in;
   input lpf_exr;
   input [2:0]p_3_out;
+  input mb_debug_sys_rst;
+  input ext_reset_in;
   input slowest_sync_clk;
 
   wire D;
@@ -247,16 +255,16 @@ endmodule
 module linux_bd_rst_processing_system7_0_142M_0_lpf
    (lpf_int,
     slowest_sync_clk,
-    mb_debug_sys_rst,
-    ext_reset_in,
     dcm_locked,
-    aux_reset_in);
+    aux_reset_in,
+    mb_debug_sys_rst,
+    ext_reset_in);
   output lpf_int;
   input slowest_sync_clk;
-  input mb_debug_sys_rst;
-  input ext_reset_in;
   input dcm_locked;
   input aux_reset_in;
+  input mb_debug_sys_rst;
+  input ext_reset_in;
 
   wire \ACTIVE_LOW_AUX.ACT_LO_AUX_n_0 ;
   wire \ACTIVE_LOW_EXT.ACT_LO_EXT_n_0 ;
@@ -268,7 +276,7 @@ module linux_bd_rst_processing_system7_0_142M_0_lpf
   wire lpf_asr;
   wire lpf_exr;
   wire lpf_int;
-  wire lpf_int0;
+  wire lpf_int0__0;
   wire mb_debug_sys_rst;
   wire p_1_in;
   wire p_2_in;
@@ -343,7 +351,7 @@ module linux_bd_rst_processing_system7_0_142M_0_lpf
         .R(1'b0));
   (* BOX_TYPE = "PRIMITIVE" *) 
   (* XILINX_LEGACY_PRIM = "SRL16" *) 
-  (* srl_name = "\U0/EXT_LPF/POR_SRL_I " *) 
+  (* srl_name = "U0/\EXT_LPF/POR_SRL_I " *) 
   SRL16E #(
     .INIT(16'hFFFF)) 
     POR_SRL_I
@@ -373,46 +381,50 @@ module linux_bd_rst_processing_system7_0_142M_0_lpf
         .R(1'b0));
   LUT4 #(
     .INIT(16'hFFEF)) 
-    lpf_int_i_1
+    lpf_int0
        (.I0(Q),
         .I1(lpf_asr),
         .I2(dcm_locked),
         .I3(lpf_exr),
-        .O(lpf_int0));
+        .O(lpf_int0__0));
   FDRE #(
     .INIT(1'b0)) 
     lpf_int_reg
        (.C(slowest_sync_clk),
         .CE(1'b1),
-        .D(lpf_int0),
+        .D(lpf_int0__0),
         .Q(lpf_int),
         .R(1'b0));
 endmodule
 
+(* C_AUX_RESET_HIGH = "1'b0" *) (* C_AUX_RST_WIDTH = "4" *) (* C_EXT_RESET_HIGH = "1'b0" *) 
+(* C_EXT_RST_WIDTH = "4" *) (* C_FAMILY = "zynq" *) (* C_NUM_BUS_RST = "1" *) 
+(* C_NUM_INTERCONNECT_ARESETN = "1" *) (* C_NUM_PERP_ARESETN = "1" *) (* C_NUM_PERP_RST = "1" *) 
 (* ORIG_REF_NAME = "proc_sys_reset" *) 
 module linux_bd_rst_processing_system7_0_142M_0_proc_sys_reset
-   (mb_reset,
+   (slowest_sync_clk,
+    ext_reset_in,
+    aux_reset_in,
+    mb_debug_sys_rst,
+    dcm_locked,
+    mb_reset,
     bus_struct_reset,
     peripheral_reset,
     interconnect_aresetn,
-    peripheral_aresetn,
-    mb_debug_sys_rst,
-    ext_reset_in,
-    slowest_sync_clk,
-    dcm_locked,
-    aux_reset_in);
-  output mb_reset;
-  output [0:0]bus_struct_reset;
-  output [0:0]peripheral_reset;
-  output [0:0]interconnect_aresetn;
-  output [0:0]peripheral_aresetn;
-  input mb_debug_sys_rst;
-  input ext_reset_in;
+    peripheral_aresetn);
   input slowest_sync_clk;
-  input dcm_locked;
+  input ext_reset_in;
   input aux_reset_in;
+  input mb_debug_sys_rst;
+  input dcm_locked;
+  output mb_reset;
+  (* equivalent_register_removal = "no" *) output [0:0]bus_struct_reset;
+  (* equivalent_register_removal = "no" *) output [0:0]peripheral_reset;
+  (* equivalent_register_removal = "no" *) output [0:0]interconnect_aresetn;
+  (* equivalent_register_removal = "no" *) output [0:0]peripheral_aresetn;
 
   wire Core;
+  wire SEQ_n_3;
   wire SEQ_n_4;
   wire aux_reset_in;
   wire bsr;
@@ -423,7 +435,6 @@ module linux_bd_rst_processing_system7_0_142M_0_proc_sys_reset
   wire lpf_int;
   wire mb_debug_sys_rst;
   wire mb_reset;
-  wire p_0_out;
   wire [0:0]peripheral_aresetn;
   wire [0:0]peripheral_reset;
   wire pr;
@@ -435,7 +446,7 @@ module linux_bd_rst_processing_system7_0_142M_0_proc_sys_reset
     \ACTIVE_LOW_BSR_OUT_DFF[0].interconnect_aresetn_reg[0] 
        (.C(slowest_sync_clk),
         .CE(1'b1),
-        .D(p_0_out),
+        .D(SEQ_n_3),
         .Q(interconnect_aresetn),
         .R(1'b0));
   (* equivalent_register_removal = "no" *) 
@@ -473,11 +484,11 @@ module linux_bd_rst_processing_system7_0_142M_0_proc_sys_reset
         .Q(peripheral_reset),
         .R(1'b0));
   linux_bd_rst_processing_system7_0_142M_0_sequence_psr SEQ
-       (.\ACTIVE_LOW_PR_OUT_DFF[0].peripheral_aresetn_reg[0] (SEQ_n_4),
+       (.\ACTIVE_LOW_BSR_OUT_DFF[0].interconnect_aresetn_reg[0] (SEQ_n_3),
+        .\ACTIVE_LOW_PR_OUT_DFF[0].peripheral_aresetn_reg[0] (SEQ_n_4),
         .Core(Core),
         .bsr(bsr),
         .lpf_int(lpf_int),
-        .p_0_out(p_0_out),
         .pr(pr),
         .slowest_sync_clk(slowest_sync_clk));
   FDRE #(
@@ -495,18 +506,19 @@ module linux_bd_rst_processing_system7_0_142M_0_sequence_psr
    (Core,
     bsr,
     pr,
-    p_0_out,
+    \ACTIVE_LOW_BSR_OUT_DFF[0].interconnect_aresetn_reg[0] ,
     \ACTIVE_LOW_PR_OUT_DFF[0].peripheral_aresetn_reg[0] ,
     lpf_int,
     slowest_sync_clk);
   output Core;
   output bsr;
   output pr;
-  output p_0_out;
+  output \ACTIVE_LOW_BSR_OUT_DFF[0].interconnect_aresetn_reg[0] ;
   output \ACTIVE_LOW_PR_OUT_DFF[0].peripheral_aresetn_reg[0] ;
   input lpf_int;
   input slowest_sync_clk;
 
+  wire \ACTIVE_LOW_BSR_OUT_DFF[0].interconnect_aresetn_reg[0] ;
   wire \ACTIVE_LOW_PR_OUT_DFF[0].peripheral_aresetn_reg[0] ;
   wire Core;
   wire Core_i_1_n_0;
@@ -518,40 +530,39 @@ module linux_bd_rst_processing_system7_0_142M_0_sequence_psr
   wire \core_dec[2]_i_1_n_0 ;
   wire \core_dec_reg_n_0_[0] ;
   wire \core_dec_reg_n_0_[1] ;
-  wire \core_dec_reg_n_0_[2] ;
   wire from_sys_i_1_n_0;
   wire lpf_int;
-  wire p_0_out;
+  wire p_0_in;
   wire [2:0]p_3_out;
   wire [2:0]p_5_out;
   wire pr;
-  wire pr_dec0;
+  wire pr_dec0__0;
   wire \pr_dec_reg_n_0_[0] ;
   wire \pr_dec_reg_n_0_[2] ;
   wire pr_i_1_n_0;
   wire seq_clr;
-  wire [5:3]seq_cnt;
+  wire [5:0]seq_cnt;
   wire seq_cnt_en;
   wire slowest_sync_clk;
 
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \ACTIVE_LOW_BSR_OUT_DFF[0].interconnect_aresetn[0]_i_1 
        (.I0(bsr),
-        .O(p_0_out));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+        .O(\ACTIVE_LOW_BSR_OUT_DFF[0].interconnect_aresetn_reg[0] ));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \ACTIVE_LOW_PR_OUT_DFF[0].peripheral_aresetn[0]_i_1 
        (.I0(pr),
         .O(\ACTIVE_LOW_PR_OUT_DFF[0].peripheral_aresetn_reg[0] ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT2 #(
     .INIT(4'h2)) 
     Core_i_1
        (.I0(Core),
-        .I1(\core_dec_reg_n_0_[2] ),
+        .I1(p_0_in),
         .O(Core_i_1_n_0));
   FDSE #(
     .INIT(1'b0)) 
@@ -563,11 +574,9 @@ module linux_bd_rst_processing_system7_0_142M_0_sequence_psr
         .S(lpf_int));
   linux_bd_rst_processing_system7_0_142M_0_upcnt_n SEQ_COUNTER
        (.Q(seq_cnt),
-        .pr_dec0(pr_dec0),
         .seq_clr(seq_clr),
         .seq_cnt_en(seq_cnt_en),
         .slowest_sync_clk(slowest_sync_clk));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT4 #(
     .INIT(16'h0804)) 
     \bsr_dec[0]_i_1 
@@ -576,7 +585,7 @@ module linux_bd_rst_processing_system7_0_142M_0_sequence_psr
         .I2(seq_cnt[5]),
         .I3(seq_cnt[4]),
         .O(p_5_out[0]));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \bsr_dec[2]_i_1 
@@ -599,7 +608,7 @@ module linux_bd_rst_processing_system7_0_142M_0_sequence_psr
         .D(p_5_out[2]),
         .Q(\bsr_dec_reg_n_0_[2] ),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT2 #(
     .INIT(4'h2)) 
     bsr_i_1
@@ -614,7 +623,7 @@ module linux_bd_rst_processing_system7_0_142M_0_sequence_psr
         .D(bsr_i_1_n_0),
         .Q(bsr),
         .S(lpf_int));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'h8040)) 
     \core_dec[0]_i_1 
@@ -623,7 +632,7 @@ module linux_bd_rst_processing_system7_0_142M_0_sequence_psr
         .I2(seq_cnt[5]),
         .I3(seq_cnt_en),
         .O(\core_dec[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \core_dec[2]_i_1 
@@ -643,7 +652,7 @@ module linux_bd_rst_processing_system7_0_142M_0_sequence_psr
     \core_dec_reg[1] 
        (.C(slowest_sync_clk),
         .CE(1'b1),
-        .D(pr_dec0),
+        .D(pr_dec0__0),
         .Q(\core_dec_reg_n_0_[1] ),
         .R(1'b0));
   FDRE #(
@@ -652,23 +661,30 @@ module linux_bd_rst_processing_system7_0_142M_0_sequence_psr
        (.C(slowest_sync_clk),
         .CE(1'b1),
         .D(\core_dec[2]_i_1_n_0 ),
-        .Q(\core_dec_reg_n_0_[2] ),
+        .Q(p_0_in),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT2 #(
     .INIT(4'h8)) 
     from_sys_i_1
        (.I0(Core),
         .I1(seq_cnt_en),
         .O(from_sys_i_1_n_0));
-  FDSE #(
-    .INIT(1'b1)) 
-    from_sys_reg
+  FDSE from_sys_reg
        (.C(slowest_sync_clk),
         .CE(1'b1),
         .D(from_sys_i_1_n_0),
         .Q(seq_cnt_en),
         .S(lpf_int));
+  LUT4 #(
+    .INIT(16'h0210)) 
+    pr_dec0
+       (.I0(seq_cnt[0]),
+        .I1(seq_cnt[1]),
+        .I2(seq_cnt[2]),
+        .I3(seq_cnt_en),
+        .O(pr_dec0__0));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'h1080)) 
     \pr_dec[0]_i_1 
@@ -699,7 +715,7 @@ module linux_bd_rst_processing_system7_0_142M_0_sequence_psr
         .D(p_3_out[2]),
         .Q(\pr_dec_reg_n_0_[2] ),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT2 #(
     .INIT(4'h2)) 
     pr_i_1
@@ -726,74 +742,60 @@ endmodule
 
 (* ORIG_REF_NAME = "upcnt_n" *) 
 module linux_bd_rst_processing_system7_0_142M_0_upcnt_n
-   (pr_dec0,
-    Q,
-    seq_cnt_en,
+   (Q,
     seq_clr,
+    seq_cnt_en,
     slowest_sync_clk);
-  output pr_dec0;
-  output [2:0]Q;
-  input seq_cnt_en;
+  output [5:0]Q;
   input seq_clr;
+  input seq_cnt_en;
   input slowest_sync_clk;
 
-  wire [2:0]Q;
+  wire [5:0]Q;
   wire clear;
-  wire pr_dec0;
   wire [5:0]q_int0;
   wire seq_clr;
-  wire [2:0]seq_cnt;
   wire seq_cnt_en;
   wire slowest_sync_clk;
 
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT4 #(
-    .INIT(16'h0210)) 
-    \core_dec[1]_i_1 
-       (.I0(seq_cnt[0]),
-        .I1(seq_cnt[1]),
-        .I2(seq_cnt[2]),
-        .I3(seq_cnt_en),
-        .O(pr_dec0));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \q_int[0]_i_1 
-       (.I0(seq_cnt[0]),
+       (.I0(Q[0]),
         .O(q_int0[0]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \q_int[1]_i_1 
-       (.I0(seq_cnt[0]),
-        .I1(seq_cnt[1]),
+       (.I0(Q[0]),
+        .I1(Q[1]),
         .O(q_int0[1]));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \q_int[2]_i_1 
-       (.I0(seq_cnt[0]),
-        .I1(seq_cnt[1]),
-        .I2(seq_cnt[2]),
+       (.I0(Q[0]),
+        .I1(Q[1]),
+        .I2(Q[2]),
         .O(q_int0[2]));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \q_int[3]_i_1 
-       (.I0(seq_cnt[1]),
-        .I1(seq_cnt[0]),
-        .I2(seq_cnt[2]),
-        .I3(Q[0]),
+       (.I0(Q[1]),
+        .I1(Q[0]),
+        .I2(Q[2]),
+        .I3(Q[3]),
         .O(q_int0[3]));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
     \q_int[4]_i_1 
-       (.I0(seq_cnt[2]),
-        .I1(seq_cnt[0]),
-        .I2(seq_cnt[1]),
-        .I3(Q[0]),
-        .I4(Q[1]),
+       (.I0(Q[2]),
+        .I1(Q[0]),
+        .I2(Q[1]),
+        .I3(Q[3]),
+        .I4(Q[4]),
         .O(q_int0[4]));
   LUT1 #(
     .INIT(2'h1)) 
@@ -803,12 +805,12 @@ module linux_bd_rst_processing_system7_0_142M_0_upcnt_n
   LUT6 #(
     .INIT(64'h7FFFFFFF80000000)) 
     \q_int[5]_i_2 
-       (.I0(Q[0]),
-        .I1(seq_cnt[1]),
-        .I2(seq_cnt[0]),
-        .I3(seq_cnt[2]),
-        .I4(Q[1]),
-        .I5(Q[2]),
+       (.I0(Q[3]),
+        .I1(Q[1]),
+        .I2(Q[0]),
+        .I3(Q[2]),
+        .I4(Q[4]),
+        .I5(Q[5]),
         .O(q_int0[5]));
   FDRE #(
     .INIT(1'b1)) 
@@ -816,7 +818,7 @@ module linux_bd_rst_processing_system7_0_142M_0_upcnt_n
        (.C(slowest_sync_clk),
         .CE(seq_cnt_en),
         .D(q_int0[0]),
-        .Q(seq_cnt[0]),
+        .Q(Q[0]),
         .R(clear));
   FDRE #(
     .INIT(1'b1)) 
@@ -824,7 +826,7 @@ module linux_bd_rst_processing_system7_0_142M_0_upcnt_n
        (.C(slowest_sync_clk),
         .CE(seq_cnt_en),
         .D(q_int0[1]),
-        .Q(seq_cnt[1]),
+        .Q(Q[1]),
         .R(clear));
   FDRE #(
     .INIT(1'b1)) 
@@ -832,7 +834,7 @@ module linux_bd_rst_processing_system7_0_142M_0_upcnt_n
        (.C(slowest_sync_clk),
         .CE(seq_cnt_en),
         .D(q_int0[2]),
-        .Q(seq_cnt[2]),
+        .Q(Q[2]),
         .R(clear));
   FDRE #(
     .INIT(1'b1)) 
@@ -840,7 +842,7 @@ module linux_bd_rst_processing_system7_0_142M_0_upcnt_n
        (.C(slowest_sync_clk),
         .CE(seq_cnt_en),
         .D(q_int0[3]),
-        .Q(Q[0]),
+        .Q(Q[3]),
         .R(clear));
   FDRE #(
     .INIT(1'b1)) 
@@ -848,7 +850,7 @@ module linux_bd_rst_processing_system7_0_142M_0_upcnt_n
        (.C(slowest_sync_clk),
         .CE(seq_cnt_en),
         .D(q_int0[4]),
-        .Q(Q[1]),
+        .Q(Q[4]),
         .R(clear));
   FDRE #(
     .INIT(1'b1)) 
@@ -856,7 +858,7 @@ module linux_bd_rst_processing_system7_0_142M_0_upcnt_n
        (.C(slowest_sync_clk),
         .CE(seq_cnt_en),
         .D(q_int0[5]),
-        .Q(Q[2]),
+        .Q(Q[5]),
         .R(clear));
 endmodule
 `ifndef GLBL

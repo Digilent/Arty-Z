@@ -73,32 +73,20 @@ module axis_infrastructure_v1_1_0_clock_synchronizer # (
 ////////////////////////////////////////////////////////////////////////////////
 // Local Parameters           
 ////////////////////////////////////////////////////////////////////////////////
-localparam integer P_SYNCH_D_WIDTH = (C_NUM_STAGES > 0) ? C_NUM_STAGES : 1;
 ////////////////////////////////////////////////////////////////////////////////
 // Wires/Reg declarations
 ////////////////////////////////////////////////////////////////////////////////
-(* ASYNC_REG = "TRUE" *) reg [P_SYNCH_D_WIDTH-1:0] synch_d = 'b0;
-
-  generate 
-  if (C_NUM_STAGES > 0) begin : gen_synchronizer
-    genvar i;
-
-    always @(posedge clk) begin
-      synch_d[0] <= synch_in;
-    end
-
-    for (i = 1; i < C_NUM_STAGES ; i = i + 1) begin : gen_stage
-      always @(posedge clk) begin
-        synch_d[i] <= synch_d[i-1];
-      end
-    end
-
-    assign synch_out = synch_d[C_NUM_STAGES-1];
-  end
-  else begin : gen_no_synchronizer
-    assign synch_out = synch_in;
-  end
-  endgenerate
+xpm_cdc_single #(
+	.DEST_SYNC_FF   ( C_NUM_STAGES ) ,
+	.SRC_INPUT_REG  ( 0            ) ,
+	.SIM_ASSERT_CHK ( 0            ) 
+)
+inst_xpm_cdc_single   (
+  .src_clk  ( 1'b0      ) ,
+  .src_in   ( synch_in  ) ,
+  .dest_out ( synch_out ) ,
+  .dest_clk ( clk       ) 
+);
 
 endmodule
 

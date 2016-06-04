@@ -1,10 +1,10 @@
-// Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-// Date        : Sun May 29 23:58:38 2016
-// Host        : localhost.localdomain running 64-bit Fedora release 22 (Twenty Two)
+// Tool Version: Vivado v.2016.1 (win64) Build 1538259 Fri Apr  8 15:45:27 MDT 2016
+// Date        : Fri Jun 03 18:27:56 2016
+// Host        : WK73 running 64-bit Service Pack 1  (build 7601)
 // Command     : write_verilog -force -mode funcsim
-//               /home/samb/sam_work/git/digilent/Arty-Z/Projects/linux_bd/src/bd/linux_bd/ip/linux_bd_axis_subset_converter_0_0/linux_bd_axis_subset_converter_0_0_sim_netlist.v
+//               C:/sam_work/git/digilent/Arty-Z/Projects/linux_bd/src/bd/linux_bd/ip/linux_bd_axis_subset_converter_0_0/linux_bd_axis_subset_converter_0_0_sim_netlist.v
 // Design      : linux_bd_axis_subset_converter_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,8 +12,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "linux_bd_axis_subset_converter_0_0,axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0,{}" *) (* CORE_GENERATION_INFO = "linux_bd_axis_subset_converter_0_0,axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0,{x_ipProduct=Vivado 2015.4,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axis_subset_converter,x_ipVersion=1.1,x_ipCoreRevision=7,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_S_AXIS_TDATA_WIDTH=32,C_S_AXIS_TID_WIDTH=1,C_S_AXIS_TDEST_WIDTH=1,C_S_AXIS_TUSER_WIDTH=1,C_S_AXIS_SIGNAL_SET=0b00000000000000000000000010011011,C_M_AXIS_TDATA_WIDTH=24,C_M_AXIS_TID_WIDTH=1,C_M_AXIS_TDEST_WIDTH=1,C_M_AXIS_SIGNAL_SET=0b00000000000000000000000010011011,C_M_AXIS_TUSER_WIDTH=1,C_DEFAULT_TLAST=0}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) 
-(* X_CORE_INFO = "axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0,Vivado 2015.4" *) 
+(* CHECK_LICENSE_TYPE = "linux_bd_axis_subset_converter_0_0,top_linux_bd_axis_subset_converter_0_0,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "top_linux_bd_axis_subset_converter_0_0,Vivado 2016.1" *) 
 (* NotValidForBitStream *)
 module linux_bd_axis_subset_converter_0_0
    (aclk,
@@ -96,7 +95,7 @@ module linux_bd_axis_subset_converter_0_0
   (* G_TASK_SEVERITY_ERR = "2" *) 
   (* G_TASK_SEVERITY_INFO = "0" *) 
   (* G_TASK_SEVERITY_WARNING = "1" *) 
-  linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0 inst
+  linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0 inst
        (.aclk(aclk),
         .aclken(1'b1),
         .aresetn(aresetn),
@@ -132,8 +131,8 @@ endmodule
 (* G_MASK_SS_TDEST = "64" *) (* G_MASK_SS_TID = "32" *) (* G_MASK_SS_TKEEP = "8" *) 
 (* G_MASK_SS_TLAST = "16" *) (* G_MASK_SS_TREADY = "1" *) (* G_MASK_SS_TSTRB = "4" *) 
 (* G_MASK_SS_TUSER = "128" *) (* G_TASK_SEVERITY_ERR = "2" *) (* G_TASK_SEVERITY_INFO = "0" *) 
-(* G_TASK_SEVERITY_WARNING = "1" *) (* ORIG_REF_NAME = "axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0" *) 
-module linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subset_converter_linux_bd_axis_subset_converter_0_0
+(* G_TASK_SEVERITY_WARNING = "1" *) (* ORIG_REF_NAME = "top_linux_bd_axis_subset_converter_0_0" *) 
+module linux_bd_axis_subset_converter_0_0_top_linux_bd_axis_subset_converter_0_0
    (aclk,
     aresetn,
     aclken,
@@ -182,16 +181,10 @@ module linux_bd_axis_subset_converter_0_0_axis_subset_converter_v1_1_7_axis_subs
   output sparse_tkeep_removed;
 
   wire \<const0> ;
-  wire aclk;
-  wire aclken;
-  wire aresetn;
   wire m_axis_tready;
   wire [31:0]s_axis_tdata;
-  wire [0:0]s_axis_tdest;
-  wire [0:0]s_axis_tid;
   wire [3:0]s_axis_tkeep;
   wire s_axis_tlast;
-  wire [3:0]s_axis_tstrb;
   wire [0:0]s_axis_tuser;
   wire s_axis_tvalid;
 

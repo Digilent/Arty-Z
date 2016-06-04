@@ -1,10 +1,10 @@
-// Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-// Date        : Sun May 29 23:57:55 2016
-// Host        : localhost.localdomain running 64-bit Fedora release 22 (Twenty Two)
+// Tool Version: Vivado v.2016.1 (win64) Build 1538259 Fri Apr  8 15:45:27 MDT 2016
+// Date        : Fri Jun 03 18:24:37 2016
+// Host        : WK73 running 64-bit Service Pack 1  (build 7601)
 // Command     : write_verilog -force -mode funcsim
-//               /home/samb/sam_work/git/digilent/Arty-Z/Projects/linux_bd/src/bd/linux_bd/ip/linux_bd_xlconcat_0_0/linux_bd_xlconcat_0_0_sim_netlist.v
+//               C:/sam_work/git/digilent/Arty-Z/Projects/linux_bd/src/bd/linux_bd/ip/linux_bd_xlconcat_0_0/linux_bd_xlconcat_0_0_sim_netlist.v
 // Design      : linux_bd_xlconcat_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,8 +12,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "linux_bd_xlconcat_0_0,xlconcat,{}" *) (* CORE_GENERATION_INFO = "linux_bd_xlconcat_0_0,xlconcat,{x_ipProduct=Vivado 2015.4,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=xlconcat,x_ipVersion=2.1,x_ipCoreRevision=2,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,IN0_WIDTH=1,IN1_WIDTH=1,IN2_WIDTH=1,IN3_WIDTH=1,IN4_WIDTH=1,IN5_WIDTH=1,IN6_WIDTH=1,IN7_WIDTH=1,IN8_WIDTH=1,IN9_WIDTH=1,IN10_WIDTH=1,IN11_WIDTH=1,IN12_WIDTH=1,IN13_WIDTH=1,IN14_WIDTH=1,IN15_WIDTH=1,IN16_WIDTH=1,IN17_WIDTH=1,IN18_WIDTH=1,IN19_WIDTH=1,IN20_WIDTH=1,IN21_WIDTH=1,IN22_WIDTH=1,IN23_WIDTH=1,IN24_WIDTH=1,IN25_WIDTH=1,IN26_WIDTH=1,IN27_WIDTH=1,IN28_WIDTH=1,IN29_WIDTH=1,IN30_WIDTH=1,IN31_WIDTH=1,dout_width=6,NUM_PORTS=6}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) 
-(* X_CORE_INFO = "xlconcat,Vivado 2015.4" *) 
+(* CHECK_LICENSE_TYPE = "linux_bd_xlconcat_0_0,xlconcat,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "xlconcat,Vivado 2016.1" *) 
 (* NotValidForBitStream *)
 module linux_bd_xlconcat_0_0
    (In0,
@@ -22,6 +21,7 @@ module linux_bd_xlconcat_0_0
     In3,
     In4,
     In5,
+    In6,
     dout);
   input [0:0]In0;
   input [0:0]In1;
@@ -29,7 +29,8 @@ module linux_bd_xlconcat_0_0
   input [0:0]In3;
   input [0:0]In4;
   input [0:0]In5;
-  output [5:0]dout;
+  input [0:0]In6;
+  output [6:0]dout;
 
   wire [0:0]In0;
   wire [0:0]In1;
@@ -37,7 +38,9 @@ module linux_bd_xlconcat_0_0
   wire [0:0]In3;
   wire [0:0]In4;
   wire [0:0]In5;
+  wire [0:0]In6;
 
+  assign dout[6] = In6;
   assign dout[5] = In5;
   assign dout[4] = In4;
   assign dout[3] = In3;
